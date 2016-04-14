@@ -11,3 +11,5 @@ test/1
  
  ett fel /dag
  närmare  rätt  / viktor
+
+Arvid testar från Terminalen
