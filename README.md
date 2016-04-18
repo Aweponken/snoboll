@@ -1,15 +1,9 @@
-13-04-16
-# Projekt-IT
-The Snöboll Project
+# Snöboll
+The game
 
-Hej, detta är ett test.
-Mergar uppåt?
-
-direkt igg
-test/1
- 
- 
- ett fel /dag
- närmare  rätt  / viktor
-
-Arvid testar från Terminalen
+## Sprint 1
+* Story 1 - En spelbana
+* Story 2 - Snöbollen
+* Story 3 - Timer
+* Story 4 - Startskärm
+* Story 5 - Styrning av snöboll (om vi hinner)
