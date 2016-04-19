@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Base path: D:/Unity/Editor/Data
 Cmd: getPlatforms
 Cmd: compileSnippet
@@ -256,3 +257,8 @@ Cmd: compileSnippet
   api=1 type=0 insize=1032 outsize=260 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 Cmd: compileSnippet
   api=1 type=1 insize=1032 outsize=600 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
+||||||| merged common ancestors
+=======
+Base path: C:/Program Files/Unity/Editor/Data
+Cmd: getPlatforms
+>>>>>>> origin/timer2

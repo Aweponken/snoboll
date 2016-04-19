@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: dec2cac24edc545419734049a67eb9b7
 folderAsset: yes
@@ -20,3 +21,15 @@ DefaultImporter:
   assetBundleName: 
   assetBundleVariant: 
 >>>>>>> origin/DavNick
+||||||| merged common ancestors
+=======
+fileFormatVersion: 2
+guid: 2dff142edd688d0439742cb3d62397aa
+folderAsset: yes
+timeCreated: 1461055691
+licenseType: Free
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> origin/timer2

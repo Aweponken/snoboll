@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fileFormatVersion: 2
 guid: 200a30ba25dd6ef4b87e568fdd841b9e
 folderAsset: yes
@@ -7,3 +8,15 @@ DefaultImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+||||||| merged common ancestors
+=======
+fileFormatVersion: 2
+guid: 9b26d49287418c24d842acc0c6dedb27
+folderAsset: yes
+timeCreated: 1461055691
+licenseType: Free
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> origin/timer2

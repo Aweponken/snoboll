@@ -1,4 +1,10 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/start.unity
+||||||| merged common ancestors
+- path: Assets/Scene1.unity
+=======
+- path: Assets/timer.unity
+>>>>>>> origin/timer2
   isLoaded: 1
   isActive: 1
