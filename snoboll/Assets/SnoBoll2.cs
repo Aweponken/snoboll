@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SnoBoll : MonoBehaviour 
+public class SnoBoll2 : MonoBehaviour 
 {
 	private Rigidbody2D snoBoll; //pekare till snöboll1
 	private CircleCollider2D snoBollCollider;
@@ -28,13 +28,13 @@ public class SnoBoll : MonoBehaviour
 		snoBoll = GetComponent<Rigidbody2D> ();
 		snoBollCollider = GetComponent<CircleCollider2D>();
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
 		//får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-		float horizontal = Input.GetAxis ("Horizontal"); 
-		float jump = Input.GetAxis("Jump");
+		float horizontal = Input.GetAxis ("Horizontal2"); 
+		float jump = Input.GetAxis("Jump2");
 
 		isGrounded ();
 
@@ -66,14 +66,13 @@ public class SnoBoll : MonoBehaviour
 				grounded = true;
 		}
 	}
-
 	private void tel()
 	{
 		float left = Camera.main.gameObject.transform.position.x
-			- ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
+		             - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
 		float right = Camera.main.gameObject.transform.position.x
-			+ ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + snoBollCollider.radius;
-
+		              + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + snoBollCollider.radius;
+		
 		if (this.transform.position.x > right) 
 		{
 			this.transform.position = new Vector2 (left ,this.transform.position.y);
