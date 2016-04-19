@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{1395AC61-8A6C-F86A-C620-BDA2FFF72C7D}") = "snoboll", "Assembly-CSharp-firstpass.csproj", "{6ED44962-13FE-2FEC-1011-D9DBCE310A72}"
+EndProject
+Project("{1395AC61-8A6C-F86A-C620-BDA2FFF72C7D}") = "snoboll", "Assembly-CSharp-Editor.csproj", "{EFD10924-1107-C457-E1A1-A38B22781989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ED44962-13FE-2FEC-1011-D9DBCE310A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ED44962-13FE-2FEC-1011-D9DBCE310A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ED44962-13FE-2FEC-1011-D9DBCE310A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ED44962-13FE-2FEC-1011-D9DBCE310A72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD10924-1107-C457-E1A1-A38B22781989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD10924-1107-C457-E1A1-A38B22781989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD10924-1107-C457-E1A1-A38B22781989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD10924-1107-C457-E1A1-A38B22781989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
