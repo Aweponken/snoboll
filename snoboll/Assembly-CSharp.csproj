@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\SnoBoll.cs" />
      <Compile Include="Assets\menuScript.cs" />
+     <Compile Include="Assets\timer.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
@@ -34,38 +33,3 @@ Global
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
-||||||| merged common ancestors
-=======
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snoboll.CSharp.Plugins", "snoboll.CSharp.Plugins.csproj", "{64276EEE-9452-FF6F-7388-7935D2266091}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snoboll.CSharp", "snoboll.CSharp.csproj", "{378BD357-FB7A-F850-32A9-8B275EF4082F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snoboll.CSharp.Editor", "snoboll.CSharp.Editor.csproj", "{796CEDDE-5583-C1E0-B2BC-80A4348470F8}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{64276EEE-9452-FF6F-7388-7935D2266091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64276EEE-9452-FF6F-7388-7935D2266091}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64276EEE-9452-FF6F-7388-7935D2266091}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64276EEE-9452-FF6F-7388-7935D2266091}.Release|Any CPU.Build.0 = Release|Any CPU
-		{378BD357-FB7A-F850-32A9-8B275EF4082F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{378BD357-FB7A-F850-32A9-8B275EF4082F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{378BD357-FB7A-F850-32A9-8B275EF4082F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{378BD357-FB7A-F850-32A9-8B275EF4082F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{796CEDDE-5583-C1E0-B2BC-80A4348470F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{796CEDDE-5583-C1E0-B2BC-80A4348470F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{796CEDDE-5583-C1E0-B2BC-80A4348470F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{796CEDDE-5583-C1E0-B2BC-80A4348470F8}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
->>>>>>> origin/timer2
