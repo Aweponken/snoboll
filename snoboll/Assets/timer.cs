@@ -2,12 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+
 public class timer : MonoBehaviour
 {
 
     public Text text;
-    public static int Mins = 0;
-    public static int Secs = 10;
+    public static int Mins = 3;
+    public static int Secs = 0;
     public TimeSpan span = new TimeSpan(Mins, Secs, 0);
     public TimeSpan span2 = new TimeSpan(0, 0, 1);
 
@@ -25,7 +27,8 @@ public class timer : MonoBehaviour
            {
                 //text.fontSize = 20;
                 text.text = "done";
-           }
+            SceneManager.LoadScene("start");
+        }
         else
             {
                 span = span.Subtract(span2); //räknar ner i hundradelar
