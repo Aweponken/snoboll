@@ -1,0 +1,27 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/timer.cs">
+    <Files>
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/MobileControlRig.cs" Line="85" Column="2" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/2D/Scripts/CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/2D/Scripts/Camera2DFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/2D/Scripts/Platformer2DUserControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/2D/Scripts/Restarter.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/CrossPlatformInputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/InputAxisScrollbar.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/Joystick.cs" Line="119" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/MobileInput.cs" Line="133" Column="2" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/PlatformSpecific/StandaloneInput.cs" Line="80" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/TiltInput.cs" Line="145" Column="2" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/TouchPad.cs" Line="157" Column="1" />
+      <File FileName="Assets/Standard Assets/CrossPlatformInput/Scripts/VirtualInput.cs" Line="135" Column="1" />
+      <File FileName="Assets/timer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
