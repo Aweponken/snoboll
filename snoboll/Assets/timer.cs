@@ -12,7 +12,7 @@ public class timer : MonoBehaviour
     public static int Secs = 0;
     public TimeSpan span = new TimeSpan(Mins, Secs, 0);
     public TimeSpan span2 = new TimeSpan(0, 0, 1);
-
+    public static bool past = false;
     // Use this for initialization
     void Start()
     {
@@ -22,7 +22,7 @@ public class timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if(!past) {
         if (span == TimeSpan.Zero) 
            {
                 //text.fontSize = 20;
@@ -35,6 +35,6 @@ public class timer : MonoBehaviour
                 text.text = span.ToString();
 
             }
-      
+      }
     }
 }
