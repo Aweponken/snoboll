@@ -12,17 +12,23 @@ public class PauseMenu : MonoBehaviour
     public Button startMenu;
     public CanvasGroup canvasGroup;
 
+
     // Use this for initialization
+    /// <summary>
+    /// Called once on start. Initialize variables
+    /// </summary>
     void Start()
     {
         isPaused = false;
         clicked = false;
         resumeGame = resumeGame.GetComponent<Button>();
-        startMenu = startMenu.GetComponent<Button>();
-       
+        startMenu = startMenu.GetComponent<Button>();   
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Runs every frame update. Here we check for click on cancel_menu input axis. If clicked we call paus/resume and also check for multible not intended pushes on Cancel_menu
+    /// </summary>
     void Update()
     {
         //kolla efter tryck på esc
@@ -42,6 +48,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Körs när vi klickar på resume
+    /// <summary>
+    /// Here we resume the game. That means resuming the timer, hiding the canvas group that holds the paus-menu, making that canvas group not interactable and also resetting the timescale
+    /// </summary>
     public void resume()
     {
         isPaused = false;
@@ -49,12 +58,14 @@ public class PauseMenu : MonoBehaviour
         //DÖlj canvas (1)
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
-        //canvasGroup.blocksRaycasts = false;
 
         Time.timeScale = 1;
     }
 
     // Körs när vi pausar
+    /// <summary>
+    /// Here we paus the game. That means pausing the timer, showing the canvas group that holds the paus-menu, making that canvas group interactable and also stopping the timescale
+    /// </summary>
     private void paus()
     {
         timer.past = true; //nå variabel past från timer.cs 
@@ -69,6 +80,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Körs när vi klickar på start menu
+    /// <summary>
+    /// This function is called "on click" from the StartMenuButton. Here we reset the timescale and timer and then change scene to "start". 
+    /// </summary>
     public void goToStartMenu()
     {
         Time.timeScale = 1;
