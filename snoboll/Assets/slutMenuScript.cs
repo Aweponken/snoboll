@@ -18,11 +18,10 @@ public class slutMenuScript : MonoBehaviour
 	private bool callMe;
 
 	/// <summary>
-	/// Get Components and select the Start-text.
+	/// Create a list with all player objects (to be displayed on the scoreboard) and initiates the Restart and Main menu button.
 	/// </summary>
-    void Start()
-
-    {
+    void Start(){
+		
 		chatEvents = new List<GameWideScript.Player> ();
 
 		chatEvents.Add (GameWideScript.Player1);
@@ -46,6 +45,10 @@ public class slutMenuScript : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Sorts the list of players depending on their sizes
+	/// </summary>
+
 	void Sort(){
 		GameWideScript.Player temp=null;
 		List<GameWideScript.Player> res = new List<GameWideScript.Player> ();
@@ -63,6 +66,10 @@ public class slutMenuScript : MonoBehaviour
 		}
 		chatEvents=res;
 	}
+
+	/// <summary>
+	/// Adds the players and their sizes to the scoreboard canvas in descending order
+	/// </summary>
 
 	void AddText(){
 		foreach (GameWideScript.Player msg in chatEvents) {
