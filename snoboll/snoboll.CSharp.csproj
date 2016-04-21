@@ -75,6 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Boost.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\SnoBoll.cs" />
     <Compile Include="Assets\SnoBoll2.cs" />
     <Compile Include="Assets\menuScript.cs" />

@@ -84,11 +84,36 @@ public class SnoBoll2 : MonoBehaviour
 		tel ();	
 	}
 
-	/// <summary>
-	/// Cecks if object is on a suface marked as "ground",
-	/// This uses the SerializeField "whatIsGrounded" to know what sufaces are "ground"
-	/// </summary>
-	private void isGrounded() 
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+
+
+        if (coll.gameObject.name == "Boll")
+        {
+
+            if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
+            {
+                transform.localScale = new Vector3(transform.localScale.x - 10, transform.localScale.x - 10, 0);
+
+                groundRadius -= 1;
+            }
+            if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
+            {
+                transform.localScale = new Vector3(transform.localScale.x + 10, transform.localScale.x + 10, 0);
+
+                groundRadius += 1;
+            }
+
+
+
+        }
+
+    }
+    /// <summary>
+    /// Cecks if object is on a suface marked as "ground",
+    /// This uses the SerializeField "whatIsGrounded" to know what sufaces are "ground"
+    /// </summary>
+    private void isGrounded() 
 	{
 		grounded = false;
 
