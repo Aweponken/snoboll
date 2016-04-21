@@ -52,7 +52,7 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     void Start()
     {
-       
+
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
     }
@@ -101,9 +101,9 @@ public class SnoBoll : MonoBehaviour
         {
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
         }
-            //snoBoll.AddForce(new Vector2(snoBoll.velocity.x*boostForce, snoBoll.velocity.y*boostForce));
-            
-        
+        //snoBoll.AddForce(new Vector2(snoBoll.velocity.x*boostForce, snoBoll.velocity.y*boostForce));
+
+
 
         tel();
     }
@@ -117,18 +117,26 @@ public class SnoBoll : MonoBehaviour
 
             if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
             {
-                transform.localScale = new Vector3(transform.localScale.x - 10, transform.localScale.x - 10, 0);
+                if (transform.localScale.x > 30)
+                {
 
-                groundRadius -= 1;
+                    transform.localScale = new Vector3(transform.localScale.x - 10, transform.localScale.x - 10, 0);
+
+                    groundRadius -= 1;
+                }
+
+
             }
             if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
             {
-                transform.localScale = new Vector3(transform.localScale.x + 10, transform.localScale.x + 10, 0);
+                if (transform.localScale.x < 170)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x + 10, transform.localScale.x + 10, 0);
 
-                groundRadius += 1;
+                    groundRadius += 1;
+                }
+
             }
-
-           
 
         }
 
@@ -159,6 +167,10 @@ public class SnoBoll : MonoBehaviour
             - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
         float right = Camera.main.gameObject.transform.position.x
             + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + snoBollCollider.radius;
+        float top = Camera.main.gameObject.transform.position.y
+            + ((2f * Camera.main.orthographicSize) / 2) + snoBollCollider.radius;
+        float bott = Camera.main.gameObject.transform.position.y
+            - ((2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
 
         if (this.transform.position.x > right)
         {
@@ -167,6 +179,16 @@ public class SnoBoll : MonoBehaviour
         if (this.transform.position.x < left)
         {
             this.transform.position = new Vector2(right, this.transform.position.y);
+
+        }
+        if (this.transform.position.y > top)
+        {
+            this.transform.position = new Vector2(this.transform.position.x, bott);
+
+        }
+        if (this.transform.position.y < bott)
+        {
+            this.transform.position = new Vector2(this.transform.position.x, top);
 
         }
     }
