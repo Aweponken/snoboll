@@ -847,6 +847,8 @@ MonoBehaviour:
   groundRadius: 10
   movementSpeed: 100
   jumpForce: 5000
+  boostForce: 200
+  boostCooldown: 1
 --- !u!50 &839466051
 Rigidbody2D:
   serializedVersion: 2
