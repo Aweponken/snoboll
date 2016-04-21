@@ -45,10 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GameWideScript.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\SnoBoll.cs" />
      <Compile Include="Assets\SnoBoll2.cs" />
      <Compile Include="Assets\menuScript.cs" />
+     <Compile Include="Assets\slutMenuScript.cs" />
      <Compile Include="Assets\timer.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

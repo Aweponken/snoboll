@@ -8,8 +8,8 @@ public class timer : MonoBehaviour
 {
 
     public Text text;
-    public static int Mins = 3;
-    public static int Secs = 0;
+    public static int Mins = 0;
+    public static int Secs = 1;
     public TimeSpan span = new TimeSpan(Mins, Secs, 0);
     public TimeSpan span2 = new TimeSpan(0, 0, 1);
     public static bool past = false;
@@ -24,10 +24,10 @@ public class timer : MonoBehaviour
     {
        if(!past) {
         if (span == TimeSpan.Zero) 
-           {
+        {
                 //text.fontSize = 20;
                 text.text = "done";
-            SceneManager.LoadScene("start");
+            SceneManager.LoadScene("slut");
         }
         else
             {

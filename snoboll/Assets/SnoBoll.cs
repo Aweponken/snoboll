@@ -7,7 +7,6 @@ public class SnoBoll : MonoBehaviour
 	private CircleCollider2D snoBollCollider;
 	private bool grounded;
 
-
 	/// <summary>
 	/// Defines what layers are "ground"
 	/// --jumpable--
@@ -46,6 +45,7 @@ public class SnoBoll : MonoBehaviour
 	/// </summary>
 	void Start () 
 	{
+		GameWideScript.Player1.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D> ();
 		snoBollCollider = GetComponent<CircleCollider2D>();
 	}
@@ -120,7 +120,6 @@ public class SnoBoll : MonoBehaviour
 		if (this.transform.position.x < left) 
 		{
 			this.transform.position = new Vector2 (right,this.transform.position.y);
-			this.
 		}
 	}
 }
