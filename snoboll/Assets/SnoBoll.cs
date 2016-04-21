@@ -120,7 +120,7 @@ public class SnoBoll : MonoBehaviour
 		if (this.transform.position.x < left) 
 		{
 			this.transform.position = new Vector2 (right,this.transform.position.y);
-			this.
+		
 		}
 	}
 }

@@ -3,6 +3,9 @@ using System.Collections;
 
 public class SnoBoll2 : MonoBehaviour 
 {
+	private Rigidbody2D snoBoll; //pekare till snöboll1
+	private CircleCollider2D snoBollCollider;
+	private bool grounded;
 	/// <summary>
 	/// Defines what layers are "ground"
 	/// --jumpable--
