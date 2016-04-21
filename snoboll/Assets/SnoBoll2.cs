@@ -3,33 +3,54 @@ using System.Collections;
 
 public class SnoBoll2 : MonoBehaviour 
 {
-	private Rigidbody2D snoBoll; //pekare till snöboll1
-	private CircleCollider2D snoBollCollider;
-	private bool grounded;
-
+	/// <summary>
+	/// Defines what layers are "ground"
+	/// --jumpable--
+	/// </summary>
 	[SerializeField] 
 	private LayerMask whatIsGround;
 
+	/// <summary>
+	/// The ground.
+	/// </summary>
 	[SerializeField] 
 	private Transform ground;
 
+	/// <summary>
+	/// The ground radius.
+	/// </summary>
 	[SerializeField]
 	private float groundRadius; 
 
-	[SerializeField]     //för att kunna styra speed från GUI:t
+	/// <summary>
+	/// The movement speed.
+	/// to be able to control speed from GUI:t
+	/// </summary>
+	[SerializeField]     
 	private float movementSpeed;
 
-	[SerializeField]     //för att kunna styra jumpforce från GUI:t
+	/// <summary>
+	/// The jump force.
+	/// to be able to control jumpforce from GUI:t
+	/// </summary>
+	[SerializeField]
 	private float jumpForce;
 
-	// Use this for initialization
+	/// <summary>
+	/// Use this for initialization
+	/// </summary>
 	void Start () 
 	{
 		snoBoll = GetComponent<Rigidbody2D> ();
 		snoBollCollider = GetComponent<CircleCollider2D>();
 	}
 
-	// Update is called once per frame
+	/// <summary>
+	/// This funtion updates on a fixed time (50 times/sec(???)) 
+	/// and gets the input from the controller/keyboard and calls 
+	/// handleMovement with these arguments. It also checks wheather 
+	/// the object is grounded or not. 
+	/// </summary>
 	void FixedUpdate () 
 	{
 		//får input från tangentbordet (via Edit -> Pro. Set. -> Input)
@@ -41,6 +62,13 @@ public class SnoBoll2 : MonoBehaviour
 		handleMovement (horizontal, jump);
 	}
 
+	/// <summary>
+	/// This function takes two arguments, Horizontal and Float, 
+	/// which are generated from input from controller/keyboard 
+	/// and decide in what direction the objuect should move
+	/// </summary>
+	/// <param name="horizontal">Horizontal.</param>
+	/// <param name="jump">Jump.</param>
 	private void handleMovement(float horizontal, float jump) 
 	{
 		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
@@ -53,6 +81,10 @@ public class SnoBoll2 : MonoBehaviour
 		tel ();	
 	}
 
+	/// <summary>
+	/// Cecks if object is on a suface marked as "ground",
+	/// This uses the SerializeField "whatIsGrounded" to know what sufaces are "ground"
+	/// </summary>
 	private void isGrounded() 
 	{
 		grounded = false;
@@ -66,6 +98,10 @@ public class SnoBoll2 : MonoBehaviour
 				grounded = true;
 		}
 	}
+
+	/// <summary>
+	/// Moves the object to the other side of the camera when moving out of view
+	/// </summary>
 	private void tel()
 	{
 		float left = Camera.main.gameObject.transform.position.x
