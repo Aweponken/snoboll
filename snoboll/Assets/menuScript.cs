@@ -13,7 +13,6 @@ public class menuScript : MonoBehaviour
     void Start()
 
     {
-
         startText = startText.GetComponent<Button>();
         exitText = exitText.GetComponent<Button>();
         startText.Select();

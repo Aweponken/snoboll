@@ -3,6 +3,9 @@ using System.Collections;
 
 public class SnoBoll2 : MonoBehaviour 
 {
+	private Rigidbody2D snoBoll; //pekare till snöboll1
+	private CircleCollider2D snoBollCollider;
+	private bool grounded;
 	/// <summary>
 	/// Defines what layers are "ground"
 	/// --jumpable--
@@ -41,6 +44,7 @@ public class SnoBoll2 : MonoBehaviour
 	/// </summary>
 	void Start () 
 	{
+		GameWideScript.Player2.size= transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D> ();
 		snoBollCollider = GetComponent<CircleCollider2D>();
 	}
