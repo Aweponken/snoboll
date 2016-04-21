@@ -52,7 +52,7 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+		GameWideScript.Player1.size= transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
     }
@@ -140,6 +140,7 @@ public class SnoBoll : MonoBehaviour
 
         }
 
+		GameWideScript.Player1.size= transform.localScale.x;
     }
     /// <summary>
     /// Cecks if object is on a suface marked as "ground",

@@ -116,7 +116,7 @@ public class SnoBoll2 : MonoBehaviour
             }
 
         }
-
+		GameWideScript.Player2.size= transform.localScale.x;
     }
     /// <summary>
     /// Cecks if object is on a suface marked as "ground",
