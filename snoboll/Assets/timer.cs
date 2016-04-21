@@ -22,6 +22,9 @@ public class timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("position" + Camera.main.gameObject.transform.position.y);
+        Debug.Log("aspect" + Camera.main.aspect);
+        Debug.Log("size" + Camera.main.orthographicSize);
        if(!past) {
         if (span == TimeSpan.Zero) 
         {
