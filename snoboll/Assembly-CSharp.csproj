@@ -45,11 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-     <Compile Include="Assets\GameWideScript.cs" />
-=======
      <Compile Include="Assets\Boost.cs" />
->>>>>>> origin/master
+     <Compile Include="Assets\GameWideScript.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\SnoBoll.cs" />
      <Compile Include="Assets\SnoBoll2.cs" />
