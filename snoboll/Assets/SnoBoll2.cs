@@ -105,10 +105,10 @@ public class SnoBoll2 : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
 		if (!grounded && isObj && isVertical) {
-			snoBoll.velocity = new Vector2 (-facing.x * movementSpeed, facing.y * movementSpeed);
+			snoBoll.velocity = new Vector2 (-horizontal * movementSpeed, facing.y * movementSpeed);
 		}
 		if (!grounded && isObj && isHorizontal) {
-			snoBoll.velocity = new Vector2 (facing.x * movementSpeed, -facing.y * movementSpeed);
+			snoBoll.velocity = new Vector2 (horizontal * movementSpeed, -facing.y * movementSpeed);
 		}
 		float h = Mathf.Abs (horizontal);
 		if (!grounded && h < 1 && vertical == 0) {

@@ -9,9 +9,14 @@ public class zone : MonoBehaviour {
     private SpriteRenderer myZone;
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
+    [SerializeField]
+    private float changeSizeWinter;
+    [SerializeField]
+    private float changeSizeSummer;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 
         myZone = gameObject.GetComponent<SpriteRenderer>();
         shaderGUItext = Shader.Find("GUI/Text Shader");
@@ -58,8 +63,9 @@ public class zone : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        float changeSizeWinter = 0.5f;
-        float changeSizeSummer = 0.8f;
+        
+     
+        
         GameObject boll = other.gameObject;
         if (type == 0)
         {
