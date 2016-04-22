@@ -8,8 +8,12 @@ public class timer : MonoBehaviour
 {
 
     public Text text;
-    public static int Mins = 0;
-    public static int Secs = 1;
+<<<<<<< HEAD
+    public static int Mins = 1;
+=======
+    public static int Mins = 3;
+>>>>>>> origin/master
+    public static int Secs = 0;
     public TimeSpan span = new TimeSpan(Mins, Secs, 0);
     public TimeSpan span2 = new TimeSpan(0, 0, 1);
     public static bool past = false;
@@ -22,9 +26,7 @@ public class timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("position" + Camera.main.gameObject.transform.position.y);
-        Debug.Log("aspect" + Camera.main.aspect);
-        Debug.Log("size" + Camera.main.orthographicSize);
+       
        if(!past) {
         if (span == TimeSpan.Zero) 
         {

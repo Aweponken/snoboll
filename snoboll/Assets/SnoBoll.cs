@@ -46,13 +46,17 @@ public class SnoBoll : MonoBehaviour
     [SerializeField]
     private float boostCooldown;
     private float boostStartTime = 0f;
-
+    [SerializeField]
+    private float boostDuration;
+    public bool boosty = false;
     /// <summary>
     /// Use this for initialization
     /// </summary>
     void Start()
     {
-
+        boostDuration = Time.time;  
+        boostStartTime = Time.time + boostCooldown;
+        GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
     }
@@ -85,21 +89,26 @@ public class SnoBoll : MonoBehaviour
     /// <param name="jump">Jump.</param>
     private void handleMovement(float horizontal, float vertical, float jump, float boost)
     {
-        snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-
+        //if (Time.time > boostDuration)
+      //  {
+            GetComponent<SpriteRenderer>().color = Color.white;
+            boostDuration = Time.time + 2;
+            snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
+       // }
         if (jump != 0 && grounded)
         {
             grounded = false;
             snoBoll.AddForce(new Vector2(0, jumpForce));
         }
 
-        if (Time.time > boostCooldown + boostStartTime)
+        if ((Time.time > boostStartTime) && boost != 0)
         {
-            boostStartTime = Time.time;
-        }
-        else if (boost != 0)
-        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            Debug.Log("boost");
+            boostStartTime = Time.time + 2;
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
+            boosty = true;
+
         }
         //snoBoll.AddForce(new Vector2(snoBoll.velocity.x*boostForce, snoBoll.velocity.y*boostForce));
 
@@ -140,6 +149,7 @@ public class SnoBoll : MonoBehaviour
 
         }
 
+        GameWideScript.Player1.size = transform.localScale.x;
     }
     /// <summary>
     /// Cecks if object is on a suface marked as "ground",
