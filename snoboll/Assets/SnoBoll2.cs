@@ -53,6 +53,8 @@ public class SnoBoll2 : MonoBehaviour
     [SerializeField]
     private float boostCooldown;
     private float boostStartTime = 0f;
+    [SerializeField]
+    private float boostDuration;
 
     public bool boosty = false;
     /// <summary>
@@ -97,9 +99,11 @@ public class SnoBoll2 : MonoBehaviour
     /// <param name="horizontal">Horizontal.</param>
     /// <param name="jump">Jump.</param>
 	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
-	{
-		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-
+    {
+        if (!boosty) { 
+            snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
+            GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
 		if (!grounded && isObj && isVertical) {
 			snoBoll.velocity = new Vector2 (-facing.x * movementSpeed, facing.y * movementSpeed);
 		}
@@ -118,12 +122,20 @@ public class SnoBoll2 : MonoBehaviour
 		}
 		if ((Time.time > boostStartTime) && boost != 0)
 		{
-			Debug.Log("boost");
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            Debug.Log("boost2");
 			boostStartTime = Time.time + boostCooldown;
 			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
 			boosty = true;
 
 		}
+        if(boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
+        {
+            Debug.Log("boost2 over");
+            boosty = false;
+        }
+
+
 		tel ();
 	}
 

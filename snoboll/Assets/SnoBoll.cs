@@ -55,13 +55,14 @@ public class SnoBoll : MonoBehaviour
     private float boostStartTime = 0f;
     [SerializeField]
     private float boostDuration;
+
     public bool boosty = false;
     /// <summary>
     /// Use this for initialization
     /// </summary>
     void Start()
     {
-        boostDuration = Time.time;  
+        
         boostStartTime = Time.time + boostCooldown;
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
@@ -98,9 +99,12 @@ public class SnoBoll : MonoBehaviour
     /// <param name="jump">Jump.</param>
 	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
 	{
+        if (!boosty) { 
 		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-
-		if (!grounded && isObj && isVertical) {
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+       
+        if (!grounded && isObj && isVertical) {
 			snoBoll.velocity = new Vector2 (-facing.x * movementSpeed, facing.y * movementSpeed);
 		}
 		if (!grounded && isObj && isHorizontal) {
@@ -111,20 +115,27 @@ public class SnoBoll : MonoBehaviour
 			snoBoll.velocity = new Vector2(facing.x *movementSpeed,snoBoll.velocity.y);
 		}
 
-		if (jump != 0 && grounded) 
+		if (jump != 0 && grounded)  
 		{
 			grounded = false;
 			snoBoll.AddForce(new Vector2(horizontal *movementSpeed, jumpForce));
 		}
 		if ((Time.time > boostStartTime) && boost != 0)
 		{
-			Debug.Log("boost");
+            GetComponent<SpriteRenderer>().color = Color.yellow;   //Bollen ändrar färg
+            Debug.Log("boost1");
 			boostStartTime = Time.time + boostCooldown;
 			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
 			boosty = true;
 
 		}
-		tel ();
+        if (boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
+        {
+            Debug.Log("boost over1");
+            boosty = false;
+        }
+
+        tel();
 	}
 
     void OnCollisionEnter2D(Collision2D coll)
