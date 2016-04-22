@@ -8,11 +8,7 @@ public class timer : MonoBehaviour
 {
 
     public Text text;
-<<<<<<< HEAD
     public static int Mins = 1;
-=======
-    public static int Mins = 3;
->>>>>>> origin/master
     public static int Secs = 0;
     public TimeSpan span = new TimeSpan(Mins, Secs, 0);
     public TimeSpan span2 = new TimeSpan(0, 0, 1);
