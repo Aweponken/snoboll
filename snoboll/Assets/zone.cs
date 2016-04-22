@@ -5,16 +5,28 @@ public class zone : MonoBehaviour {
 
 	private int counter;
 	private int MaxCounter;
+    private int type;
+    private SpriteRenderer myZone;
+    private Shader shaderGUItext;
+    private Shader shaderSpritesDefault;
 
 	// Use this for initialization
 	void Start () {
-		counter = 400;
+
+        myZone = gameObject.GetComponent<SpriteRenderer>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
+        type = Random.Range(0, 2);
+        decideType();
+        counter = 400;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if(counter == 0){
-			//Disable
+            //Disable
+            type = Random.Range(0, 2);
+            decideType();
 			counter = 400;
 			gameObject.active = false;
 			zones.isTwoActive--;
@@ -24,8 +36,46 @@ public class zone : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
- 	{
-         Debug.Log("Something has entered this zone.");    
+    /// <summary>
+    /// decide whether the zone is warm or cold depending on random number(0,1)
+    /// </summary>
+    void decideType()
+    {
+        if (type == 0) //kallt område
+        {
+            myZone.material.shader = shaderGUItext;
+            myZone.color = Color.blue;
+
+        }
+        else   // varmt område
+        {
+            myZone.material.shader = shaderGUItext;
+            myZone.color = Color.red;
+
+        }
+
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        float changeSizeWinter = 0.5f;
+        float changeSizeSummer = 0.8f;
+        GameObject boll = other.gameObject;
+        if (type == 0)
+        {
+            if (boll.transform.localScale.x < 170)
+            {
+                boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, 0);
+            }
+
+        }
+        else
+        {
+            if (boll.transform.localScale.x > 30)
+            {
+                boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.y - changeSizeSummer, 0);
+            }
+
+        }
     }
 }

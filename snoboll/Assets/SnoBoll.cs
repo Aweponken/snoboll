@@ -85,8 +85,8 @@ public class SnoBoll : MonoBehaviour
 
 		isGrounded ();
 		anyObject ();
-
-		handleMovement(horizontal, vertical, jump, boost, facing);
+        groundRadius = (transform.localScale.x) / 10;
+        handleMovement(horizontal, vertical, jump, boost, facing);
 	}
 
     /// <summary>
@@ -141,7 +141,7 @@ public class SnoBoll : MonoBehaviour
 
                     transform.localScale = new Vector3(transform.localScale.x - 10, transform.localScale.x - 10, 0);
 
-                    groundRadius -= 1;
+                  //  groundRadius -= 1;
                 }
 
 
@@ -152,7 +152,7 @@ public class SnoBoll : MonoBehaviour
                 {
                     transform.localScale = new Vector3(transform.localScale.x + 10, transform.localScale.x + 10, 0);
 
-                    groundRadius += 1;
+                  //  groundRadius += 1;
                 }
 
             }
