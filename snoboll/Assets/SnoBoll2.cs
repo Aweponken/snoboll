@@ -9,6 +9,7 @@ public class SnoBoll2 : MonoBehaviour
 	private bool isObj;
 	private bool isVertical;
 	private bool isHorizontal;
+    public static bool PowerUp_Inv = false;
 	Vector2 facing;
 
 
@@ -114,6 +115,8 @@ public class SnoBoll2 : MonoBehaviour
 		if (!grounded && h < 1 && vertical == 0) {
 			snoBoll.velocity = new Vector2(facing.x *movementSpeed,snoBoll.velocity.y);
 		}
+        if (PowerUp_Inv == true)
+            snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 
 		if (jump != 0 && grounded) 
 		{
