@@ -6,6 +6,10 @@ public class SnoBoll : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
     private bool grounded;
+	private bool isObj;
+	private bool isVertical;
+	private bool isHorizontal;
+	Vector2 facing;
 
 
     /// <summary>
@@ -14,6 +18,9 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     [SerializeField]
     private LayerMask whatIsGround;
+
+	[SerializeField] 
+	private LayerMask whatIsAny;
 
     /// <summary>
     /// The ground.
@@ -67,18 +74,20 @@ public class SnoBoll : MonoBehaviour
     /// handleMovement with these arguments. It also checks wheather 
     /// the object is grounded or not. 
     /// </summary>
-    void FixedUpdate()
-    {
-        //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-        float horizontal = Input.GetAxis("Horizontal1");
-        float vertical = Input.GetAxis("Vertical1");
-        float jump = Input.GetAxis("Jump1");
-        float boost = Input.GetAxis("Boost1");
+	void FixedUpdate () 
+	{
+		//får input från tangentbordet (via Edit -> Pro. Set. -> Input)
+		float horizontal = Input.GetAxis ("Horizontal1");
+		float vertical = Input.GetAxis("Vertical1");
+		float jump = Input.GetAxis("Jump1");
+		float boost = Input.GetAxis("Boost1");
+		facing = snoBoll.velocity.normalized;
 
-        isGrounded();
+		isGrounded ();
+		anyObject ();
 
-        handleMovement(horizontal, vertical, jump, boost);
-    }
+		handleMovement(horizontal, vertical, jump, boost, facing);
+	}
 
     /// <summary>
     /// This function takes two arguments, Horizontal and Float, 
@@ -87,35 +96,36 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     /// <param name="horizontal">Horizontal.</param>
     /// <param name="jump">Jump.</param>
-    private void handleMovement(float horizontal, float vertical, float jump, float boost)
-    {
-        //if (Time.time > boostDuration)
-      //  {
-            GetComponent<SpriteRenderer>().color = Color.white;
-            boostDuration = Time.time + 2;
-            snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-       // }
-        if (jump != 0 && grounded)
-        {
-            grounded = false;
-            snoBoll.AddForce(new Vector2(0, jumpForce));
-        }
+	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
+	{
+		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
 
-        if ((Time.time > boostStartTime) && boost != 0)
-        {
-            GetComponent<SpriteRenderer>().color = Color.red;
-            Debug.Log("boost");
-            boostStartTime = Time.time + 2;
-            snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
-            boosty = true;
+		if (!grounded && isObj && isVertical) {
+			snoBoll.velocity = new Vector2 (-facing.x * movementSpeed, facing.y * movementSpeed);
+		}
+		if (!grounded && isObj && isHorizontal) {
+			snoBoll.velocity = new Vector2 (facing.x * movementSpeed, -facing.y * movementSpeed);
+		}
+		float h = Mathf.Abs (horizontal);
+		if (!grounded && h < 1 && vertical == 0) {
+			snoBoll.velocity = new Vector2(facing.x *movementSpeed,snoBoll.velocity.y);
+		}
 
-        }
-        //snoBoll.AddForce(new Vector2(snoBoll.velocity.x*boostForce, snoBoll.velocity.y*boostForce));
+		if (jump != 0 && grounded) 
+		{
+			grounded = false;
+			snoBoll.AddForce(new Vector2(horizontal *movementSpeed, jumpForce));
+		}
+		if ((Time.time > boostStartTime) && boost != 0)
+		{
+			Debug.Log("boost");
+			boostStartTime = Time.time + boostCooldown;
+			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
+			boosty = true;
 
-
-
-        tel();
-    }
+		}
+		tel ();
+	}
 
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -168,6 +178,26 @@ public class SnoBoll : MonoBehaviour
                 grounded = true;
         }
     }
+	private void anyObject() 
+	{
+		isObj = false;
+		isVertical = false;
+		isHorizontal = false;
+		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(ground.position, groundRadius, whatIsAny);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders [i].gameObject != gameObject) {
+				isObj = true;
+				if (colliders [i].gameObject.layer == 11)
+					isVertical = true;
+				if (colliders [i].gameObject.layer == 10)
+					isHorizontal = true;
+
+			}	
+		}
+	}
     /// <summary>
     /// Moves the object to the other side of the camera when moving out of view
     /// </summary>
