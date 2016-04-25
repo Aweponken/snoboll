@@ -86,7 +86,8 @@ public class slutMenuScript : MonoBehaviour
         {
             if (msg.size > 0)
             {
-                display = display.ToString() + msg.name.ToString() + " " + msg.size.ToString() + "\n";
+                int score = (int)Mathf.Round(msg.size); 
+                display = display.ToString() + msg.name.ToString() + " " + score.ToString() + "\n";
             }
         }
         winner.text = display;
