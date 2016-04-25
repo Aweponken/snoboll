@@ -106,15 +106,15 @@ public class SnoBoll : MonoBehaviour
         }
        
         if (!grounded && isObj && isVertical) {
-			snoBoll.velocity = new Vector2 (-horizontal * movementSpeed, facing.y * movementSpeed);
+            snoBoll.transform.position = new Vector2(snoBoll.position.x-2, snoBoll.position.y);
+            snoBoll.velocity = new Vector2 (-horizontal * movementSpeed, facing.y * movementSpeed);
 		}
 		if (!grounded && isObj && isHorizontal) {
-			snoBoll.velocity = new Vector2 (horizontal * movementSpeed, -facing.y * movementSpeed);
+            snoBoll.transform.position = new Vector2(snoBoll.position.x, snoBoll.position.y - 2);
+            snoBoll.velocity = new Vector2 (horizontal * movementSpeed, -facing.y * movementSpeed);
 		}
-		float h = Mathf.Abs (horizontal);
-		if (!grounded && h < 1 && vertical == 0) {
-			snoBoll.velocity = new Vector2(facing.x *movementSpeed,snoBoll.velocity.y);
-		}
+		
+		
         if (PowerUp_Inv == true)
             snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 

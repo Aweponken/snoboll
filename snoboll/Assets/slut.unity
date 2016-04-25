@@ -373,7 +373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main menu
+  m_Text: MAIN MENU
 --- !u!222 &583583383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -650,8 +650,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 200, y: 40}
+  m_AnchoredPosition: {x: 0, y: -80.100006}
+  m_SizeDelta: {x: 257.92, y: 39.802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281752223
 MonoBehaviour:
@@ -737,7 +737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart game
+  m_Text: RESTART GAME
 --- !u!222 &1281752225
 CanvasRenderer:
   m_ObjectHideFlags: 0
