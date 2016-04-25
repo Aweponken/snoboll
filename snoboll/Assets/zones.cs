@@ -50,7 +50,9 @@ public class zones : MonoBehaviour {
 
 		if(zonesArray[rand].active == false){
 			zonesArray[rand].active = true;
-			isTwoActive++;
+            zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.00001f, zonesArray[rand].transform.position.y, 0);
+            zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.00001f, zonesArray[rand].transform.position.y, 0);
+            isTwoActive++;
 		}
 	}
 }
