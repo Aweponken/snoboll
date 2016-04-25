@@ -6,36 +6,35 @@ using UnityEngine.SceneManagement;
 
 public class timer : MonoBehaviour
 {
-
-    public Text text;
-    public static int Mins = 1;
-    public static int Secs = 0;
-    public TimeSpan span = new TimeSpan(Mins, Secs, 0);
-    public TimeSpan span2 = new TimeSpan(0, 0, 1);
+	private int counter = 60; //Fixed update counter for 1 sec.
+	private int year = 2016; //Starting year
+	private int stopYear = 2100; //Stopping year
+	private Text text;
     public static bool past = false;
-    // Use this for initialization
+    
+	// Use this for initialization
     void Start()
     {
         text = GetComponent<Text>();
-    }
+    }		
+	void FixedUpdate(){
+		if (!past) {
+			text.text = "Year: " + year.ToString();
+			if (counter != 0) {
+				counter--;	
+			} 
+			else {
+				if (year == stopYear) {
+					text.text = "done";
+					SceneManager.LoadScene ("slut");
+				} else {
+					year++;
+					counter = 60;
+				}
+			}
+		}
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-       if(!past) {
-        if (span == TimeSpan.Zero) 
-        {
-                //text.fontSize = 20;
-                text.text = "done";
-            SceneManager.LoadScene("slut");
-        }
-        else
-            {
-                span = span.Subtract(span2); //räknar ner i hundradelar
-                text.text = span.ToString();
+	}
 
-            }
-      }
-    }
+
 }
