@@ -1432,13 +1432,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   ground: {fileID: 686475725}
-  groundRadius: 10
+  groundRadius: 9.5
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 200
   boostCooldown: 1
   boostDuration: 0.5
   boosty: 0
+  maxSize: 220
+  minSize: 30
+  changeIfHit: 5
 --- !u!50 &686475723
 Rigidbody2D:
   serializedVersion: 2
@@ -1494,7 +1497,7 @@ Transform:
   m_GameObject: {fileID: 686475720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1673,7 +1676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5f4b6587dd2744dbc32c371f924b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
 --- !u!114 &777516086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,12 +1869,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   ground: {fileID: 839466053}
-  groundRadius: 10
+  groundRadius: 9.5
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 200
   boostCooldown: 1
   boostDuration: 0.5
+  maxSize: 220
+  minSize: 30
+  changeIfHit: 5
   boosty: 0
 --- !u!50 &839466051
 Rigidbody2D:
@@ -1929,7 +1934,7 @@ Transform:
   m_GameObject: {fileID: 839466048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.9, y: 20.4, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
