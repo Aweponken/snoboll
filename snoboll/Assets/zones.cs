@@ -11,9 +11,11 @@ public class zones : MonoBehaviour {
 	private int minTime;
 	private float counter;
 	private float counterSecondZone;
+   
 
 	// Use this for initialization
 	void Start () {
+       
 		counter = Random.Range(minTime,maxTime);
 		counterSecondZone = Random.Range(minTime,maxTime);
 		zonesArray = GameObject.FindGameObjectsWithTag("Zone");
@@ -39,7 +41,8 @@ public class zones : MonoBehaviour {
 		}
 		else {
 			counterSecondZone--;
-		}		
+		}
+        
 	}
 
 	void activateZone(){
