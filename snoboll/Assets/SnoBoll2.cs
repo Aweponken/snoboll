@@ -112,15 +112,6 @@ public class SnoBoll2 : MonoBehaviour
             snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
-		if (!grounded && isObj && isVertical) {
-            snoBoll.transform.position = new Vector2(snoBoll.position.x-2, snoBoll.position.y);
-            snoBoll.velocity = new Vector2 (-horizontal * movementSpeed, facing.y * movementSpeed);
-		}
-		if (!grounded && isObj && isHorizontal) {
-            snoBoll.transform.position = new Vector2(snoBoll.position.x, snoBoll.position.y - 2);
-            snoBoll.velocity = new Vector2 (horizontal * movementSpeed, -facing.y * movementSpeed);
-		}
-		
 		
         if (PowerUp_Inv == true)
             snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
