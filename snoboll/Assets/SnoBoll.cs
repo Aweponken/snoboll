@@ -57,6 +57,13 @@ public class SnoBoll : MonoBehaviour
     [SerializeField]
     private float boostDuration;
 
+	[SerializeField]
+	private float maxSize = 220;
+	[SerializeField]
+	private float minSize = 30;
+	[SerializeField]
+	private float changeIfHit = 5;
+
     public bool boosty = false;
     /// <summary>
     /// Use this for initialization
@@ -150,10 +157,10 @@ public class SnoBoll : MonoBehaviour
 
             if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
             {
-                if (transform.localScale.x > 30)
+				if (transform.localScale.x > minSize)
                 {
 
-                    transform.localScale = new Vector3(transform.localScale.x - 10, transform.localScale.x - 10, 0);
+					transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
 
                   //  groundRadius -= 1;
                 }
@@ -162,9 +169,9 @@ public class SnoBoll : MonoBehaviour
             }
             if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
             {
-                if (transform.localScale.x < 170)
+				if (transform.localScale.x < maxSize)
                 {
-                    transform.localScale = new Vector3(transform.localScale.x + 10, transform.localScale.x + 10, 0);
+					transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
 
                   //  groundRadius += 1;
                 }
