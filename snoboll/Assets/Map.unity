@@ -1477,9 +1477,9 @@ MonoBehaviour:
   groundRadius: 9.5
   movementSpeed: 100
   jumpForce: 5000
-  boostForce: 200
-  boostCooldown: 1
-  boostDuration: 0.5
+  boostForce: 400
+  boostCooldown: 4
+  boostDuration: 0.15
   boosty: 0
   maxSize: 220
   minSize: 30
@@ -1914,12 +1914,18 @@ MonoBehaviour:
   groundRadius: 9.5
   movementSpeed: 100
   jumpForce: 5000
+<<<<<<< HEAD
   boostForce: 200
   boostCooldown: 1
   boostDuration: 0.5
   maxSize: 220
   minSize: 30
   changeIfHit: 5
+=======
+  boostForce: 400
+  boostCooldown: 4
+  boostDuration: 0.15
+>>>>>>> refs/remotes/origin/BoostBalance
   boosty: 0
 --- !u!50 &839466051
 Rigidbody2D:
