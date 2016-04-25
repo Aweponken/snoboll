@@ -11,9 +11,11 @@ public class zones : MonoBehaviour {
 	private int minTime;
 	private float counter;
 	private float counterSecondZone;
+   
 
 	// Use this for initialization
 	void Start () {
+       
 		counter = Random.Range(minTime,maxTime);
 		counterSecondZone = Random.Range(minTime,maxTime);
 		zonesArray = GameObject.FindGameObjectsWithTag("Zone");
@@ -39,15 +41,18 @@ public class zones : MonoBehaviour {
 		}
 		else {
 			counterSecondZone--;
-		}		
+		}
+        
 	}
 
 	void activateZone(){
-		int rand = Random.Range(0, zonesArray.Length - 1);
+		int rand = Random.Range(0, zonesArray.Length);
 
 		if(zonesArray[rand].active == false){
 			zonesArray[rand].active = true;
-			isTwoActive++;
+            zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.00001f, zonesArray[rand].transform.position.y, 0);
+            zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.00001f, zonesArray[rand].transform.position.y, 0);
+            isTwoActive++;
 		}
 	}
 }

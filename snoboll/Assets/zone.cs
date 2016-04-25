@@ -64,24 +64,28 @@ public class zone : MonoBehaviour {
     void OnTriggerStay2D(Collider2D other)
     {
         
-     
+      
         
         GameObject boll = other.gameObject;
-        if (type == 0)
+        if (boll.name.Contains("Boll"))
         {
-            if (boll.transform.localScale.x < 170)
-            {
-                boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, 0);
-            }
 
-        }
-        else
-        {
-            if (boll.transform.localScale.x > 30)
+            if (type == 0)
             {
-                boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.y - changeSizeSummer, 0);
-            }
+                if (boll.transform.localScale.x < 170)
+                {
+                    boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, 0);
+                }
 
+            }
+            else
+            {
+                if (boll.transform.localScale.x > 30)
+                {
+                    boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.y - changeSizeSummer, 0);
+                }
+
+            }
         }
     }
 }
