@@ -508,8 +508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &219274059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -744,8 +744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &339022143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &394089324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -918,8 +918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &420624817
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2141,8 +2141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &904337828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2576,8 +2576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &1209230979
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,8 +2797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb47587b4dc249a4dbea64d28faba0f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSizeWinter: 0.4
-  changeSizeSummer: 1
+  changeSizeWinter: 0.25
+  changeSizeSummer: 1.25
 --- !u!61 &1459684867
 BoxCollider2D:
   m_ObjectHideFlags: 0

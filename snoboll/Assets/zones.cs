@@ -46,7 +46,7 @@ public class zones : MonoBehaviour {
 	}
 
 	void activateZone(){
-		int rand = Random.Range(0, zonesArray.Length - 1);
+		int rand = Random.Range(0, zonesArray.Length);
 
 		if(zonesArray[rand].active == false){
 			zonesArray[rand].active = true;
