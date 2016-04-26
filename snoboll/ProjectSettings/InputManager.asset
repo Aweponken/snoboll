@@ -266,7 +266,7 @@ InputManager:
     descriptiveName: Jump Keyboard 1
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: space
+    positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
