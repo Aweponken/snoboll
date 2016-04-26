@@ -248,7 +248,11 @@ public class SnoBoll : MonoBehaviour
     IEnumerator wfs2()
     {
         SnoBoll2.PowerUp_Inv = true;
+		SnoBoll3.PowerUp_Inv = true;
+		SnoBoll4.PowerUp_Inv = true;
         yield return new WaitForSeconds(5);
         SnoBoll2.PowerUp_Inv = false;
+		SnoBoll3.PowerUp_Inv = false;
+		SnoBoll4.PowerUp_Inv = false;
     }
 }

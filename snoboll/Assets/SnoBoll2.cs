@@ -251,8 +251,12 @@ public class SnoBoll2 : MonoBehaviour
     public void inv() { StartCoroutine(wfs2()); }
     IEnumerator wfs2()
     {
-        SnoBoll.PowerUp_Inv = true;
-        yield return new WaitForSeconds(5);
-        SnoBoll.PowerUp_Inv = false;
+		SnoBoll.PowerUp_Inv = true;
+		SnoBoll3.PowerUp_Inv = true;
+		SnoBoll4.PowerUp_Inv = true;
+		yield return new WaitForSeconds(5);
+		SnoBoll.PowerUp_Inv = false;
+		SnoBoll3.PowerUp_Inv = false;
+		SnoBoll4.PowerUp_Inv = false;
     }
 }
