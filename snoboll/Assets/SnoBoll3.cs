@@ -94,19 +94,23 @@ public class SnoBoll3 : MonoBehaviour
 
 		isGrounded ();
 		anyObject ();
-
-		handleMovement(horizontal, vertical, jump, boost, facing);
 		groundRadius = (transform.localScale.x) / 10;
-	}
+        if (PowerUp_Inv)
+            handleMovement(horizontal * -1, vertical * -1, jump, boost, facing);
+        else
+            handleMovement(horizontal, vertical, jump, boost, facing);
+        jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
 
-	/// <summary>
-	/// This function takes two arguments, Horizontal and Float, 
-	/// which are generated from input from controller/keyboard 
-	/// and decide in what direction the objuect should move
-	/// </summary>
-	/// <param name="horizontal">Horizontal.</param>
-	/// <param name="jump">Jump.</param>
-	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
+    }
+
+    /// <summary>
+    /// This function takes two arguments, Horizontal and Float, 
+    /// which are generated from input from controller/keyboard 
+    /// and decide in what direction the objuect should move
+    /// </summary>
+    /// <param name="horizontal">Horizontal.</param>
+    /// <param name="jump">Jump.</param>
+    private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
 	{
 		if (!boosty) { 
 			snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet

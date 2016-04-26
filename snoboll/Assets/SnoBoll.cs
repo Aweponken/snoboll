@@ -10,6 +10,7 @@ public class SnoBoll : MonoBehaviour
 	private bool isVertical;
 	private bool isHorizontal;
     public static bool PowerUp_Inv = false;
+    public static float horizontal;
 	Vector2 facing;
 
 
@@ -71,7 +72,7 @@ public class SnoBoll : MonoBehaviour
     void Start()
     {
         
-        boostStartTime = Time.time + boostCooldown;
+        boostStartTime = Time.time;
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
@@ -86,7 +87,7 @@ public class SnoBoll : MonoBehaviour
 	void FixedUpdate () 
 	{
 		//får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-		float horizontal = Input.GetAxis ("Horizontal1");
+		horizontal = Input.GetAxis ("Horizontal1");
 		float vertical = Input.GetAxis("Vertical1");
 		float jump = Input.GetAxis("Jump1");
 		float boost = Input.GetAxis("Boost1");
@@ -95,8 +96,12 @@ public class SnoBoll : MonoBehaviour
 		isGrounded ();
 		anyObject ();
         groundRadius = (transform.localScale.x) / 10;
-        handleMovement(horizontal, vertical, jump, boost, facing);
+        if (PowerUp_Inv)
+            handleMovement(horizontal * -1, vertical *-1, jump, boost, facing);
+        else
+            handleMovement(horizontal, vertical, jump, boost, facing);
         jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
+       
     }
 
     /// <summary>
@@ -114,8 +119,11 @@ public class SnoBoll : MonoBehaviour
         }
        
 
-        if (PowerUp_Inv == true)
-            snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
+       // if (PowerUp_Inv == true)
+        //    snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
+
+
+
 		if (jump != 0 && grounded)  
 		{
 			grounded = false;

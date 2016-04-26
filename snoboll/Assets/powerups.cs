@@ -8,7 +8,7 @@ public class powerups : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        rndm_time = Random.Range(100, 200);
+        rndm_time = Random.Range(500, 1000);
         Pow = GameObject.Find("PowerUp_Inv");
         Pow.active = false;
 	
@@ -28,7 +28,7 @@ public class powerups : MonoBehaviour {
                 - ((2f * Camera.main.orthographicSize) / 2) + 15;
             Pow.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
             Pow.active = true;
-            rndm_time = Random.Range(100, 200);
+            rndm_time = Random.Range(500, 1000);
         }
         if(!Pow.active)
             rndm_time--;
