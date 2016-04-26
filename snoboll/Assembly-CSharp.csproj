@@ -51,6 +51,8 @@
      <Compile Include="Assets\PowerUp_Inv_scr.cs" />
      <Compile Include="Assets\SnoBoll.cs" />
      <Compile Include="Assets\SnoBoll2.cs" />
+     <Compile Include="Assets\SnoBoll3.cs" />
+     <Compile Include="Assets\SnoBoll4.cs" />
      <Compile Include="Assets\menuScript.cs" />
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
