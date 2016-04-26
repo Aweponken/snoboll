@@ -110,7 +110,7 @@ public class SnoBoll : MonoBehaviour
 	{
         if (!boosty) { 
 		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-            GetComponent<SpriteRenderer>().color = Color.white;
+			GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
         }
        
 
@@ -143,7 +143,7 @@ public class SnoBoll : MonoBehaviour
     {
 
 
-        if (coll.gameObject.name == "Boll 2")
+		if (coll.gameObject.name == "Boll 2" ||coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4")
         {
 
             if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
