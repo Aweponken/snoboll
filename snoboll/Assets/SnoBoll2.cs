@@ -94,9 +94,10 @@ public class SnoBoll2 : MonoBehaviour
 
 		isGrounded ();
 		anyObject ();
-
-		handleMovement(horizontal, vertical, jump, boost, facing);
         groundRadius = (transform.localScale.x) / 10;
+        handleMovement(horizontal, vertical, jump, boost, facing);
+        jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
+        
 	}
 
     /// <summary>
@@ -112,7 +113,9 @@ public class SnoBoll2 : MonoBehaviour
             snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
-		
+        
+       
+
         if (PowerUp_Inv == true)
             snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 

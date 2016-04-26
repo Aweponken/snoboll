@@ -96,7 +96,8 @@ public class SnoBoll : MonoBehaviour
 		anyObject ();
         groundRadius = (transform.localScale.x) / 10;
         handleMovement(horizontal, vertical, jump, boost, facing);
-	}
+        jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
+    }
 
     /// <summary>
     /// This function takes two arguments, Horizontal and Float, 
@@ -111,7 +112,8 @@ public class SnoBoll : MonoBehaviour
 		snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
             GetComponent<SpriteRenderer>().color = Color.white;
         }
-		
+       
+
         if (PowerUp_Inv == true)
             snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 		if (jump != 0 && grounded)  
