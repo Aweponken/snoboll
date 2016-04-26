@@ -1184,7 +1184,7 @@ MonoBehaviour:
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 400
-  boostCooldown: 4
+  boostCooldown: 2
   boostDuration: 0.15
   boosty: 0
   maxSize: 220
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 400
-  boostCooldown: 4
+  boostCooldown: 2
   boostDuration: 0.15
   maxSize: 220
   minSize: 30

@@ -6,11 +6,12 @@ public class SnoBoll2 : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
     private bool grounded;
-	private bool isObj;
-	private bool isVertical;
-	private bool isHorizontal;
+    private bool isObj;
+    private bool isVertical;
+    private bool isHorizontal;
     public static bool PowerUp_Inv = false;
-	Vector2 facing;
+    public static float horizontal;
+    Vector2 facing;
 
 
     /// <summary>
@@ -20,8 +21,8 @@ public class SnoBoll2 : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
-	[SerializeField] 
-	private LayerMask whatIsAny;
+    [SerializeField]
+    private LayerMask whatIsAny;
 
     /// <summary>
     /// The ground.
@@ -59,19 +60,19 @@ public class SnoBoll2 : MonoBehaviour
 
     public bool boosty = false;
 
-	[SerializeField]
-	private float maxSize = 220;
-	[SerializeField]
-	private float minSize = 30;
-	[SerializeField]
-	private float changeIfHit = 5;
+    [SerializeField]
+    private float maxSize = 220;
+    [SerializeField]
+    private float minSize = 30;
+    [SerializeField]
+    private float changeIfHit = 5;
     /// <summary>
     /// Use this for initialization
     /// </summary>
     void Start()
     {
 
-        boostStartTime = Time.time + boostCooldown;
+        boostStartTime = Time.time;
         GameWideScript.Player2.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
@@ -83,22 +84,25 @@ public class SnoBoll2 : MonoBehaviour
     /// handleMovement with these arguments. It also checks wheather 
     /// the object is grounded or not. 
     /// </summary>
-	void FixedUpdate () 
-	{
-		//får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-		float horizontal = Input.GetAxis ("Horizontal2");
-		float vertical = Input.GetAxis("Vertical2");
-		float jump = Input.GetAxis("Jump2");
-		float boost = Input.GetAxis("Boost2");
-		facing = snoBoll.velocity.normalized;
+	void FixedUpdate()
+    {
+        //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
+        horizontal = Input.GetAxis("Horizontal2");
+        float vertical = Input.GetAxis("Vertical2");
+        float jump = Input.GetAxis("Jump2");
+        float boost = Input.GetAxis("Boost2");
+        facing = snoBoll.velocity.normalized;
 
-		isGrounded ();
-		anyObject ();
+        isGrounded();
+        anyObject();
         groundRadius = (transform.localScale.x) / 10;
-        handleMovement(horizontal, vertical, jump, boost, facing);
+        if (PowerUp_Inv)
+            handleMovement(horizontal * -1, vertical * -1, jump, boost, facing);
+        else
+            handleMovement(horizontal, vertical, jump, boost, facing);
         jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
-        
-	}
+
+    }
 
     /// <summary>
     /// This function takes two arguments, Horizontal and Float, 
@@ -109,39 +113,40 @@ public class SnoBoll2 : MonoBehaviour
     /// <param name="jump">Jump.</param>
 	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
     {
-        if (!boosty) { 
+        if (!boosty)
+        {
             snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
             GetComponent<SpriteRenderer>().color = Color.magenta;
         }
-        
-       
 
-        if (PowerUp_Inv == true)
-            snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 
-		if (jump != 0 && grounded) 
-		{
-			grounded = false;
-			snoBoll.AddForce(new Vector2(horizontal *movementSpeed, jumpForce));
-		}
-		if ((Time.time > boostStartTime) && boost != 0)
-		{
+
+        //  if (PowerUp_Inv == true)
+        //     snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
+
+        if (jump != 0 && grounded)
+        {
+            grounded = false;
+            snoBoll.AddForce(new Vector2(horizontal * movementSpeed, jumpForce));
+        }
+        if ((Time.time > boostStartTime) && boost != 0)
+        {
             GetComponent<SpriteRenderer>().color = Color.yellow;
             Debug.Log("boost2");
-			boostStartTime = Time.time + boostCooldown;
-			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
-			boosty = true;
+            boostStartTime = Time.time + boostCooldown;
+            snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
+            boosty = true;
 
-		}
-        if(boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
+        }
+        if (boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
         {
             Debug.Log("boost2 over");
             boosty = false;
         }
 
 
-		tel ();
-	}
+        tel();
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -152,23 +157,23 @@ public class SnoBoll2 : MonoBehaviour
 
             if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
             {
-				if (transform.localScale.x > minSize)
+                if (transform.localScale.x > minSize)
                 {
 
-					transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
+                    transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
 
-                 //     groundRadius -= 1;
+                    //     groundRadius -= 1;
                 }
 
 
             }
             if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
             {
-				if (transform.localScale.x < maxSize)
+                if (transform.localScale.x < maxSize)
                 {
-					transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
+                    transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
 
-                  //  groundRadius += 1;
+                    //  groundRadius += 1;
                 }
 
             }
@@ -194,26 +199,27 @@ public class SnoBoll2 : MonoBehaviour
                 grounded = true;
         }
     }
-	private void anyObject() 
-	{
-		isObj = false;
-		isVertical = false;
-		isHorizontal = false;
-		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(ground.position, groundRadius, whatIsAny);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders [i].gameObject != gameObject) {
-				isObj = true;
-				if (colliders [i].gameObject.layer == 11)
-					isVertical = true;
-				if (colliders [i].gameObject.layer == 10)
-					isHorizontal = true;
+    private void anyObject()
+    {
+        isObj = false;
+        isVertical = false;
+        isHorizontal = false;
+        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(ground.position, groundRadius, whatIsAny);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+                isObj = true;
+                if (colliders[i].gameObject.layer == 11)
+                    isVertical = true;
+                if (colliders[i].gameObject.layer == 10)
+                    isHorizontal = true;
 
-			}	
-		}
-	}
+            }
+        }
+    }
     /// <summary>
     /// Moves the object to the other side of the camera when moving out of view
     /// </summary>
@@ -254,5 +260,7 @@ public class SnoBoll2 : MonoBehaviour
         SnoBoll.PowerUp_Inv = true;
         yield return new WaitForSeconds(5);
         SnoBoll.PowerUp_Inv = false;
+
+
     }
 }
