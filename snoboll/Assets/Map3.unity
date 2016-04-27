@@ -187,6 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rndm_time: 0
   Pow: {fileID: 817920870}
+  Pow1: {fileID: 0}
+  Pow2: {fileID: 0}
+  Pow3: {fileID: 0}
+  Pow4: {fileID: 0}
 --- !u!4 &107534244
 Transform:
   m_ObjectHideFlags: 0
@@ -2223,7 +2227,7 @@ MonoBehaviour:
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 400
-  boostCooldown: 4
+  boostCooldown: 2
   boostDuration: 0.15
   boosty: 0
   maxSize: 220
@@ -2573,7 +2577,7 @@ MonoBehaviour:
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 400
-  boostCooldown: 4
+  boostCooldown: 2
   boostDuration: 0.15
   boosty: 0
   maxSize: 220
