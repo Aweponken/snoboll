@@ -10,6 +10,8 @@ public class SnoBoll : MonoBehaviour
     private bool isVertical;
     private bool isHorizontal;
     public static bool PowerUp_Inv = false;
+    public static bool static_shield = false;
+    public bool shield = false;
     public static float horizontal;
     public static float slowerFaster = 1;
     Vector2 facing;
@@ -88,6 +90,7 @@ public class SnoBoll : MonoBehaviour
 	void FixedUpdate()
     {
         //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
+        Debug.Log(static_shield);
         horizontal = Input.GetAxis("Horizontal1");
         float vertical = Input.GetAxis("Vertical1");
         float jump = Input.GetAxis("Jump1");
@@ -135,7 +138,6 @@ public class SnoBoll : MonoBehaviour
         if ((Time.time > boostStartTime) && boost != 0)
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;   //Bollen ändrar färg
-            Debug.Log("boost1");
             boostStartTime = Time.time + boostCooldown;
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
             boosty = true;
@@ -143,7 +145,7 @@ public class SnoBoll : MonoBehaviour
         }
         if (boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
         {
-            Debug.Log("boost over1");
+           
             boosty = false;
         }
 
@@ -154,10 +156,12 @@ public class SnoBoll : MonoBehaviour
     {
 
 
-        if (coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4")
+        if (shield)
+            StartCoroutine(shield_delay());
+        if ((coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4"))
         {
 
-            if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
+            if ((coll.gameObject.transform.position.y - transform.position.y > 10) && !static_shield) //när denna boll är under den andra bollen // Hamp och Dag inte bli större av boll med sköld. 
             {
                 if (transform.localScale.x > minSize)
                 {
@@ -169,7 +173,7 @@ public class SnoBoll : MonoBehaviour
 
 
             }
-            if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
+            if (coll.gameObject.transform.position.y - transform.position.y < -10 && !((coll.gameObject.name == "Boll 2" && coll.gameObject.GetComponent<SnoBoll2>().shield) || (coll.gameObject.name == "Boll 3" && coll.gameObject.GetComponent<SnoBoll3>().shield) || (coll.gameObject.name == "Boll 4" && coll.gameObject.GetComponent<SnoBoll4>().shield))) //när denna boll är över
             {
                 if (transform.localScale.x < maxSize)
                 {
@@ -285,4 +289,20 @@ public class SnoBoll : MonoBehaviour
         slowerFaster = 1;
         movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
     }
+
+    public void setShield()
+    {
+        StartCoroutine(shield_delay());
+    }
+
+    IEnumerator shield_delay()
+    {
+
+        static_shield = true;
+        shield = true;
+        yield return new WaitForSeconds(10);
+        shield = false;
+        static_shield = false;
+    }
+ 
 }

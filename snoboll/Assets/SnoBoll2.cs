@@ -11,7 +11,8 @@ public class SnoBoll2 : MonoBehaviour
     private bool isHorizontal;
     public static bool PowerUp_Inv = false;
     public static float horizontal;
-
+    public static bool static_shield = false;
+    public bool shield = false;
     public static float slowerFaster = 1;
     Vector2 facing;
 
@@ -73,7 +74,7 @@ public class SnoBoll2 : MonoBehaviour
     /// </summary>
     void Start()
     {
-
+        boostStartTime = Time.time;
         boostStartTime = Time.time;
         GameWideScript.Player2.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
@@ -118,7 +119,7 @@ public class SnoBoll2 : MonoBehaviour
         if (!boosty)
         {
             snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-			GetComponent<SpriteRenderer>().color = new Color32(182, 255, 255, 255);
+            GetComponent<SpriteRenderer>().color = new Color32(182, 255, 255, 255);
         }
 
 
@@ -134,7 +135,7 @@ public class SnoBoll2 : MonoBehaviour
         if ((Time.time > boostStartTime) && boost != 0)
         {
             GetComponent<SpriteRenderer>().color = Color.yellow;
-            Debug.Log("boost2");
+           
             boostStartTime = Time.time + boostCooldown;
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
             boosty = true;
@@ -142,7 +143,7 @@ public class SnoBoll2 : MonoBehaviour
         }
         if (boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
         {
-            Debug.Log("boost2 over");
+            
             boosty = false;
         }
 
@@ -152,24 +153,24 @@ public class SnoBoll2 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        if (static_shield)
+            StartCoroutine(shield_delay());
 
-
-		if (coll.gameObject.name == "Boll" ||coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4")
+        if (coll.gameObject.name == "Boll" || coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4")
         {
-
-            if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
+            if ((coll.gameObject.transform.position.y - transform.position.y > 10) && !static_shield) //när denna boll är under den andra bollen // Hamp och Dag inte bli större av boll med sköld. 
             {
                 if (transform.localScale.x > minSize)
                 {
 
                     transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
 
-                    //     groundRadius -= 1;
+                    //  groundRadius -= 1;
                 }
 
 
             }
-            if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
+            if (coll.gameObject.transform.position.y - transform.position.y < -10 && !((coll.gameObject.name == "Boll" && coll.gameObject.GetComponent<SnoBoll>().shield) || (coll.gameObject.name == "Boll 3" && coll.gameObject.GetComponent<SnoBoll3>().shield) || (coll.gameObject.name == "Boll 4" && coll.gameObject.GetComponent<SnoBoll4>().shield))) //när denna boll är över
             {
                 if (transform.localScale.x < maxSize)
                 {
@@ -258,7 +259,7 @@ public class SnoBoll2 : MonoBehaviour
     }
     public void inv() { StartCoroutine(wfs2()); }
     IEnumerator wfs2()
- 
+
     {
         SnoBoll.PowerUp_Inv = true;
         SnoBoll3.PowerUp_Inv = true;
@@ -284,5 +285,19 @@ public class SnoBoll2 : MonoBehaviour
         }
         yield return new WaitForSeconds(5);
         slowerFaster = 1;
+    }
+    public void setShield()
+    {
+        StartCoroutine(shield_delay());
+    }
+
+    IEnumerator shield_delay()
+    {
+
+        static_shield = true;
+        shield = true;
+        yield return new WaitForSeconds(10);
+        shield = false;
+        static_shield = false;
     }
 }

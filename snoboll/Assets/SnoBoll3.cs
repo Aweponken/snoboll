@@ -10,7 +10,8 @@ public class SnoBoll3 : MonoBehaviour
 	private bool isVertical;
 	private bool isHorizontal;
 	public static bool PowerUp_Inv = false;
-
+    public static bool static_shield = false;
+    public bool shield = false;
     public static float slowerFaster = 1;
     Vector2 facing;
 
@@ -72,8 +73,8 @@ public class SnoBoll3 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
-
-		boostStartTime = Time.time + boostCooldown;
+        shield = static_shield;
+        boostStartTime = Time.time + boostCooldown;
 		GameWideScript.Player3.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D>();
 		snoBollCollider = GetComponent<CircleCollider2D>();
@@ -131,7 +132,7 @@ public class SnoBoll3 : MonoBehaviour
 		if ((Time.time > boostStartTime) && boost != 0)
 		{
 			GetComponent<SpriteRenderer>().color = Color.yellow;
-			Debug.Log("boost3");
+			
 			boostStartTime = Time.time + boostCooldown;
 			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
 			boosty = true;
@@ -139,7 +140,7 @@ public class SnoBoll3 : MonoBehaviour
 		}
 		if(boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
 		{
-			Debug.Log("boost3 over");
+			
 			boosty = false;
 		}
 
@@ -149,37 +150,38 @@ public class SnoBoll3 : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D coll)
 	{
+        if (static_shield)
+            StartCoroutine(shield_delay());
+        if ((coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll" || coll.gameObject.name == "Boll 4"))
+        {
+
+            if ((coll.gameObject.transform.position.y - transform.position.y > 10) && !static_shield) //när denna boll är under den andra bollen // Hamp och Dag inte bli större av boll med sköld. 
+            {
+                if (transform.localScale.x > minSize)
+                {
+
+                    transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
+
+                    //  groundRadius -= 1;
+                }
 
 
-		if (coll.gameObject.name == "Boll"||coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 4")
-		{
+            }
+            if (coll.gameObject.transform.position.y - transform.position.y < -10 && !((coll.gameObject.name == "Boll 2" && coll.gameObject.GetComponent<SnoBoll2>().shield) || (coll.gameObject.name == "Boll" && coll.gameObject.GetComponent<SnoBoll>().shield) || (coll.gameObject.name == "Boll 4" && coll.gameObject.GetComponent<SnoBoll4>().shield))) //när denna boll är över
+            {
+                if (transform.localScale.x < maxSize)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
 
-			if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
-			{
-				if (transform.localScale.x > minSize)
-				{
+                    //  groundRadius += 1;
+                }
 
-					transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
+            }
 
-					//     groundRadius -= 1;
-				}
+        }
 
 
-			}
-			if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
-			{
-				if (transform.localScale.x < maxSize)
-				{
-					transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
-
-					//  groundRadius += 1;
-				}
-
-			}
-
-		}
-
-		GameWideScript.Player3.size = transform.localScale.x;
+        GameWideScript.Player3.size = transform.localScale.x;
 	}
 	/// <summary>
 	/// Cecks if object is on a suface marked as "ground",
@@ -222,7 +224,7 @@ public class SnoBoll3 : MonoBehaviour
 	/// Moves the object to the other side of the camera when moving out of view
 	/// </summary>
 	private void tel()
-	{	Debug.Log("knas");
+	{	
 		float left = Camera.main.gameObject.transform.position.x
 			- ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
 		float right = Camera.main.gameObject.transform.position.x
@@ -234,12 +236,12 @@ public class SnoBoll3 : MonoBehaviour
 
 		if (this.transform.position.x > right)
 		{
-			Debug.Log("höger");
+		
 			this.transform.position = new Vector2(left, this.transform.position.y);
 		}
 		if (this.transform.position.x < left)
 		{
-			Debug.Log("vänster");
+		
 			this.transform.position = new Vector2(right, this.transform.position.y);
 
 		}
@@ -281,5 +283,19 @@ public class SnoBoll3 : MonoBehaviour
         }
         yield return new WaitForSeconds(5);
         slowerFaster = 1;
+    }
+    public void setShield()
+    {
+        StartCoroutine(shield_delay());
+    }
+
+    IEnumerator shield_delay()
+    {
+
+        static_shield = true;
+        shield = true;
+        yield return new WaitForSeconds(10);
+        shield = false;
+        static_shield = false; ;
     }
 }
