@@ -187,6 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rndm_time: 0
   Pow: {fileID: 817920870}
+  Pow1: {fileID: 0}
+  Pow2: {fileID: 0}
+  Pow3: {fileID: 0}
+  Pow4: {fileID: 0}
 --- !u!4 &107534244
 Transform:
   m_ObjectHideFlags: 0
@@ -1088,6 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1371eaa6444b47fda8d0ce616bc64b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -1580,6 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a36b606e3574a38854b62e6ebcb7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -2033,6 +2039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a89ffe3f614d140ad67256bec05b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -2352,6 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5f1ec1d417f8a418bd1604e38f0cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shield: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -3388,7 +3396,7 @@ Transform:
   m_GameObject: {fileID: 2098020547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 0.8, z: -10}
-  m_LocalScale: {x: 80.325714, y: 116.16814, z: 1}
+  m_LocalScale: {x: 145.59036, y: 116.16814, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
