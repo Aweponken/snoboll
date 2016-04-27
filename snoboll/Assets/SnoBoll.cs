@@ -12,6 +12,7 @@ public class SnoBoll : MonoBehaviour
     public static bool PowerUp_Inv = false;
     public static bool static_shield = false;
     public bool shield = false;
+    public static bool ableToJump = true;
     public static float horizontal;
     public static float slowerFaster = 1;
     Vector2 facing;
@@ -130,7 +131,7 @@ public class SnoBoll : MonoBehaviour
 
 
 
-        if (jump != 0 && grounded)
+        if (jump != 0 && grounded && ableToJump)
         {
             grounded = false;
             snoBoll.AddForce(new Vector2(horizontal * movementSpeed, jumpForce));
@@ -304,5 +305,36 @@ public class SnoBoll : MonoBehaviour
         shield = false;
         static_shield = false;
     }
- 
+    public void noJump()
+    {
+        StartCoroutine(wfs4());
+    }
+    IEnumerator wfs4()
+    {
+        float randomSF = Random.Range(1, 5);
+        if (randomSF == 1)
+        {
+            SnoBoll.ableToJump = false;
+        }
+        else if (randomSF == 2)
+        {
+            SnoBoll2.ableToJump = false;
+        }
+        else if (randomSF == 3)
+        {
+            SnoBoll3.ableToJump = false;
+        }
+        else
+        {
+            SnoBoll4.ableToJump = false;
+        }
+        Debug.Log("random SF " + randomSF);
+        yield return new WaitForSeconds(5);
+        Debug.Log("väntat ");
+        SnoBoll.ableToJump = true;
+        SnoBoll2.ableToJump = true;
+        SnoBoll3.ableToJump = true;
+        SnoBoll4.ableToJump = true;
+        Debug.Log("Efter " + randomSF);
+    }
 }

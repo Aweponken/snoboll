@@ -4,42 +4,57 @@ using System.Collections;
 public class powerups : MonoBehaviour {
 
     public int rndm_time;
-    public GameObject Pow;
-<<<<<<< HEAD
-	private BoxCollider2D InvCollider;
+    public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
+    public static int a = Random.Range(1, 5);
+
+    private BoxCollider2D InvCollider;
+
 
 	// Use this for initialization
 	void Start () {
-        rndm_time = Random.Range(0, 10);
-        Pow = GameObject.Find("PowerUp_Inv");
-=======
- 
+        rndm_time = Random.Range(100, 200);
+        Pow1 = GameObject.Find("PowerUp_Inv");
+        Pow2 = GameObject.Find("PowerUp_Shield");
+        Pow3 = GameObject.Find("PowerUp_SpeedSlow");
+        Pow4 = GameObject.Find("PowerUp_NoJump");
 
-	// Use this for initialization
-	void Start () {
-        rndm_time = Random.Range(1000, 2000);
-        int a = Random.Range(1, 4);
-        if (a == 1)
-        {
-            Pow = GameObject.Find("PowerUp_Inv");
-        }
-        else if(a == 2)
-        {
-            Pow = GameObject.Find("PowerUp_Shield");
-        }
-    
-        else
-        {
-            Pow = GameObject.Find("PowerUp_Slower_Faster");
-        }
->>>>>>> refs/heads/power_shield
+       
         Pow.active = false;
+        Pow1.active = false;
+        Pow2.active = false;
+        Pow3.active = false;
+        Pow4.active = false;
+
+
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        
         if (rndm_time <= 0 && !(Pow.active))
         {
+            if (a == 1)
+            {
+                Pow1.active = true;
+                Pow = Pow1;
+
+            }
+            else if (a == 2)
+            {
+                Pow2.active = true;
+                Pow = Pow2;
+            }
+
+            else if (a == 3)
+            {
+                Pow3.active = true;
+                Pow = Pow3;
+            }
+            else
+            {
+                Pow4.active = true;
+                Pow = Pow4;
+            }
             float left = Camera.main.gameObject.transform.position.x
                  - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
             float right = Camera.main.gameObject.transform.position.x
@@ -50,12 +65,12 @@ public class powerups : MonoBehaviour {
                 - ((2f * Camera.main.orthographicSize) / 2) + 15;
             Pow.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
             Pow.active = true;
-<<<<<<< HEAD
-            rndm_time = Random.Range(0, 10);
-=======
-            rndm_time = Random.Range(1000, 2000);
->>>>>>> refs/heads/power_shield
+
+            rndm_time = Random.Range(100, 200);
+
         }
+
+        a = Random.Range(1, 5);
         if(!Pow.active)
             rndm_time--;
 		tel();

@@ -12,6 +12,7 @@ public class SnoBoll4 : MonoBehaviour
 	public static bool PowerUp_Inv = false;
     public static bool static_shield = false;
     public bool shield = false;
+    public static bool ableToJump = true;
     public static float slowerFaster = 1;
     Vector2 facing;
 
@@ -124,7 +125,7 @@ public class SnoBoll4 : MonoBehaviour
 		if (PowerUp_Inv == true)
 			snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 
-		if (jump != 0 && grounded) 
+		if (jump != 0 && grounded && ableToJump) 
 		{
 			grounded = false;
 			snoBoll.AddForce(new Vector2(horizontal *movementSpeed, jumpForce));
