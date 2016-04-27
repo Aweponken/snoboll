@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Map.unity
-=======
 - path: Assets/start.unity
->>>>>>> refs/remotes/origin/master
   isLoaded: 1
   isActive: 1
