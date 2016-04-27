@@ -10,7 +10,10 @@ public class SnoBoll4 : MonoBehaviour
 	private bool isVertical;
 	private bool isHorizontal;
 	public static bool PowerUp_Inv = false;
-	Vector2 facing;
+    public static bool static_shield = false;
+    public bool shield = false;
+    public static float slowerFaster = 1;
+    Vector2 facing;
 
 
 	/// <summary>
@@ -70,8 +73,8 @@ public class SnoBoll4 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
-
-		boostStartTime = Time.time + boostCooldown;
+        shield = static_shield;
+        boostStartTime = Time.time + boostCooldown;
 		GameWideScript.Player4.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D>();
 		snoBollCollider = GetComponent<CircleCollider2D>();
@@ -100,6 +103,7 @@ public class SnoBoll4 : MonoBehaviour
         else
             handleMovement(horizontal, vertical, jump, boost, facing);
         jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
+        movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
 
     }
 
@@ -128,7 +132,6 @@ public class SnoBoll4 : MonoBehaviour
 		if ((Time.time > boostStartTime) && boost != 0)
 		{
 			GetComponent<SpriteRenderer>().color = Color.yellow;
-			Debug.Log("boost4");
 			boostStartTime = Time.time + boostCooldown;
 			snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
 			boosty = true;
@@ -136,7 +139,6 @@ public class SnoBoll4 : MonoBehaviour
 		}
 		if(boosty && Time.time > boostStartTime - boostCooldown + boostDuration)
 		{
-			Debug.Log("boost4 over");
 			boosty = false;
 		}
 
@@ -147,36 +149,38 @@ public class SnoBoll4 : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D coll)
 	{
 
+        if (static_shield)
+            StartCoroutine(shield_delay());
+        if ((coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll"))
+        {
 
-		if (coll.gameObject.name == "Boll"|| coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 3")
-		{
+            if ((coll.gameObject.transform.position.y - transform.position.y > 10) && !static_shield) //när denna boll är under den andra bollen // Hamp och Dag inte bli större av boll med sköld. 
+            {
+                if (transform.localScale.x > minSize)
+                {
 
-			if (coll.gameObject.transform.position.y - transform.position.y > 10) //när denna boll är under den andra bollen
-			{
-				if (transform.localScale.x > minSize)
-				{
+                    transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
 
-					transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
-
-					//     groundRadius -= 1;
-				}
+                    //  groundRadius -= 1;
+                }
 
 
-			}
-			if (coll.gameObject.transform.position.y - transform.position.y < -10) //när denna boll är över
-			{
-				if (transform.localScale.x < maxSize)
-				{
-					transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
+            }
+            if (coll.gameObject.transform.position.y - transform.position.y < -10 && !((coll.gameObject.name == "Boll 2" && coll.gameObject.GetComponent<SnoBoll2>().shield) || (coll.gameObject.name == "Boll 3" && coll.gameObject.GetComponent<SnoBoll3>().shield) || (coll.gameObject.name == "Boll" && coll.gameObject.GetComponent<SnoBoll>().shield))) //när denna boll är över
+            {
+                if (transform.localScale.x < maxSize)
+                {
+                    transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
 
-					//  groundRadius += 1;
-				}
+                    //  groundRadius += 1;
+                }
 
-			}
+            }
 
-		}
+        }
 
-		GameWideScript.Player4.size = transform.localScale.x;
+
+        GameWideScript.Player4.size = transform.localScale.x;
 	}
 	/// <summary>
 	/// Cecks if object is on a suface marked as "ground",
@@ -260,4 +264,35 @@ public class SnoBoll4 : MonoBehaviour
 		SnoBoll3.PowerUp_Inv = false;
 		SnoBoll.PowerUp_Inv = false;
 	}
+    public void SlowerFasterF() { StartCoroutine(wfs3()); }
+    IEnumerator wfs3()
+    {
+        float randomSF = Random.Range(1, 3);
+
+        if (randomSF < 1.5)
+
+        {
+            slowerFaster = 0.5f;
+        }
+        else
+        {
+            slowerFaster = 1.5f;
+        }
+        yield return new WaitForSeconds(5);
+        slowerFaster = 1;
+    }
+    public void setShield()
+    {
+        StartCoroutine(shield_delay());
+    }
+
+    IEnumerator shield_delay()
+    {
+        
+        static_shield = true;
+        shield = true;
+        yield return new WaitForSeconds(10);
+        shield = false;
+        static_shield = false;
+    }
 }

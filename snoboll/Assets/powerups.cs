@@ -5,15 +5,36 @@ public class powerups : MonoBehaviour {
 
     public int rndm_time;
     public GameObject Pow;
+<<<<<<< HEAD
 	private BoxCollider2D InvCollider;
 
 	// Use this for initialization
 	void Start () {
         rndm_time = Random.Range(0, 10);
         Pow = GameObject.Find("PowerUp_Inv");
+=======
+ 
+
+	// Use this for initialization
+	void Start () {
+        rndm_time = Random.Range(1000, 2000);
+        int a = Random.Range(1, 4);
+        if (a == 1)
+        {
+            Pow = GameObject.Find("PowerUp_Inv");
+        }
+        else if(a == 2)
+        {
+            Pow = GameObject.Find("PowerUp_Shield");
+        }
+    
+        else
+        {
+            Pow = GameObject.Find("PowerUp_Slower_Faster");
+        }
+>>>>>>> refs/heads/power_shield
         Pow.active = false;
-	
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -29,7 +50,11 @@ public class powerups : MonoBehaviour {
                 - ((2f * Camera.main.orthographicSize) / 2) + 15;
             Pow.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
             Pow.active = true;
+<<<<<<< HEAD
             rndm_time = Random.Range(0, 10);
+=======
+            rndm_time = Random.Range(1000, 2000);
+>>>>>>> refs/heads/power_shield
         }
         if(!Pow.active)
             rndm_time--;
