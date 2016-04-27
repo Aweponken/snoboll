@@ -219,7 +219,7 @@ public class SnoBoll3 : MonoBehaviour
 	/// Moves the object to the other side of the camera when moving out of view
 	/// </summary>
 	private void tel()
-	{	Debug.Log("knas");
+	{	
 		float left = Camera.main.gameObject.transform.position.x
 			- ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
 		float right = Camera.main.gameObject.transform.position.x
@@ -231,12 +231,12 @@ public class SnoBoll3 : MonoBehaviour
 
 		if (this.transform.position.x > right)
 		{
-			Debug.Log("höger");
+
 			this.transform.position = new Vector2(left, this.transform.position.y);
 		}
 		if (this.transform.position.x < left)
 		{
-			Debug.Log("vänster");
+
 			this.transform.position = new Vector2(right, this.transform.position.y);
 
 		}
