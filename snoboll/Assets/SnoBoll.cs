@@ -285,10 +285,10 @@ public class SnoBoll : MonoBehaviour
         {
             slowerFaster = 1.5f;
         }
-        movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
+      
         yield return new WaitForSeconds(5);
         slowerFaster = 1;
-        movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
+       
     }
 
     public void setShield()

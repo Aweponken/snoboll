@@ -19,7 +19,7 @@ public class powerups : MonoBehaviour {
         Pow4 = GameObject.Find("PowerUp_NoJump");
 
        
-        Pow.active = false;
+
         Pow1.active = false;
         Pow2.active = false;
         Pow3.active = false;
