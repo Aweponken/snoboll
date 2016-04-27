@@ -5,14 +5,22 @@ public class powerups : MonoBehaviour {
 
     public int rndm_time;
     public GameObject Pow;
+ 
 
 	// Use this for initialization
 	void Start () {
         rndm_time = Random.Range(500, 1000);
-        Pow = GameObject.Find("PowerUp_Inv");
+        int a = Random.Range(1, 3);
+        if (a == 1)
+        {
+            Pow = GameObject.Find("PowerUp_Inv");
+        }
+        else
+        {
+            Pow = GameObject.Find("PowerUp_Slower_Faster");
+        }
         Pow.active = false;
-	
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {

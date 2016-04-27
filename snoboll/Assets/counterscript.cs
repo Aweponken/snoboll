@@ -28,7 +28,7 @@ public class counterscript : MonoBehaviour {
             if(number == 0 && counter > 60)
             {
                 Time.timeScale = 1;
-                timer.past = true;
+                timer.past = false;
                 canvasGroup.alpha = 0;
             }
             else if (number==1)

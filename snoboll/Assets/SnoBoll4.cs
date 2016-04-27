@@ -10,7 +10,9 @@ public class SnoBoll4 : MonoBehaviour
 	private bool isVertical;
 	private bool isHorizontal;
 	public static bool PowerUp_Inv = false;
-	Vector2 facing;
+
+    public static float slowerFaster = 1;
+    Vector2 facing;
 
 
 	/// <summary>
@@ -100,6 +102,7 @@ public class SnoBoll4 : MonoBehaviour
         else
             handleMovement(horizontal, vertical, jump, boost, facing);
         jumpForce = 3000 + (100000 / snoBoll.transform.localScale.x);
+        movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
 
     }
 
@@ -260,4 +263,21 @@ public class SnoBoll4 : MonoBehaviour
 		SnoBoll3.PowerUp_Inv = false;
 		SnoBoll.PowerUp_Inv = false;
 	}
+    public void SlowerFasterF() { StartCoroutine(wfs3()); }
+    IEnumerator wfs3()
+    {
+        float randomSF = Random.Range(1, 3);
+
+        if (randomSF < 1.5)
+
+        {
+            slowerFaster = 0.5f;
+        }
+        else
+        {
+            slowerFaster = 1.5f;
+        }
+        yield return new WaitForSeconds(5);
+        slowerFaster = 1;
+    }
 }
