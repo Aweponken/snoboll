@@ -118,7 +118,10 @@ public class SnoBoll3 : MonoBehaviour
     private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
 	{
 		if (!boosty) { 
-			snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
+			if (snoBoll.velocity.y < 0) 
+				snoBoll.velocity = new Vector2 (horizontal * movementSpeed, snoBoll.velocity.y - 3); 
+			else 
+				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
 			GetComponent<SpriteRenderer>().color = new Color32(255, 208, 250, 255);
 		}
 
