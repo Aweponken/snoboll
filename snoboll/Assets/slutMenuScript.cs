@@ -110,7 +110,7 @@ public class slutMenuScript : MonoBehaviour
     public void ExitGame() //This function will be used on our "Yes" button in our Quit menu
 
     {
-        SceneManager.LoadScene("start"); //this will quit our game. Note this will only work after building the game
+        SceneManager.LoadScene("Options"); //this will quit our game. Note this will only work after building the game
 
     }
 }
