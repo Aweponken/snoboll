@@ -4,11 +4,19 @@ using System.Collections;
 public class GameWideScript : MonoBehaviour {
 
 	public static GameWideScript Instance;
+	public bool setCostum;
+	public bool setSound;
+	public bool setPow;
+	public bool setZone;
+	public int setTime;
+	public int setPlayers;
+	public int setMap;
 
 	void Awake(){
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
 			Instance = this;
+			Instance.setCostum = false;
 		} else if (Instance != this) {
 			Destroy (gameObject);
 		}
