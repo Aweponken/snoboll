@@ -32,15 +32,14 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             script.SlowerFasterF();
             gameObject.active = false;
         }
-
-        if (coll.gameObject.name == "Boll 2")
+        else if (coll.gameObject.name == "Boll 2")
         {
             GameObject snoBoll = GameObject.Find("Boll 2");
             SnoBoll2 script = (SnoBoll2)snoBoll.GetComponent(typeof(SnoBoll2));
             script.SlowerFasterF();
             gameObject.active = false;
         }
-        if (coll.gameObject.name == "Boll 3")
+        else if (coll.gameObject.name == "Boll 3")
         {
             print("BOLL 3");
             GameObject snoBoll = GameObject.Find("Boll 3");
@@ -48,8 +47,7 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             script.SlowerFasterF();
             gameObject.active = false;
         }
-
-        if (coll.gameObject.name == "Boll 4")
+        else if (coll.gameObject.name == "Boll 4")
         {
             print("Boll 4");
             GameObject snoBoll = GameObject.Find("Boll 4");
