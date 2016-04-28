@@ -45,7 +45,6 @@ public class PowerUp_Shield : MonoBehaviour
         }
         if (coll.gameObject.name == "Boll 3")
         {
-            print("BOLL 3");
             GameObject snoBoll = GameObject.Find("Boll 3");
             SnoBoll3 script = (SnoBoll3)snoBoll.GetComponent(typeof(SnoBoll3));
             script.setShield();
@@ -54,7 +53,6 @@ public class PowerUp_Shield : MonoBehaviour
 
         if (coll.gameObject.name == "Boll 4")
         {
-            print("Boll 4");
             GameObject snoBoll = GameObject.Find("Boll 4");
             SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
             script.setShield();

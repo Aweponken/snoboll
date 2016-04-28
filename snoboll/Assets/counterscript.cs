@@ -25,11 +25,12 @@ public class counterscript : MonoBehaviour {
         textOutput.fontSize  +=10;
         if (counter > 50)
         {
-            if(number == 0 && counter > 60)
+			if(number == 0 && counter > 60 && counter < 120)
             {
                 Time.timeScale = 1;
                 timer.past = false;
                 canvasGroup.alpha = 0;
+				counter = 145;
             }
             else if (number==1)
             {
