@@ -121,8 +121,11 @@ public class SnoBoll : MonoBehaviour
     {
         if (!boosty)
         {
-            snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
-            GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
+			if (snoBoll.velocity.y < 0) 
+				snoBoll.velocity = new Vector2 (horizontal * movementSpeed, snoBoll.velocity.y - 3); 
+			else 
+				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
+			GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
         }
 
 
