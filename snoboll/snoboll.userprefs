@@ -1,28 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/menuScript.cs">
-||||||| merged common ancestors
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SnoBoll.cs">
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SnoBoll.cs">
->>>>>>> snabbtfall
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets/menuScript.cs" Line="281" Column="2" />
-||||||| merged common ancestors
-      <File FileName="Assets\SnoBoll3.cs" Line="222" Column="4" />
-      <File FileName="Assets\counterscript.cs" Line="24" Column="19" />
-      <File FileName="Assets\menuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\SnoBoll.cs" Line="62" Column="30" />
-      <File FileName="Assets\SnoBoll2.cs" Line="1" Column="1" />
-      <File FileName="Assets\SnoBoll4.cs" Line="1" Column="1" />
-      <File FileName="Assets\slutMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\powerups.cs" Line="1" Column="1" />
-      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets/SnoBoll.cs" Line="125" Column="89" />
->>>>>>> snabbtfall
+      <File FileName="Assets/menuScript.cs" Line="173" Column="4" />
+      <File FileName="Assets/powerups.cs" Line="64" Column="4" />
+      <File FileName="Assets/zone.cs" Line="1" Column="1" />
+      <File FileName="Assets/zones.cs" Line="43" Column="5" />
+      <File FileName="Assets/GameWideScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/PlayersOption.cs" Line="14" Column="46" />
+      <File FileName="Assets/timer.cs" Line="11" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -206,7 +206,7 @@ Transform:
   - {fileID: 688246528}
   - {fileID: 817920875}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
 --- !u!1 &135846054
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ Transform:
   - {fileID: 219274057}
   - {fileID: 904337826}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
 --- !u!1 &217291702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1148,7 @@ RectTransform:
   m_Children:
   - {fileID: 777516084}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1270,11 +1270,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686475720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26, y: 73, z: 0}
+  m_LocalPosition: {x: -15.78059, y: 72.2, z: 10}
   m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 2123504597}
+  m_RootOrder: 1
 --- !u!1 &688246523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1432,7 @@ Transform:
   - {fileID: 1436524834}
   - {fileID: 870871912}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
 --- !u!1 &734135749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1536,7 @@ Transform:
   - {fileID: 2044480393}
   - {fileID: 1347697924}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
 --- !u!114 &743633280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,11 +1866,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 839466048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -154, y: 20, z: 0}
+  m_LocalPosition: {x: -143.7806, y: 19.2, z: 10}
   m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 2123504597}
+  m_RootOrder: 0
 --- !u!1 &846820125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,11 +2334,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905180141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142, y: 35, z: 0}
+  m_LocalPosition: {x: 152.2194, y: 34.2, z: 10}
   m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 2123504597}
+  m_RootOrder: 3
 --- !u!1 &971114616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,11 +2654,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053200885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: 69, z: 0}
+  m_LocalPosition: {x: 45.21941, y: 68.2, z: 10}
   m_LocalScale: {x: 95, y: 95, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 2123504597}
+  m_RootOrder: 2
 --- !u!1 &1124442709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,3 +3712,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &2123504595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2123504597}
+  - 114: {fileID: 2123504596}
+  m_Layer: 0
+  m_Name: PlayersOptions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2123504596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123504595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca35d8942790412b88fcbf75f57c029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2123504597
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123504595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.21941, y: 0.8, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 839466053}
+  - {fileID: 686475725}
+  - {fileID: 1053200890}
+  - {fileID: 905180146}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6

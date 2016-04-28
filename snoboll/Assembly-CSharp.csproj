@@ -48,6 +48,7 @@
      <Compile Include="Assets\Boost.cs" />
      <Compile Include="Assets\GameWideScript.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
+     <Compile Include="Assets\PlayersOption.cs" />
      <Compile Include="Assets\PowerUp_Faster_Slower.cs" />
      <Compile Include="Assets\PowerUp_Inv_scr.cs" />
      <Compile Include="Assets\PowerUp_NoJump.cs" />
