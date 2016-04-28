@@ -8,7 +8,7 @@ public class timer : MonoBehaviour
 {
 	private int counter = 60; //Fixed update counter for 1 sec.
 	private int year = 2016; //Starting year
-	private int stopYear = GameWideScript.Instance.setTime; //Stopping year
+	private int stopYear = 2100; //Stopping year
 	private Text text;
     public static bool past = false;
     

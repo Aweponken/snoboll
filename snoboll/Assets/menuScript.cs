@@ -64,7 +64,7 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setSound = Sound;
 		GameWideScript.Instance.setPow = Pow;
 		GameWideScript.Instance.setZone = Zone;
-		GameWideScript.Instance.setTime = Time*10;
+		GameWideScript.Instance.setTime = Time;
 		GameWideScript.Instance.setPlayers = Players;
 		GameWideScript.Instance.setCostum = true;
 
@@ -92,7 +92,7 @@ public class menuScript : MonoBehaviour
 	public void playersChange(){
 		Players = (int)players.value;
 		playersValue.text = Players.ToString();
-		/*switch (Players) {
+		switch (Players) {
 		case 2:
 			mapChoice (1);
 			break;
@@ -102,7 +102,7 @@ public class menuScript : MonoBehaviour
 		case 4:
 			mapChoice (3);
 			break;
-		}*/
+		}
 	}
 
 	public void LoadHowToPlay () {
@@ -164,13 +164,10 @@ public class menuScript : MonoBehaviour
 
 	public void onClickSound() {
 		Sound = !Sound;
-		if (!Sound) { 
+		if(!Sound) 
 			SoundButton.GetComponent<Image> ().color = Color.white;
-			AudioListener.pause = true;
-		} else {
+		else
 			SoundButton.GetComponent<Image> ().color = Color.gray;
-			AudioListener.pause = false;
-		}
 	}
 
 	public void onClickPower() {
