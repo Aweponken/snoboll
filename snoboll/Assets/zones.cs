@@ -26,21 +26,21 @@ public class zones : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(counter == 0){
-			counter = Random.Range(minTime,maxTime);
-			
-			activateZone();	
-		}
-		else {
-			counter--;
-		}
-		if(counterSecondZone == 0){
-			counterSecondZone = Random.Range(minTime,maxTime);
-			
-			activateZone();	
-		}
-		else {
-			counterSecondZone--;
+		if (GameWideScript.Instance.setZone){
+			if (counter == 0) {
+				counter = Random.Range (minTime, maxTime);
+				
+				activateZone ();	
+			} else {
+				counter--;
+			}
+			if (counterSecondZone == 0) {
+				counterSecondZone = Random.Range (minTime, maxTime);
+				
+				activateZone ();	
+			} else {
+				counterSecondZone--;
+			}
 		}
         
 	}
