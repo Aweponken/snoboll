@@ -187,6 +187,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rndm_time: 0
   Pow: {fileID: 817920870}
+  Pow1: {fileID: 0}
+  Pow2: {fileID: 0}
+  Pow3: {fileID: 0}
+  Pow4: {fileID: 0}
 --- !u!4 &107534244
 Transform:
   m_ObjectHideFlags: 0
@@ -1066,7 +1070,7 @@ GameObject:
   - 223: {fileID: 612809416}
   - 114: {fileID: 612809415}
   - 114: {fileID: 612809414}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
