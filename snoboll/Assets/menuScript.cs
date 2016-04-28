@@ -67,8 +67,14 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setTime = Time;
 		GameWideScript.Instance.setPlayers = Players;
 		GameWideScript.Instance.setCostum = true;
+
+        if (Map == 1)
 		SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
-	}
+        else if (Map == 2)
+            SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
+        else
+            SceneManager.LoadScene("Map3"); //this will load our first level from our build settings. "1" is the second scene in our game
+    }
 	/// <summary>
 	/// If triggered, shutdown the game.
 	/// </summary>

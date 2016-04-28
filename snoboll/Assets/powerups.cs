@@ -5,13 +5,14 @@ public class powerups : MonoBehaviour {
 
     public int rndm_time;
     public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
-    public static int a = Random.Range(1, 5);
+    public static int a;
 
     private BoxCollider2D InvCollider;
 
 
 	// Use this for initialization
 	void Start () {
+        a = Random.Range(1, 5);
         rndm_time = Random.Range(100, 200);
         Pow1 = GameObject.Find("PowerUp_Inv");
         Pow2 = GameObject.Find("PowerUp_Shield");
@@ -19,7 +20,7 @@ public class powerups : MonoBehaviour {
         Pow4 = GameObject.Find("PowerUp_NoJump");
 
        
-        Pow.active = false;
+
         Pow1.active = false;
         Pow2.active = false;
         Pow3.active = false;
