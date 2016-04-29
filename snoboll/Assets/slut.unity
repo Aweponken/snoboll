@@ -1012,7 +1012,7 @@ GameObject:
   - 225: {fileID: 2062265038}
   - 114: {fileID: 2062265037}
   m_Layer: 0
-  m_Name: HowToPlayCanvas
+  m_Name: ScoreBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
