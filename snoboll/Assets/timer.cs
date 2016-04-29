@@ -28,7 +28,8 @@ public class timer : MonoBehaviour
 				if (year == stopYear) {
 					text.text = "done";
 					if (!scoreBoard) {
-						GameObject.Find ("mainScene").GetComponent<Camera> ().enabled = true;
+						//GameObject.Find ("mainScene").GetComponent<Camera> ().enabled = true;
+						Time.timeScale = 0;
 						Application.LoadLevelAdditive ("slut");
 						scoreBoard = true;
 					}

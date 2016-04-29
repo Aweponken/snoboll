@@ -60,6 +60,7 @@
      <Compile Include="Assets\SnoBoll4.cs" />
      <Compile Include="Assets\StartScript.cs" />
      <Compile Include="Assets\counterscript.cs" />
+     <Compile Include="Assets\fadeInBlur.cs" />
      <Compile Include="Assets\menuScript.cs" />
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
