@@ -22,7 +22,8 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         clicked = false;
         resumeGame = resumeGame.GetComponent<Button>();
-        startMenu = startMenu.GetComponent<Button>();   
+        startMenu = startMenu.GetComponent<Button>(); 
+		//GameObject.Find ("BlurObject").gameObject.active = false;
     }
 
     // Update is called once per frame
@@ -53,6 +54,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void resume()
     {
+		GameObject.Find ("BlurObject").GetComponent<Camera> ().enabled = false;
         isPaused = false;
         timer.past = false; //nå variabel-past från timer.cs
         //DÖlj canvas (1)
@@ -68,13 +70,16 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     private void paus()
     {
-        timer.past = true; //nå variabel past från timer.cs 
+		GameObject.Find ("BlurObject").GetComponent<Camera> ().enabled = true;
+		timer.past = true; //nå variabel past från timer.cs 
         isPaused = true;
         //Visa canvas(1)
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         //canvasGroup.blocksRaycasts = true;
         resumeGame.Select();
+		GameObject.Find ("BlurObject").GetComponent<UnityStandardAssets.ImageEffects.Blur> ().blurSpread = 0;
+		fadeInBlur.count = 0;
 
         Time.timeScale = 0;
     }

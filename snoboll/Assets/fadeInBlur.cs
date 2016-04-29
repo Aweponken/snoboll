@@ -3,7 +3,7 @@ using System.Collections;
 
 public class fadeInBlur : MonoBehaviour {
 
-	private int count;
+	public static int count;
 	// Use this for initialization
 	void Start () {
 		count = 0;
