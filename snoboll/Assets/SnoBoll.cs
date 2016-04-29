@@ -75,11 +75,11 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     void Start()
     {
-
         boostStartTime = Time.time;
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
+		GameWideScript.Player1.Color = "Yellow";
     }
 
     /// <summary>

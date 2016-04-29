@@ -79,6 +79,7 @@ public class SnoBoll3 : MonoBehaviour
 		GameWideScript.Player3.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D>();
 		snoBollCollider = GetComponent<CircleCollider2D>();
+		GameWideScript.Player3.Color = "Pink";
 	}
 
 	/// <summary>
