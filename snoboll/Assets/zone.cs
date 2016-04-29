@@ -33,7 +33,7 @@ public class zone : MonoBehaviour {
             type = Random.Range(0, 2);
             decideType();
 			counter = 400;
-			//gameObject.active = false;
+			gameObject.active = false;
 			zones.isTwoActive--;
 		} 
 		else {

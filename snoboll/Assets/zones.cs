@@ -22,14 +22,11 @@ public class zones : MonoBehaviour {
 		foreach(GameObject i in zonesArray) {
 			i.active = false;
 		}
-		for (int i = 0; i < zonesArray.Length; i++) {
-			activateZoneByIndex (i);
-		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		/*if (GameWideScript.Instance.setZone) {
+		if (GameWideScript.Instance.setZone) {
 			if (counter == 0) {
 				counter = Random.Range (minTime, maxTime);
 			
@@ -44,7 +41,7 @@ public class zones : MonoBehaviour {
 			} else {
 				counterSecondZone--;
 			}
-		}*/  
+		}  
 	}
 
 	void activateZone(){
