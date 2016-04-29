@@ -124,14 +124,18 @@ public class menuScript : MonoBehaviour
 		timeValue.text = (10 * Time).ToString();
 		playersValue.text = Players.ToString();
 
+		Button b = SoundButton.GetComponent<Button>(); 
+		ColorBlock cb = b.colors;
+		cb.normalColor = timeValue.color;
+
 		if (Sound) {
-			SoundButton.GetComponent<Image> ().color = Color.gray;
+			SoundButton.GetComponent<Image> ().color = timeValue.color;
 		}
 		if (Pow) {
-			PowerUpButton.GetComponent<Image> ().color = Color.gray;
+			PowerUpButton.GetComponent<Image> ().color = timeValue.color;
 		}
 		if (Zone) {
-			ZonesButton.GetComponent<Image> ().color = Color.gray;
+			ZonesButton.GetComponent<Image> ().color  = timeValue.color;
 		}
 
 		// Custom map could be set
@@ -164,31 +168,72 @@ public class menuScript : MonoBehaviour
 
 	public void onClickSound() {
 		Sound = !Sound;
+		Button b = SoundButton.GetComponent<Button>(); 
+		ColorBlock cb = b.colors;
 		if (!Sound) { 
-			SoundButton.GetComponent<Image> ().color = Color.white;
+			SoundButton.GetComponent<Image>().color = Color.white;
 			AudioListener.pause = true;
 		} else {
-			SoundButton.GetComponent<Image> ().color = Color.gray;
+			SoundButton.GetComponent<Image>().color = timeValue.color;
 			AudioListener.pause = false;
 		}
+		b.colors = cb;
 	}
 
 	public void onClickPower() {
 		Pow = !Pow;
-		if(!Pow) 
-			PowerUpButton.GetComponent<Image> ().color = Color.white;
-		else
-			PowerUpButton.GetComponent<Image> ().color = Color.gray;
+		Button b = PowerUpButton.GetComponent<Button>(); 
+		ColorBlock cb = b.colors;
+		if (!Pow) { 
+			PowerUpButton.GetComponent<Image>().color = Color.white;
+		} else {
+			PowerUpButton.GetComponent<Image>().color = timeValue.color;
+		}
+		b.colors = cb;
 	}
 
 	public void onClickZone() {
 		Zone = !Zone;
-		if(!Zone) 
-			ZonesButton.GetComponent<Image> ().color = Color.white;
-		else
-			ZonesButton.GetComponent<Image> ().color = Color.gray;
+		Button b = ZonesButton.GetComponent<Button>(); 
+		ColorBlock cb = b.colors;
+		if (!Zone) { 
+			ZonesButton.GetComponent<Image>().color = Color.white;
+		} else {
+			ZonesButton.GetComponent<Image>().color = timeValue.color;
+		}
+		b.colors = cb;
 	}
 
+	public void onHoverSound(){
+		Button b = SoundButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.black;
+	}
+
+	public void onHoverPower(){
+		Button b = PowerUpButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.black;
+	}
+
+	public void onHoverZone(){
+		Button b = ZonesButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.black;
+	}
+
+	public void onLeaveSound(){
+		Button b = SoundButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.clear;
+	}
+
+	public void onLeavePower(){
+		Button b = PowerUpButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.clear;
+	}
+
+	public void onLeaveZone(){
+		Button b = ZonesButton.GetComponent<Button>(); 
+		b.GetComponent<Outline> ().effectColor = Color.clear;
+	}
+		
 	public void map1click (){
 		Map = 1;
 		mapChoice (1);
