@@ -22,7 +22,6 @@ public class slutMenuScript : MonoBehaviour
     /// </summary>
     void Start()
     {
-
         chatEvents = new List<GameWideScript.Player>();
 
         chatEvents.Add(GameWideScript.Player1);
@@ -84,10 +83,10 @@ public class slutMenuScript : MonoBehaviour
     {
         foreach (GameWideScript.Player msg in chatEvents)
         {
-            if (msg.size > 0)
+			if (msg.isActive)
             {
                 int score = (int)Mathf.Round(msg.size); 
-                display = display.ToString() + msg.name.ToString() + " " + score.ToString() + "\n";
+				display = display.ToString() + msg.Color.ToString() + " " + score.ToString() + "\n";
             }
         }
         winner.text = display;
