@@ -1,8 +1,12 @@
 sceneSetups:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Options.unity
 =======
 - path: Assets/Map2.unity
 >>>>>>> refs/remotes/origin/zoon-pow-bugg
+=======
+- path: Assets/start.unity
+>>>>>>> ny-layout-på-scoreboard
   isLoaded: 1
   isActive: 1

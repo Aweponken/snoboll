@@ -11,6 +11,7 @@ public class timer : MonoBehaviour
 	private int stopYear = GameWideScript.Instance.setTime; //Stopping year
 	private Text text;
     public static bool past = false;
+	public bool scoreBoard = false;
     
 	// Use this for initialization
     void Start()
@@ -26,7 +27,12 @@ public class timer : MonoBehaviour
 			else {
 				if (year == stopYear) {
 					text.text = "done";
-					SceneManager.LoadScene ("slut");
+					if (!scoreBoard) {
+						//GameObject.Find ("mainScene").GetComponent<Camera> ().enabled = true;
+						Time.timeScale = 0;
+						Application.LoadLevelAdditive ("slut");
+						scoreBoard = true;
+					}
 				} else {
 					year++;
 					counter = 60;

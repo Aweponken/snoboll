@@ -1,19 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zone.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/timer.cs">
     <Files>
-      <File FileName="Assets\powerups.cs" Line="9" Column="1" />
-      <File FileName="Assets\menuScript.cs" Line="173" Column="4" />
-      <File FileName="Assets\zone.cs" Line="85" Column="140" />
-      <File FileName="Assets\zones.cs" Line="27" Column="4" />
-      <File FileName="Assets\GameWideScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayersOption.cs" Line="14" Column="46" />
-      <File FileName="Assets\timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="59" Column="4" />
-      <File FileName="Assets\SnoBoll.cs" Line="345" Column="3" />
-      <File FileName="Assets\SnoBoll2.cs" Line="309" Column="3" />
-      <File FileName="Assets\SnoBoll3.cs" Line="307" Column="3" />
-      <File FileName="Assets\SnoBoll4.cs" Line="304" Column="3" />
+      <File FileName="Assets/timer.cs" Line="31" Column="1" />
+      <File FileName="Assets/SnoBoll.cs" Line="94" Column="1" />
+      <File FileName="Assets/powerups.cs" Line="6" Column="19" />
+      <File FileName="Assets/PowerUp_Shield.cs" Line="1" Column="1" />
+      <File FileName="Assets/PowerUp_NoJump.cs" Line="1" Column="1" />
+      <File FileName="Assets/PowerUp_Faster_Slower.cs" Line="1" Column="1" />
+      <File FileName="Assets/PowerUp_Inv_scr.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
