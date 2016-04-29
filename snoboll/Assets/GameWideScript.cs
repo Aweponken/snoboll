@@ -31,10 +31,13 @@ public class GameWideScript : MonoBehaviour {
 
 		public string name;
 		public float size;
+		public bool isActive;
+		public string Color;
 
-		public Player(string name, float size) {
+		public Player(string name, float size, bool isActive = true) {
 			this.name = name;
 			this.size = size;
+			this.isActive = isActive;
 		}
 	}
 }
