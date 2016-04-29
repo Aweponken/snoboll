@@ -299,4 +299,7 @@ public class SnoBoll4 : MonoBehaviour
         shield = false;
         static_shield = false;
     }
+	public void updateRad(){
+		groundRadius = (transform.localScale.x) / 10;
+	}
 }

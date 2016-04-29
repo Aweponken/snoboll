@@ -22,11 +22,14 @@ public class zones : MonoBehaviour {
 		foreach(GameObject i in zonesArray) {
 			i.active = false;
 		}
+		for (int i = 0; i < zonesArray.Length; i++) {
+			activateZoneByIndex (i);
+		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (GameWideScript.Instance.setZone) {
+		/*if (GameWideScript.Instance.setZone) {
 			if (counter == 0) {
 				counter = Random.Range (minTime, maxTime);
 			
@@ -41,7 +44,7 @@ public class zones : MonoBehaviour {
 			} else {
 				counterSecondZone--;
 			}
-		}  
+		}*/  
 	}
 
 	void activateZone(){
@@ -52,6 +55,15 @@ public class zones : MonoBehaviour {
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.1f, zonesArray[rand].transform.position.y, 0);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.1f, zonesArray[rand].transform.position.y, 0);
             isTwoActive++;
+		}
+	}
+	
+	void activateZoneByIndex(int i){
+		if(zonesArray[i].active == false){
+			zonesArray[i].active = true;
+			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x + 0.1f, zonesArray[i].transform.position.y, 0);
+			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x - 0.1f, zonesArray[i].transform.position.y, 0);
+			isTwoActive++;
 		}
 	}
 }

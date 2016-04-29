@@ -340,4 +340,7 @@ public class SnoBoll : MonoBehaviour
         SnoBoll4.ableToJump = true;
         Debug.Log("Efter " + randomSF);
     }
+	public void updateRad(){
+		groundRadius = (transform.localScale.x) / 10;
+	}
 }

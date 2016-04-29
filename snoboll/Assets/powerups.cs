@@ -7,7 +7,6 @@ public class powerups : MonoBehaviour {
     public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
     public static int a;
 
-    private BoxCollider2D InvCollider;
 
 
 	// Use this for initialization
@@ -62,7 +61,8 @@ public class powerups : MonoBehaviour {
 
 			}
 		}
-        a = Random.Range(1, 5);
+		a = 1;
+        //a = Random.Range(1, 5);
         if(!Pow.active)
             rndm_time--;
 		tel();
