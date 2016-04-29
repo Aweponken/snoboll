@@ -17,6 +17,12 @@ public class GameWideScript : MonoBehaviour {
 			DontDestroyOnLoad (gameObject);
 			Instance = this;
 			Instance.setCostum = false;
+			Instance.setSound = true;
+			Instance.setPow = true;
+			Instance.setZone = true;
+			Instance.setTime = 210;
+			Instance.setPlayers = 2;
+			Instance.setMap = 1;
 		} else if (Instance != this) {
 			Destroy (gameObject);
 		}
