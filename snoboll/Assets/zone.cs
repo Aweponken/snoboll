@@ -4,7 +4,6 @@ using System.Collections;
 public class zone : MonoBehaviour {
 
 	private int counter;
-	private int MaxCounter;
     private int type;
     private SpriteRenderer myZone;
     private Shader shaderGUItext;
@@ -82,20 +81,18 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x > 30)
                 {
-					boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeSummer, boll.transform.localScale.x + changeSizeSummer, 0);
+					boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.x - changeSizeSummer, 0);
 					if (boll.gameObject.name == "Boll")
 					{
 						GameObject snoBoll = GameObject.Find("Boll");
 						SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
 						script.updateRad();
-						gameObject.active = false;
 					}
 					else if (boll.gameObject.name == "Boll 2")
 					{
 						GameObject snoBoll = GameObject.Find("Boll 2");
 						SnoBoll2 script = (SnoBoll2)snoBoll.GetComponent(typeof(SnoBoll2));
 						script.updateRad();
-						gameObject.active = false;
 					}
 					else if (boll.gameObject.name == "Boll 3")
 					{
@@ -103,7 +100,6 @@ public class zone : MonoBehaviour {
 						GameObject snoBoll = GameObject.Find("Boll 3");
 						SnoBoll3 script = (SnoBoll3)snoBoll.GetComponent(typeof(SnoBoll3));
 						script.updateRad();
-						gameObject.active = false;
 					}
 					else if (boll.gameObject.name == "Boll 4")
 					{
@@ -111,10 +107,8 @@ public class zone : MonoBehaviour {
 						GameObject snoBoll = GameObject.Find("Boll 4");
 						SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
 						script.updateRad ();
-						gameObject.active = false;
 					}
-					gameObject.active = false;
-                }
+				}
 
             }
         }

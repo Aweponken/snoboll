@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Options.unity
+=======
+- path: Assets/Map2.unity
+>>>>>>> refs/remotes/origin/zoon-pow-bugg
   isLoaded: 1
   isActive: 1
