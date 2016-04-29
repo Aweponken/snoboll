@@ -54,4 +54,13 @@ public class zones : MonoBehaviour {
             isTwoActive++;
 		}
 	}
+	
+	void activateZoneByIndex(int i){
+		if(zonesArray[i].active == false){
+			zonesArray[i].active = true;
+			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x + 0.1f, zonesArray[i].transform.position.y, 0);
+			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x - 0.1f, zonesArray[i].transform.position.y, 0);
+			isTwoActive++;
+		}
+	}
 }

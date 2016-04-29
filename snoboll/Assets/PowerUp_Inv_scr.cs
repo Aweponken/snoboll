@@ -26,6 +26,7 @@ public class PowerUp_Inv_scr : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+		
         if (coll.gameObject.name == "Boll")
         {
             GameObject snoBoll = GameObject.Find("Boll");

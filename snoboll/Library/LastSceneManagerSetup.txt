@@ -1,4 +1,10 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Map.unity
+||||||| merged common ancestors
+- path: Assets/Map3.unity
+=======
+- path: Assets/start.unity
+>>>>>>> origin/zoon-pow-bugg
   isLoaded: 1
   isActive: 1

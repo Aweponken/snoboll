@@ -7,13 +7,12 @@ public class powerups : MonoBehaviour {
     public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
     public static int a;
 
-    private BoxCollider2D InvCollider;
 
 
 	// Use this for initialization
 	void Start () {
         a = Random.Range(1, 5);
-        rndm_time = Random.Range(100, 200);
+        rndm_time = Random.Range(1000, 2000);
         Pow1 = GameObject.Find("PowerUp_Inv");
         Pow2 = GameObject.Find("PowerUp_Shield");
         Pow3 = GameObject.Find("PowerUp_SpeedSlow");
@@ -58,7 +57,7 @@ public class powerups : MonoBehaviour {
 				                     - ((2f * Camera.main.orthographicSize) / 2) + 15;
 				Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
 				Pow.active = true;
-				rndm_time = Random.Range (100, 200);
+				rndm_time = Random.Range (1000, 2000);
 
 			}
 		}
