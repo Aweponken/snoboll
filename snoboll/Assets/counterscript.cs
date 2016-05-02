@@ -31,6 +31,7 @@ public class counterscript : MonoBehaviour {
                 timer.past = false;
                 canvasGroup.alpha = 0;
 				counter = 145;
+				PauseMenu.countDownDone = true;
             }
             else if (number==1)
             {

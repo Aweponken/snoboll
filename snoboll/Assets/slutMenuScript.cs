@@ -44,6 +44,7 @@ public class slutMenuScript : MonoBehaviour
             Sort();
             AddText();
             callMe = false;
+			GameWideScript.Instance.EndOfGame = true;
         }
     }
 
@@ -100,6 +101,7 @@ public class slutMenuScript : MonoBehaviour
     public void StartLevel() //this function will be used on our Play button
 
     {	
+		GameWideScript.Instance.EndOfGame = false;
 		Time.timeScale = 1;
         if (GameWideScript.Instance.setMap == 1)
             SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game

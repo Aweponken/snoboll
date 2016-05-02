@@ -4,9 +4,12 @@ using System.Collections;
 public class fadeInBlur : MonoBehaviour {
 
 	public static int count;
+	public static bool OnOff;
+	public float takeAway;
 	// Use this for initialization
 	void Start () {
 		count = 0;
+		OnOff = false;
 	}
 	
 	// Update is called once per frame

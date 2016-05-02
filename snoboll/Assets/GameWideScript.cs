@@ -11,8 +11,10 @@ public class GameWideScript : MonoBehaviour {
 	public int setTime;
 	public int setPlayers;
 	public int setMap;
+	public bool EndOfGame;
 
 	void Awake(){
+		EndOfGame = false;
 		if (Instance == null) {
 			DontDestroyOnLoad (gameObject);
 			Instance = this;

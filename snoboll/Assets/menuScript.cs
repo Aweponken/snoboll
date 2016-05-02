@@ -36,7 +36,7 @@ public class menuScript : MonoBehaviour
 			Sound = GameWideScript.Instance.setSound;
 			Pow = GameWideScript.Instance.setPow;
 			Zone = GameWideScript.Instance.setZone;
-			Time = GameWideScript.Instance.setTime;
+			Time = GameWideScript.Instance.setTime/10;
 			Players = GameWideScript.Instance.setPlayers;
 			Map = GameWideScript.Instance.setMap;
 		}
