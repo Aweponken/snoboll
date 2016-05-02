@@ -9,8 +9,11 @@ public class menuScript : MonoBehaviour
 	private bool Pow;
 	private bool Zone;
 	private int Time;
+	private int PowUpOcc;
 	private int Players;
 	private int Map;
+	private int minPowUpTime;
+	private int maxPowUpTime;
 	public Button startText;
 	public Button exitText;
 	public Button HowToPlay;
@@ -21,8 +24,10 @@ public class menuScript : MonoBehaviour
 	public CanvasGroup HowToPlayCanvas;
 	public Slider time;
 	public Slider players;
+	public Slider powerUpOcc;
 	public Text timeValue;
 	public Text playersValue;
+	public Text powerUpOccValue;
 	public GameObject map1;
 	public GameObject map2;
 	public GameObject map3;
@@ -39,6 +44,8 @@ public class menuScript : MonoBehaviour
 			Time = GameWideScript.Instance.setTime/10;
 			Players = GameWideScript.Instance.setPlayers;
 			Map = GameWideScript.Instance.setMap;
+			minPowUpTime = GameWideScript.Instance.setminPowUpTime;
+			maxPowUpTime = GameWideScript.Instance.setmaxPowUpTime;
 		}
 		else {
 			Sound = true;
@@ -47,6 +54,8 @@ public class menuScript : MonoBehaviour
 			Time = 210;
 			Players = 2;
 			Map = 1;
+			minPowUpTime = 1000;
+			maxPowUpTime = 2000;
 		}
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
@@ -69,7 +78,7 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setCostum = true;
 
         if (Map == 1)
-		SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
+			SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
         else if (Map == 2)
             SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
         else
@@ -103,6 +112,26 @@ public class menuScript : MonoBehaviour
 			mapChoice (3);
 			break;
 		}*/
+	}
+
+	public void PowUpOccChange(){
+		PowUpOcc = (int)powerUpOcc.value;
+		switch (PowUpOcc) {
+		case 0:
+			powerUpOccValue.text = "None";
+			Pow = false;
+			break;
+		case 1: 
+			powerUpOccValue.text = "Low";
+			break;
+		case 2: 
+			powerUpOccValue.text = "Medium";
+			break;
+		case 3:
+			powerUpOccValue.text = "High";
+			break;	
+		}
+
 	}
 
 	public void LoadHowToPlay () {
