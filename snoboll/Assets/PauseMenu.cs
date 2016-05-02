@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public Button resumeGame;
     public Button startMenu;
     public CanvasGroup canvasGroup;
+	public static bool countDownDone;
 
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     void Start()
     {
+		countDownDone = false;
         isPaused = false;
         clicked = false;
         resumeGame = resumeGame.GetComponent<Button>();
@@ -32,20 +34,20 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     void Update()
     {
-        //kolla efter tryck på esc
-        if (Input.GetAxisRaw("Cancel_menu") != 0)
-        {
-            if (!clicked)
-            {
-                clicked = true;
-                if (!isPaused)
-                    paus();
-                else
-                    resume();
-            }
-        }
-        if (Input.GetAxisRaw("Cancel_menu") == 0)
-            clicked = false;
+		if (!GameWideScript.Instance.EndOfGame && countDownDone){
+			//kolla efter tryck på esc
+			if (Input.GetAxisRaw ("Cancel_menu") != 0) {
+				if (!clicked) {
+					clicked = true;
+					if (!isPaused)
+						paus ();
+					else
+						resume ();
+				}
+			}
+			if (Input.GetAxisRaw ("Cancel_menu") == 0)
+				clicked = false;
+		}
     }
 
     // Körs när vi klickar på resume
