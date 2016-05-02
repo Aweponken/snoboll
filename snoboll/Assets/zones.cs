@@ -1,12 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// script to handle the spawning of zones
+/// </summary>
 public class zones : MonoBehaviour {
 
 	private GameObject[] zonesArray;
+	/// <summary>
+	/// int to check if there are already two zones active
+	/// --- if 2; no more zones will spawn until this variable is decreased  
+	/// </summary>
 	public static int isTwoActive = 0;
+	/// <summary>
+	/// sets the max time between zones
+	/// </summary>
 	[SerializeField]
 	private int maxTime;
+	/// <summary>
+	/// sets the min time between zones
+	/// </summary>
 	[SerializeField]
 	private int minTime;
 	private float counter;
@@ -20,7 +32,7 @@ public class zones : MonoBehaviour {
 		counterSecondZone = Random.Range(minTime,maxTime);
 		zonesArray = GameObject.FindGameObjectsWithTag("Zone");
 		foreach(GameObject i in zonesArray) {
-			i.active = false;
+			i.SetActive(false);
 		}
 	}
 	
@@ -48,7 +60,7 @@ public class zones : MonoBehaviour {
 		int rand = Random.Range(0, zonesArray.Length);
 
 		if(zonesArray[rand].active == false){
-			zonesArray[rand].active = true;
+			zonesArray[rand].SetActive(true);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.1f, zonesArray[rand].transform.position.y, 0);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.1f, zonesArray[rand].transform.position.y, 0);
             isTwoActive++;
@@ -57,7 +69,7 @@ public class zones : MonoBehaviour {
 	
 	void activateZoneByIndex(int i){
 		if(zonesArray[i].active == false){
-			zonesArray[i].active = true;
+			zonesArray[i].SetActive(true);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x + 0.1f, zonesArray[i].transform.position.y, 0);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x - 0.1f, zonesArray[i].transform.position.y, 0);
 			isTwoActive++;

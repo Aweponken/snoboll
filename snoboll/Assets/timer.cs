@@ -3,13 +3,18 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Script to handle the in-game timer
+/// </summary>
 public class timer : MonoBehaviour
 {
 	private int counter = 60; //Fixed update counter for 1 sec.
 	private int year = 2016; //Starting year
 	private int stopYear = GameWideScript.Instance.setTime; //Stopping year
 	private Text text;
+	/// <summary>
+	/// boolean activated when the time is up
+	/// </summary>
     public static bool past = false;
     
 	// Use this for initialization

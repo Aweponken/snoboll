@@ -1,7 +1,9 @@
 ﻿
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Script that handle shield power up
+/// </summary>
 public class PowerUp_Shield : MonoBehaviour
 {
 
@@ -33,28 +35,28 @@ public class PowerUp_Shield : MonoBehaviour
             GameObject snoBoll = GameObject.Find("Boll");
             SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
             script.setShield();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
 		else if (coll.gameObject.name == "Boll 2")
         {
             GameObject snoBoll = GameObject.Find("Boll 2");
             SnoBoll2 script = (SnoBoll2)snoBoll.GetComponent(typeof(SnoBoll2));
             script.setShield();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
 		else if (coll.gameObject.name == "Boll 3")
         {
             GameObject snoBoll = GameObject.Find("Boll 3");
             SnoBoll3 script = (SnoBoll3)snoBoll.GetComponent(typeof(SnoBoll3));
             script.setShield();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
 		else if (coll.gameObject.name == "Boll 4")
         {
             GameObject snoBoll = GameObject.Find("Boll 4");
             SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
             script.setShield();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
     }
 }

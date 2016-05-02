@@ -3,12 +3,22 @@ using UnityEngine.UI;// we need this namespace in order to access UI elements wi
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// script that handles the scoreboard
+/// </summary>
 public class slutMenuScript : MonoBehaviour
 {
+	/// <summary>
+	/// button to restart game
+	/// </summary>
     public Button restartText;
+	/// <summary>
+	/// button that links to main menu
+	/// </summary>
     public Button mainmenuText;
-
+	/// <summary>
+	/// the actual scoreboard
+	/// </summary>
     public Text winner;
 
     private string display = "";

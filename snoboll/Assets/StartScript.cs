@@ -2,9 +2,13 @@
 using UnityEngine.UI;// we need this namespace in order to access UI elements within our script
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Script that handles 'press any key to start'
+/// </summary>
 public class StartScript : MonoBehaviour {
-
+	/// <summary>
+	/// button
+	/// </summary>
 	public Button startText;
 	private CanvasRenderer flash;
 	private float alpha;
@@ -37,7 +41,9 @@ public class StartScript : MonoBehaviour {
 		flash.SetAlpha (alpha);
 
 	}
-
+	/// <summary>
+	/// links to next scene
+	/// </summary>
 	public void StartLevel() //this function will be used on our Play button
 	{
 		SceneManager.LoadScene("Options"); //this will load our first level from our build settings. "1" is the second scene in our game

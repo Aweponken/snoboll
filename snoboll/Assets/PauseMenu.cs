@@ -2,14 +2,25 @@
 using System.Collections;
 using UnityEngine.UI;// we need this namespace in order to access UI elements within our script
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// script that handles the pause menu
+/// </summary>
 public class PauseMenu : MonoBehaviour
 {
 
     private bool isPaused;
     private bool clicked;
+	/// <summary>
+	/// button to resume game
+	/// </summary>
     public Button resumeGame;
+	/// <summary>
+	/// button to go to start menu
+	/// </summary>
     public Button startMenu;
+	/// <summary>
+	/// The canvas group
+	/// </summary>
     public CanvasGroup canvasGroup;
 
 
