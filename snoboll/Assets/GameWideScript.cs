@@ -12,8 +12,9 @@ public class GameWideScript : MonoBehaviour {
 	public int setPlayers;
 	public int setMap;
 	public bool EndOfGame;
-	public int setminPowUpTime;
-	public int setmaxPowUpTime;
+	public int setPowUpOcc;
+	//public int setminPowUpTime;
+	//public int setmaxPowUpTime;
 
 	void Awake(){
 		EndOfGame = false;
@@ -27,8 +28,7 @@ public class GameWideScript : MonoBehaviour {
 			Instance.setTime = 210;
 			Instance.setPlayers = 2;
 			Instance.setMap = 1;
-			Instance.setminPowUpTime = 1000;
-			Instance.setmaxPowUpTime = 2000;
+			Instance.setPowUpOcc = 2;
 		} 
 		else if (Instance != this) {
 			Destroy (gameObject);

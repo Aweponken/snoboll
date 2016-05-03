@@ -12,8 +12,8 @@ public class menuScript : MonoBehaviour
 	private int PowUpOcc;
 	private int Players;
 	private int Map;
-	private int minPowUpTime;
-	private int maxPowUpTime;
+	//private int minPowUpTime;
+	//private int maxPowUpTime;
 	public Button startText;
 	public Button exitText;
 	public Button HowToPlay;
@@ -44,8 +44,7 @@ public class menuScript : MonoBehaviour
 			Time = GameWideScript.Instance.setTime/10;
 			Players = GameWideScript.Instance.setPlayers;
 			Map = GameWideScript.Instance.setMap;
-			minPowUpTime = GameWideScript.Instance.setminPowUpTime;
-			maxPowUpTime = GameWideScript.Instance.setmaxPowUpTime;
+			PowUpOcc = GameWideScript.Instance.setPowUpOcc;
 		}
 		else {
 			Sound = true;
@@ -54,8 +53,9 @@ public class menuScript : MonoBehaviour
 			Time = 210;
 			Players = 2;
 			Map = 1;
-			minPowUpTime = 1000;
-			maxPowUpTime = 2000;
+			PowUpOcc = 2;
+			//minPowUpTime = 1000;
+			//maxPowUpTime = 2000;
 		}
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
@@ -75,6 +75,9 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setZone = Zone;
 		GameWideScript.Instance.setTime = 10 * Time;
 		GameWideScript.Instance.setPlayers = Players;
+		GameWideScript.Instance.setPowUpOcc = PowUpOcc;
+		//GameWideScript.Instance.setminPowUpTime = minPowUpTime;
+		//GameWideScript.Instance.setmaxPowUpTime = maxPowUpTime;
 		GameWideScript.Instance.setCostum = true;
 
         if (Map == 1)
@@ -101,33 +104,22 @@ public class menuScript : MonoBehaviour
 	public void playersChange(){
 		Players = (int)players.value;
 		playersValue.text = Players.ToString();
-		/*switch (Players) {
-		case 2:
-			mapChoice (1);
-			break;
-		case 3:
-			mapChoice (2);
-			break;
-		case 4:
-			mapChoice (3);
-			break;
-		}*/
 	}
 
 	public void PowUpOccChange(){
 		PowUpOcc = (int)powerUpOcc.value;
 		switch (PowUpOcc) {
-		case 0:
+		case 1:
 			powerUpOccValue.text = "None";
 			Pow = false;
 			break;
-		case 1: 
+		case 2: 
 			powerUpOccValue.text = "Low";
 			break;
-		case 2: 
+		case 3: 
 			powerUpOccValue.text = "Medium";
 			break;
-		case 3:
+		case 4:
 			powerUpOccValue.text = "High";
 			break;	
 		}
@@ -150,8 +142,10 @@ public class menuScript : MonoBehaviour
 	private void SetGUI (){
 		time.value = Time;
 		players.value = Players;
+		powerUpOcc.value = PowUpOcc;
 		timeValue.text = (10 * Time).ToString();
 		playersValue.text = Players.ToString();
+		powerUpOccValue.text = PowUpOcc.ToString ();
 
 		Button b = SoundButton.GetComponent<Button>(); 
 		ColorBlock cb = b.colors;
