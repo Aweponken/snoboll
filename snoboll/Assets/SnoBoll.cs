@@ -314,7 +314,7 @@ public class SnoBoll : MonoBehaviour
     }
     IEnumerator wfs4()
     {
-        float randomSF = Random.Range(1, 5);
+		float randomSF = Random.Range(1, GameWideScript.Instance.setPlayers+1);
         if (randomSF == 1)
         {
             SnoBoll.ableToJump = false;
