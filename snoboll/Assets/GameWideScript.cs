@@ -17,13 +17,10 @@ public class GameWideScript : MonoBehaviour {
 	/// Boolean to toggle sound
 	/// </summary>
 	public bool setSound;
-<<<<<<< HEAD
 	/// <summary>
 	/// Boolean to toggle powerups 
 	/// </summary>
-=======
 	public bool setKrymp=true;
->>>>>>> refs/remotes/origin/krymp
 	public bool setPow;
 	/// <summary>
 	/// Boolean to toggle zones

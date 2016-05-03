@@ -11,7 +11,6 @@ public class SnoBoll : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
     private bool grounded;
-<<<<<<< HEAD
     /// <summary>
     /// Boolean showing if the controls are inverted
     /// </summary>
@@ -19,13 +18,6 @@ public class SnoBoll : MonoBehaviour
 	/// <summary>
 	/// Boolean used to set the shield
 	/// </summary>
-=======
-    private bool isObj;
-    private bool isVertical;
-    private bool isHorizontal;
-	private GameObject[] bollArray;
-    public static bool PowerUp_Inv = false;
->>>>>>> refs/remotes/origin/krymp
     public static bool static_shield = false;
 	/// <summary>
 	/// Boolean showing if the shield is active
