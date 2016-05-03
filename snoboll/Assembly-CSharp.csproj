@@ -37,10 +37,17 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
+<<<<<<< HEAD
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+=======
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+>>>>>>> refs/remotes/origin/krymp
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -93,10 +100,10 @@
      <Compile Include="Assets\counterscript.cs" />
      <Compile Include="Assets\fadeInBlur.cs" />
      <Compile Include="Assets\menuScript.cs" />
-     <Compile Include="Assets\molnrör.cs" />
+     <Compile Include="Assets\molnrör.cs" />
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
-     <Compile Include="Assets\solrör.cs" />
+     <Compile Include="Assets\solrör.cs" />
      <Compile Include="Assets\timer.cs" />
      <Compile Include="Assets\zone.cs" />
      <Compile Include="Assets\zones.cs" />
@@ -178,12 +185,13 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
- <Reference Include="UnityEngine.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
 ||||||| merged common ancestors
@@ -223,6 +231,12 @@
       <Project>{6ED44962-13FE-2FEC-1011-D9DBCE310A72}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{6ED44962-13FE-2FEC-1011-D9DBCE310A72}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+>>>>>>> refs/remotes/origin/krymp
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

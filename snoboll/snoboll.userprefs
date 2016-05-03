@@ -1,6 +1,7 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PauseMenu.cs">
 ||||||| merged common ancestors
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zone.cs">
@@ -51,6 +52,14 @@
       <File FileName="Assets\slutMenuScript.cs" Line="1" Column="1" />
       <File FileName="Assets\StartScript.cs" Line="1" Column="1" />
 >>>>>>> doc
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SnoBoll.cs">
+    <Files>
+      <File FileName="Assets\zone.cs" Line="4" Column="25" />
+      <File FileName="Assets\slutMenuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\zones.cs" Line="67" Column="1" />
+      <File FileName="Assets\SnoBoll.cs" Line="1" Column="1" />
+>>>>>>> refs/remotes/origin/krymp
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

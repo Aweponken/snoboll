@@ -112,6 +112,18 @@ public class SnoBoll2 : MonoBehaviour
     /// </summary>
 	void FixedUpdate()
     {
+		if (GameWideScript.Instance.setKrymp) {
+
+			if (transform.localScale.x < 10) {
+				Debug.Log ("boll1 dog");
+				GameWideScript.Player2.size = 0;
+				timer.onlyOne++;
+				gameObject.SetActive (false);
+			} else {
+				transform.localScale = new Vector3 (transform.localScale.x - 0.1f, transform.localScale.x - 0.1f, 0);
+				GameWideScript.Player2.size = transform.localScale.x;
+			}
+		}
         //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
         horizontal = Input.GetAxis("Horizontal2");
         float vertical = Input.GetAxis("Vertical2");

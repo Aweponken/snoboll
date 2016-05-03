@@ -11,6 +11,7 @@ public class SnoBoll : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
     private bool grounded;
+<<<<<<< HEAD
     /// <summary>
     /// Boolean showing if the controls are inverted
     /// </summary>
@@ -18,6 +19,13 @@ public class SnoBoll : MonoBehaviour
 	/// <summary>
 	/// Boolean used to set the shield
 	/// </summary>
+=======
+    private bool isObj;
+    private bool isVertical;
+    private bool isHorizontal;
+	private GameObject[] bollArray;
+    public static bool PowerUp_Inv = false;
+>>>>>>> refs/remotes/origin/krymp
     public static bool static_shield = false;
 	/// <summary>
 	/// Boolean showing if the shield is active
@@ -91,8 +99,19 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
 	void FixedUpdate()
     {
+		if (GameWideScript.Instance.setKrymp) {
+			
+			if (transform.localScale.x < 10) {
+				Debug.Log ("boll1 dog");
+				GameWideScript.Player1.size = 0;
+				timer.onlyOne++;
+				gameObject.SetActive (false);
+			} else {
+				transform.localScale = new Vector3 (transform.localScale.x - 0.1f, transform.localScale.x - 0.1f, 0);
+				GameWideScript.Player1.size = transform.localScale.x;
+			}
+		}
         //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-        Debug.Log(static_shield);
         horizontal = Input.GetAxis("Horizontal1");
         float vertical = Input.GetAxis("Vertical1");
         float jump = Input.GetAxis("Jump1");
@@ -353,4 +372,5 @@ public class SnoBoll : MonoBehaviour
 	public void updateRad(){
 		groundRadius = (transform.localScale.x) / 10;
 	}
+
 }
