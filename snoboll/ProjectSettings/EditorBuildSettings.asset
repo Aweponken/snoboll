@@ -11,9 +11,11 @@ EditorBuildSettings:
     path: Assets/Map.unity
   - enabled: 1
     path: Assets/slut.unity
-  - enabled: 1
-    path: Assets/Options.unity
+  - enabled: 0
+    path: Assets/OptionsHEHE.unity
   - enabled: 1
     path: Assets/Map2.unity
   - enabled: 1
     path: Assets/Map3.unity
+  - enabled: 1
+    path: Assets/Options.unity
