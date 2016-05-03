@@ -2,11 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 //using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Script that handles countdown before game
+/// </summary>
 public class counterscript : MonoBehaviour {
-
+	/// <summary>
+	/// The text output.
+	/// </summary>
     public Text textOutput;
     private int counter=0,number=3;
+	/// <summary>
+	/// The canvas group that the countdown lays in
+	/// </summary>
     public CanvasGroup canvasGroup;
 
 

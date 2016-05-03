@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Fixed camera.
+/// </summary>
 public class FixedCamera : MonoBehaviour {
 
 	// Use this for initialization

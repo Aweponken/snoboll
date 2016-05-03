@@ -1,7 +1,9 @@
 ﻿
 using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Script that handles Power up faster slower.
+/// </summary>
 public class PowerUp_Faster_Slower : MonoBehaviour {
 
 	// Use this for initialization
@@ -30,14 +32,14 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             GameObject snoBoll = GameObject.Find("Boll");
             SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
             script.SlowerFasterF();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
         else if (coll.gameObject.name == "Boll 2")
         {
             GameObject snoBoll = GameObject.Find("Boll 2");
             SnoBoll2 script = (SnoBoll2)snoBoll.GetComponent(typeof(SnoBoll2));
             script.SlowerFasterF();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
         else if (coll.gameObject.name == "Boll 3")
         {
@@ -45,7 +47,7 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             GameObject snoBoll = GameObject.Find("Boll 3");
             SnoBoll3 script = (SnoBoll3)snoBoll.GetComponent(typeof(SnoBoll3));
             script.SlowerFasterF();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
         else if (coll.gameObject.name == "Boll 4")
         {
@@ -53,7 +55,7 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             GameObject snoBoll = GameObject.Find("Boll 4");
             SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
             script.SlowerFasterF();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
     }
 }

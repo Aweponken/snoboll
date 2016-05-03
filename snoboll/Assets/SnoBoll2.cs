@@ -1,28 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// script for player2
+/// </summary>
 public class SnoBoll2 : MonoBehaviour
 {
-    private Rigidbody2D snoBoll; //pekare till snöboll1
-    private CircleCollider2D snoBollCollider;
-    private bool grounded;
-    private bool isObj;
-    private bool isVertical;
-    private bool isHorizontal;
-    public static bool PowerUp_Inv = false;
-    public static float horizontal;
-    public static bool static_shield = false;
-    public bool shield = false;
-    public static bool ableToJump = true;
-    public static float slowerFaster = 1;
-    Vector2 facing;
+	private bool isObj;
+	private bool isVertical;
+	private bool isHorizontal;
+	private Rigidbody2D snoBoll; //pekare till snöboll1
+	private CircleCollider2D snoBollCollider;
+	private bool grounded;
+	/// <summary>
+	/// Boolean showing if the controls are inverted
+	/// </summary>
+	public static bool PowerUp_Inv = false;
+	/// <summary>
+	/// Boolean used to set the shield
+	/// </summary>
+	public static bool static_shield = false;
+	/// <summary>
+	/// Boolean showing if the shield is active
+	/// </summary>
+	public bool shield = false;
+	/// <summary>
+	/// Boolean showing if the player is able to jump
+	/// </summary>
+	public static bool ableToJump = true;
+	/// <summary>
+	/// the input for horizontal movement
+	/// </summary>
+	public static float horizontal;
+	/// <summary>
+	/// float used to set movement speed
+	/// </summary>
+	public static float slowerFaster = 1;
+	Vector2 facing;
 
 
-    /// <summary>
-    /// Defines what layers are "ground"
-    /// --jumpable--
-    /// </summary>
-    [SerializeField]
+	/// <summary>
+	/// Defines what layers are "ground"
+	/// --jumpable--
+	/// </summary>	[SerializeField]
     private LayerMask whatIsGround;
 
     [SerializeField]
@@ -61,7 +80,9 @@ public class SnoBoll2 : MonoBehaviour
     private float boostStartTime = 0f;
     [SerializeField]
     private float boostDuration;
-
+	/// <summary>
+	/// Boolean showing if the boost is active
+	/// </summary>
     public bool boosty = false;
 
     [SerializeField]
@@ -109,13 +130,6 @@ public class SnoBoll2 : MonoBehaviour
         movementSpeed = (50 + (5000 / snoBoll.transform.localScale.x)) * slowerFaster;
     }
 
-    /// <summary>
-    /// This function takes two arguments, Horizontal and Float, 
-    /// which are generated from input from controller/keyboard 
-    /// and decide in what direction the objuect should move
-    /// </summary>
-    /// <param name="horizontal">Horizontal.</param>
-    /// <param name="jump">Jump.</param>
 	private void handleMovement(float horizontal, float vertical, float jump, float boost, Vector2 facing)
     {
         if (!boosty)
@@ -273,7 +287,11 @@ public class SnoBoll2 : MonoBehaviour
         SnoBoll.PowerUp_Inv = false;
         SnoBoll3.PowerUp_Inv = false;
         SnoBoll4.PowerUp_Inv = false;
-    }
+	}
+	/// <summary>
+	/// randomly chooses one of the players and gives that player either half or double the movement speed 
+	/// This reverts after 5 sec
+	/// </summary>
     public void SlowerFasterF() { StartCoroutine(wfs3()); }
     IEnumerator wfs3()
     {
@@ -290,7 +308,11 @@ public class SnoBoll2 : MonoBehaviour
         }
         yield return new WaitForSeconds(5);
         slowerFaster = 1;
-    }
+	}
+	/// <summary>
+	/// Sets the shield.
+	/// This reverts after 10 sec
+	/// </summary>
     public void setShield()
     {
         StartCoroutine(shield_delay());
@@ -305,6 +327,9 @@ public class SnoBoll2 : MonoBehaviour
         shield = false;
         static_shield = false;
     }
+	/// <summary>
+	/// Updates the ground radius
+	/// </summary>
 	public void updateRad(){
 		groundRadius = (transform.localScale.x) / 10;
 	}

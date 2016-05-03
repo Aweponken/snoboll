@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// script for invert-power up
+/// </summary>
 public class PowerUp_Inv_scr : MonoBehaviour {
 
 
@@ -32,14 +34,14 @@ public class PowerUp_Inv_scr : MonoBehaviour {
             GameObject snoBoll = GameObject.Find("Boll");
             SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
             script.inv();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
         else if (coll.gameObject.name == "Boll 2")
         {
             GameObject snoBoll = GameObject.Find("Boll 2");
             SnoBoll2 script = (SnoBoll2)snoBoll.GetComponent(typeof(SnoBoll2));
             script.inv();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
 		else if (coll.gameObject.name == "Boll 3")
 		{
@@ -47,7 +49,7 @@ public class PowerUp_Inv_scr : MonoBehaviour {
 			GameObject snoBoll = GameObject.Find("Boll 3");
 			SnoBoll3 script = (SnoBoll3)snoBoll.GetComponent(typeof(SnoBoll3));
 			script.inv();
-			gameObject.active = false;
+			gameObject.SetActive(false);
 		}
 		else if (coll.gameObject.name == "Boll 4")
 		{
@@ -55,7 +57,7 @@ public class PowerUp_Inv_scr : MonoBehaviour {
 			GameObject snoBoll = GameObject.Find("Boll 4");
 			SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
 			script.inv();
-			gameObject.active = false;
+			gameObject.SetActive(false);
 		}
     }
     IEnumerator wfs1()

@@ -1,13 +1,56 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PauseMenu.cs">
+||||||| merged common ancestors
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zone.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\powerups.cs">
+>>>>>>> doc
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/slutMenuScript.cs" Line="104" Column="45" />
       <File FileName="Assets/PauseMenu.cs" Line="59" Column="74" />
       <File FileName="Assets/GameWideScript.cs" Line="19" Column="35" />
       <File FileName="Assets/fadeInBlur.cs" Line="19" Column="12" />
       <File FileName="Assets/menuScript.cs" Line="39" Column="45" />
       <File FileName="Assets/counterscript.cs" Line="34" Column="36" />
+||||||| merged common ancestors
+      <File FileName="Assets\powerups.cs" Line="9" Column="1" />
+      <File FileName="Assets\menuScript.cs" Line="173" Column="4" />
+      <File FileName="Assets\zone.cs" Line="85" Column="140" />
+      <File FileName="Assets\zones.cs" Line="27" Column="4" />
+      <File FileName="Assets\GameWideScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayersOption.cs" Line="14" Column="46" />
+      <File FileName="Assets\timer.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="59" Column="4" />
+      <File FileName="Assets\SnoBoll.cs" Line="345" Column="3" />
+      <File FileName="Assets\SnoBoll2.cs" Line="309" Column="3" />
+      <File FileName="Assets\SnoBoll3.cs" Line="307" Column="3" />
+      <File FileName="Assets\SnoBoll4.cs" Line="304" Column="3" />
+=======
+      <File FileName="Assets\DocuMaker\Editor\DocuMaker.cs" Line="1" Column="1" />
+      <File FileName="Assets\powerups.cs" Line="102" Column="1" />
+      <File FileName="Assets\menuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\zone.cs" Line="1" Column="1" />
+      <File FileName="Assets\zones.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameWideScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayersOption.cs" Line="1" Column="1" />
+      <File FileName="Assets\timer.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="1" Column="1" />
+      <File FileName="Assets\SnoBoll2.cs" Line="1" Column="1" />
+      <File FileName="Assets\SnoBoll3.cs" Line="1" Column="1" />
+      <File FileName="Assets\SnoBoll4.cs" Line="1" Column="1" />
+      <File FileName="Assets\SnoBoll.cs" Line="1" Column="1" />
+      <File FileName="Assets\counterscript.cs" Line="1" Column="1" />
+      <File FileName="Assets\FixedCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_Faster_Slower.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_NoJump.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_Shield.cs" Line="1" Column="1" />
+      <File FileName="Assets\slutMenuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\StartScript.cs" Line="1" Column="1" />
+>>>>>>> doc
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

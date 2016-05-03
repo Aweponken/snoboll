@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// script to handle zones
+/// </summary>
 public class zone : MonoBehaviour {
 
 	private int counter;
@@ -9,9 +11,15 @@ public class zone : MonoBehaviour {
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
     [SerializeField]
+	/// <summary>
+	/// The change size winter.
+	/// </summary>
     private float changeSizeWinter;
     [SerializeField]
-    private float changeSizeSummer;
+    /// <summary>
+    /// The change size summer.
+    /// </summary>
+	private float changeSizeSummer;
 
 
     // Use this for initialization
@@ -32,7 +40,7 @@ public class zone : MonoBehaviour {
             type = Random.Range(0, 2);
             decideType();
 			counter = 400;
-			gameObject.active = false;
+			gameObject.SetActive(false);
 			zones.isTwoActive--;
 		} 
 		else {

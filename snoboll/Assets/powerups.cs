@@ -1,10 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// script that handles powerup spawning
+/// </summary>
 public class powerups : MonoBehaviour {
-
+	/// <summary>
+	/// sets time between spawns
+	/// </summary>
     public int rndm_time;
+	/// <summary>
+	/// variable that handles different kids of powerups
+	/// </summary>
     public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
+	/// <summary>
+	/// decides wich will be the next powerup to spawn
+	/// </summary>
     public static int a;
 
 
@@ -20,10 +30,10 @@ public class powerups : MonoBehaviour {
 
        
 
-        Pow1.active = false;
-        Pow2.active = false;
-        Pow3.active = false;
-        Pow4.active = false;
+		Pow1.SetActive(false);
+		Pow2.SetActive(false);
+		Pow3.SetActive(false);
+		Pow4.SetActive(false);
 
 
     }
@@ -34,17 +44,17 @@ public class powerups : MonoBehaviour {
 		if (rndm_time <= 0 && !(Pow.active)) {
 			if (GameWideScript.Instance.setPow) {
 				if (a == 1) {
-					Pow1.active = true;
+					Pow1.SetActive(true);
 					Pow = Pow1;
 
 				} else if (a == 2) {
-					Pow2.active = true;
+					Pow2.SetActive(true);
 					Pow = Pow2;
 				} else if (a == 3) {
-					Pow3.active = true;
+					Pow3.SetActive(true);
 					Pow = Pow3;
 				} else {
-					Pow4.active = true;
+					Pow4.SetActive(true);
 					Pow = Pow4;
 				}
 				float left = Camera.main.gameObject.transform.position.x
@@ -56,7 +66,7 @@ public class powerups : MonoBehaviour {
 				float bott = Camera.main.gameObject.transform.position.y
 				                     - ((2f * Camera.main.orthographicSize) / 2) + 15;
 				Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
-				Pow.active = true;
+				Pow.SetActive(true);
 				rndm_time = Random.Range (1000, 2000);
 
 			}

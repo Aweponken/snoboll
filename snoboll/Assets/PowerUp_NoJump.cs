@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// Script that handles no jump power up
+/// </summary>
 public class PowerUp_NoJump : MonoBehaviour
 {
 
@@ -31,7 +33,7 @@ public class PowerUp_NoJump : MonoBehaviour
             GameObject snoBoll = GameObject.Find("Boll");
             SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
             script.noJump();
-            gameObject.active = false;
+			gameObject.SetActive(false);
         }
     }
 
