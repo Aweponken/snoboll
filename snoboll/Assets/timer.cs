@@ -12,20 +12,26 @@ public class timer : MonoBehaviour
 	private Text text;
     public static bool past = false;
 	public bool scoreBoard = false;
-    
+	public static int onlyOne = 1;
 	// Use this for initialization
     void Start()
     {
         text = GetComponent<Text>();
     }		
 	void FixedUpdate(){
+		if (onlyOne>=GameWideScript.Instance.setPlayers) {
+			//GameObject.Find ("mainScene").GetComponent<Camera> ().enabled = true;
+			Time.timeScale = 0;
+			Application.LoadLevelAdditive ("slut");
+			scoreBoard = true;
+		}
 		if (!past) {
 			text.text = "Year: " + year.ToString();
 			if (counter != 0) {
 				counter--;	
 			} 
 			else {
-				if (year == stopYear) {
+				if (year == stopYear && !GameWideScript.Instance.setKrymp) {
 					text.text = "done";
 					if (!scoreBoard) {
 						//GameObject.Find ("mainScene").GetComponent<Camera> ().enabled = true;
@@ -41,6 +47,4 @@ public class timer : MonoBehaviour
 		}
 
 	}
-
-
 }

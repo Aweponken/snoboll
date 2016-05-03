@@ -6,6 +6,7 @@ public class GameWideScript : MonoBehaviour {
 	public static GameWideScript Instance;
 	public bool setCostum;
 	public bool setSound;
+	public bool setKrymp=true;
 	public bool setPow;
 	public bool setZone;
 	public int setTime;
@@ -18,6 +19,7 @@ public class GameWideScript : MonoBehaviour {
 			Instance = this;
 			Instance.setCostum = false;
 			Instance.setSound = true;
+			Instance.setKrymp = true;
 			Instance.setPow = true;
 			Instance.setZone = true;
 			Instance.setTime = 210;

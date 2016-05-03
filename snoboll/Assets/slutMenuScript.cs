@@ -23,11 +23,14 @@ public class slutMenuScript : MonoBehaviour
     void Start()
     {
         chatEvents = new List<GameWideScript.Player>();
-
-        chatEvents.Add(GameWideScript.Player1);
-        chatEvents.Add(GameWideScript.Player2);
-        chatEvents.Add(GameWideScript.Player3);
-        chatEvents.Add(GameWideScript.Player4);
+		chatEvents.Add (GameWideScript.Player1);
+		chatEvents.Add (GameWideScript.Player2);
+		if (GameWideScript.Instance.setPlayers > 2) {
+			chatEvents.Add (GameWideScript.Player3);
+		}
+		if (GameWideScript.Instance.setPlayers > 3) {
+			chatEvents.Add (GameWideScript.Player4);
+		}
 
 
         callMe = true;
@@ -82,12 +85,9 @@ public class slutMenuScript : MonoBehaviour
     void AddText()
     {
         foreach (GameWideScript.Player msg in chatEvents)
-        {
-			if (msg.isActive)
-            {
-                int score = (int)Mathf.Round(msg.size); 
-				display = display.ToString() + msg.Color.ToString() + " " + score.ToString() + "\n";
-            }
+		{
+            int score = (int)Mathf.Round(msg.size); 
+			display = display.ToString() + msg.Color.ToString() + " " + score.ToString() + "\n";
         }
         winner.text = display;
     }
@@ -101,6 +101,8 @@ public class slutMenuScript : MonoBehaviour
 
     {	
 		Time.timeScale = 1;
+		timer.onlyOne = 1;
+
         if (GameWideScript.Instance.setMap == 1)
             SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
         else if (GameWideScript.Instance.setMap == 2)
