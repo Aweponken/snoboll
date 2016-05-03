@@ -13,8 +13,7 @@ public class GameWideScript : MonoBehaviour {
 	public int setMap;
 	public bool EndOfGame;
 	public int setPowUpOcc;
-	//public int setminPowUpTime;
-	//public int setmaxPowUpTime;
+	public int setPowUpDelay;
 
 	void Awake(){
 		EndOfGame = false;

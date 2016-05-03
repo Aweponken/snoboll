@@ -6,13 +6,13 @@ public class powerups : MonoBehaviour {
     public int rndm_time;
     public GameObject Pow, Pow1,Pow2, Pow3, Pow4;
     public static int a;
-
+	private int count;
 
 
 	// Use this for initialization
 	void Start () {
         a = Random.Range(1, 5);
-		rndm_time = Random.Range (1000, 2000);
+		rndm_time = Random.Range (500, 1000);
 		//rndm_time = Random.Range(GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
         Pow1 = GameObject.Find("PowerUp_Inv");
         Pow2 = GameObject.Find("PowerUp_Shield");
@@ -28,38 +28,45 @@ public class powerups : MonoBehaviour {
 
 
     }
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
         
 		if (rndm_time <= 0 && !(Pow.active)) {
 			if (GameWideScript.Instance.setPow) {
-				if (a == 1) {
-					Pow1.active = true;
-					Pow = Pow1;
-
-				} else if (a == 2) {
-					Pow2.active = true;
-					Pow = Pow2;
-				} else if (a == 3) {
-					Pow3.active = true;
-					Pow = Pow3;
+				if (count == GameWideScript.Instance.setPowUpDelay) {
+					Debug.Log ("JA");
+					if (a == 1) {
+						Pow1.active = true;
+						Pow = Pow1;
+					} else if (a == 2) {
+						Pow2.active = true;
+						Pow = Pow2;
+					} else if (a == 3) {
+						Pow3.active = true;
+						Pow = Pow3;
+					} else {
+						Pow4.active = true;
+						Pow = Pow4;
+					
+					}
+					float left = Camera.main.gameObject.transform.position.x
+					             - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
+					float right = Camera.main.gameObject.transform.position.x
+					              + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
+					float top = Camera.main.gameObject.transform.position.y
+					            + ((2f * Camera.main.orthographicSize) / 2) - 15;
+					float bott = Camera.main.gameObject.transform.position.y
+					             - ((2f * Camera.main.orthographicSize) / 2) + 15;
+					Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
+					Pow.active = true;
+					count = 0;
 				} else {
-					Pow4.active = true;
-					Pow = Pow4;
+					count += 1;
+					Debug.Log ("NEJ");
 				}
-				float left = Camera.main.gameObject.transform.position.x
-				                     - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
-				float right = Camera.main.gameObject.transform.position.x
-				                      + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
-				float top = Camera.main.gameObject.transform.position.y
-				                    + ((2f * Camera.main.orthographicSize) / 2) - 15;
-				float bott = Camera.main.gameObject.transform.position.y
-				                     - ((2f * Camera.main.orthographicSize) / 2) + 15;
-				Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
-				Pow.active = true;
 				//rndm_time = Random.Range (GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
-				rndm_time = Random.Range (1000, 2000);
+				rndm_time = Random.Range (500, 1000);
 
 			}
 		}

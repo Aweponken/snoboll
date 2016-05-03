@@ -12,14 +12,12 @@ public class menuScript : MonoBehaviour
 	private int PowUpOcc;
 	private int Players;
 	private int Map;
-	//private int minPowUpTime;
-	//private int maxPowUpTime;
+	private int PowUpDelay;
 	public Button startText;
 	public Button exitText;
 	public Button HowToPlay;
 	public Button HowToPlayClose;
 	public Button SoundButton;
-	public Button PowerUpButton;
 	public Button ZonesButton;
 	public CanvasGroup HowToPlayCanvas;
 	public Slider time;
@@ -45,6 +43,7 @@ public class menuScript : MonoBehaviour
 			Players = GameWideScript.Instance.setPlayers;
 			Map = GameWideScript.Instance.setMap;
 			PowUpOcc = GameWideScript.Instance.setPowUpOcc;
+			PowUpDelay = (GameWideScript.Instance.setPowUpDelay);
 		}
 		else {
 			Sound = true;
@@ -54,8 +53,7 @@ public class menuScript : MonoBehaviour
 			Players = 2;
 			Map = 1;
 			PowUpOcc = 2;
-			//minPowUpTime = 1000;
-			//maxPowUpTime = 2000;
+			PowUpDelay = 10;
 		}
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
@@ -76,8 +74,8 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setTime = 10 * Time;
 		GameWideScript.Instance.setPlayers = Players;
 		GameWideScript.Instance.setPowUpOcc = PowUpOcc;
-		//GameWideScript.Instance.setminPowUpTime = minPowUpTime;
-		//GameWideScript.Instance.setmaxPowUpTime = maxPowUpTime;
+		GameWideScript.Instance.setPowUpDelay = PowUpDelay;
+
 		GameWideScript.Instance.setCostum = true;
 
         if (Map == 1)
@@ -110,17 +108,20 @@ public class menuScript : MonoBehaviour
 		PowUpOcc = (int)powerUpOcc.value;
 		switch (PowUpOcc) {
 		case 1:
-			powerUpOccValue.text = "None";
+			powerUpOccValue.text = "NONE";
 			Pow = false;
 			break;
 		case 2: 
-			powerUpOccValue.text = "Low";
+			powerUpOccValue.text = "LOW";
+			PowUpDelay = 10;
 			break;
 		case 3: 
-			powerUpOccValue.text = "Medium";
+			powerUpOccValue.text = "MEDIUM";
+			PowUpDelay = 5;
 			break;
 		case 4:
-			powerUpOccValue.text = "High";
+			powerUpOccValue.text = "HIGH";
+			PowUpDelay = 0;
 			break;	
 		}
 
@@ -145,7 +146,20 @@ public class menuScript : MonoBehaviour
 		powerUpOcc.value = PowUpOcc;
 		timeValue.text = (10 * Time).ToString();
 		playersValue.text = Players.ToString();
-		powerUpOccValue.text = PowUpOcc.ToString ();
+		switch (PowUpOcc) {
+		case 1:
+			powerUpOccValue.text = "NONE";
+			break;
+		case 2: 
+			powerUpOccValue.text = "LOW";
+			break;
+		case 3: 
+			powerUpOccValue.text = "MEDIUM";
+			break;
+		case 4:
+			powerUpOccValue.text = "HIGH";
+			break;	
+		}
 
 		Button b = SoundButton.GetComponent<Button>(); 
 		ColorBlock cb = b.colors;
@@ -154,9 +168,7 @@ public class menuScript : MonoBehaviour
 		if (Sound) {
 			SoundButton.GetComponent<Image> ().color = timeValue.color;
 		}
-		if (Pow) {
-			PowerUpButton.GetComponent<Image> ().color = timeValue.color;
-		}
+			
 		if (Zone) {
 			ZonesButton.GetComponent<Image> ().color  = timeValue.color;
 		}
@@ -202,19 +214,7 @@ public class menuScript : MonoBehaviour
 		}
 		b.colors = cb;
 	}
-
-	public void onClickPower() {
-		Pow = !Pow;
-		Button b = PowerUpButton.GetComponent<Button>(); 
-		ColorBlock cb = b.colors;
-		if (!Pow) { 
-			PowerUpButton.GetComponent<Image>().color = Color.white;
-		} else {
-			PowerUpButton.GetComponent<Image>().color = timeValue.color;
-		}
-		b.colors = cb;
-	}
-
+		
 	public void onClickZone() {
 		Zone = !Zone;
 		Button b = ZonesButton.GetComponent<Button>(); 
@@ -231,12 +231,7 @@ public class menuScript : MonoBehaviour
 		Button b = SoundButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.black;
 	}
-
-	public void onHoverPower(){
-		Button b = PowerUpButton.GetComponent<Button>(); 
-		b.GetComponent<Outline> ().effectColor = Color.black;
-	}
-
+		
 	public void onHoverZone(){
 		Button b = ZonesButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.black;
@@ -246,12 +241,7 @@ public class menuScript : MonoBehaviour
 		Button b = SoundButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.clear;
 	}
-
-	public void onLeavePower(){
-		Button b = PowerUpButton.GetComponent<Button>(); 
-		b.GetComponent<Outline> ().effectColor = Color.clear;
-	}
-
+		
 	public void onLeaveZone(){
 		Button b = ZonesButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.clear;
