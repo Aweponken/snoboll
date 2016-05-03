@@ -44,7 +44,6 @@ public class powerups : MonoBehaviour {
         
 		if (rndm_time <= 0 && !(Pow.active)) {
 			if (GameWideScript.Instance.setPow) {
-<<<<<<< HEAD
 				if (a == 1) {
 					Pow1.SetActive(true);
 					Pow = Pow1;
@@ -70,7 +69,6 @@ public class powerups : MonoBehaviour {
 				Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
 				Pow.SetActive(true);
 				rndm_time = Random.Range (1000, 2000);
-=======
 				if (count == GameWideScript.Instance.setPowUpDelay) {
 					Debug.Log ("JA");
 					if (a == 1) {
@@ -87,16 +85,7 @@ public class powerups : MonoBehaviour {
 						Pow = Pow4;
 					
 					}
-					float left = Camera.main.gameObject.transform.position.x
-					             - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
-					float right = Camera.main.gameObject.transform.position.x
-					              + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
-					float top = Camera.main.gameObject.transform.position.y
-					            + ((2f * Camera.main.orthographicSize) / 2) - 15;
-					float bott = Camera.main.gameObject.transform.position.y
-					             - ((2f * Camera.main.orthographicSize) / 2) + 15;
-					Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
-					Pow.active = true;
+
 					count = 0;
 				} else {
 					count += 1;
@@ -104,7 +93,6 @@ public class powerups : MonoBehaviour {
 				}
 				//rndm_time = Random.Range (GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
 				rndm_time = Random.Range (500, 1000);
->>>>>>> PowUpTid
 
 			}
 		}
