@@ -41,7 +41,9 @@ public class SnoBoll2 : MonoBehaviour
 	/// <summary>
 	/// Defines what layers are "ground"
 	/// --jumpable--
-	/// </summary>	[SerializeField]
+	/// </summary>	
+
+	[SerializeField]
     private LayerMask whatIsGround;
 
     [SerializeField]
