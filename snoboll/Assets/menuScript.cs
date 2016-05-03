@@ -11,11 +11,16 @@ public class menuScript : MonoBehaviour
 	private bool Pow;
 	private bool Zone;
 	private int Time;
+	private int PowUpOcc;
 	private int Players;
 	private int Map;
+<<<<<<< HEAD
 	/// <summary>
 	/// The button that starts the game
 	/// </summary>
+=======
+	private int PowUpDelay;
+>>>>>>> PowUpTid
 	public Button startText;
 	/// <summary>
 	/// The button that exits the game
@@ -33,6 +38,7 @@ public class menuScript : MonoBehaviour
 	/// The button that toggles sound
 	/// </summary>
 	public Button SoundButton;
+<<<<<<< HEAD
 	/// <summary>
 	/// The button that toggles powerups
 	/// </summary>
@@ -40,6 +46,8 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// The Btton that toggles zones
 	/// </summary>
+=======
+>>>>>>> PowUpTid
 	public Button ZonesButton;
 	/// <summary>
 	/// Canvas that displays contols
@@ -53,17 +61,25 @@ public class menuScript : MonoBehaviour
 	/// The slider that changes the number of players
 	/// </summary>
 	public Slider players;
+<<<<<<< HEAD
 	/// <summary>
 	/// Text that displays 'times' value
 	/// </summary>
+=======
+	public Slider powerUpOcc;
+>>>>>>> PowUpTid
 	public Text timeValue;
 	/// <summary>
 	/// Text that displays 'players' value
 	/// </summary>
 	public Text playersValue;
+<<<<<<< HEAD
 	/// <summary>
 	/// 'button' to toggle map1
 	/// </summary>
+=======
+	public Text powerUpOccValue;
+>>>>>>> PowUpTid
 	public GameObject map1;
 	/// <summary>
 	/// 'button' to toggle map2
@@ -86,6 +102,8 @@ public class menuScript : MonoBehaviour
 			Time = GameWideScript.Instance.setTime/10;
 			Players = GameWideScript.Instance.setPlayers;
 			Map = GameWideScript.Instance.setMap;
+			PowUpOcc = GameWideScript.Instance.setPowUpOcc;
+			PowUpDelay = (GameWideScript.Instance.setPowUpDelay);
 		}
 		else {
 			Sound = true;
@@ -94,6 +112,8 @@ public class menuScript : MonoBehaviour
 			Time = 210;
 			Players = 2;
 			Map = 1;
+			PowUpOcc = 2;
+			PowUpDelay = 10;
 		}
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
@@ -113,10 +133,13 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setZone = Zone;
 		GameWideScript.Instance.setTime = 10 * Time;
 		GameWideScript.Instance.setPlayers = Players;
+		GameWideScript.Instance.setPowUpOcc = PowUpOcc;
+		GameWideScript.Instance.setPowUpDelay = PowUpDelay;
+
 		GameWideScript.Instance.setCostum = true;
 
         if (Map == 1)
-		SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
+			SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
         else if (Map == 2)
             SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
         else
@@ -143,17 +166,29 @@ public class menuScript : MonoBehaviour
 	public void playersChange(){
 		Players = (int)players.value;
 		playersValue.text = Players.ToString();
-		/*switch (Players) {
-		case 2:
-			mapChoice (1);
+	}
+
+	public void PowUpOccChange(){
+		PowUpOcc = (int)powerUpOcc.value;
+		switch (PowUpOcc) {
+		case 1:
+			powerUpOccValue.text = "NONE";
+			Pow = false;
 			break;
-		case 3:
-			mapChoice (2);
+		case 2: 
+			powerUpOccValue.text = "LOW";
+			PowUpDelay = 10;
+			break;
+		case 3: 
+			powerUpOccValue.text = "MEDIUM";
+			PowUpDelay = 5;
 			break;
 		case 4:
-			mapChoice (3);
-			break;
-		}*/
+			powerUpOccValue.text = "HIGH";
+			PowUpDelay = 0;
+			break;	
+		}
+
 	}
 	/// <summary>
 	/// Shows the howToPlay canvas
@@ -176,8 +211,23 @@ public class menuScript : MonoBehaviour
 	private void SetGUI (){
 		time.value = Time;
 		players.value = Players;
+		powerUpOcc.value = PowUpOcc;
 		timeValue.text = (10 * Time).ToString();
 		playersValue.text = Players.ToString();
+		switch (PowUpOcc) {
+		case 1:
+			powerUpOccValue.text = "NONE";
+			break;
+		case 2: 
+			powerUpOccValue.text = "LOW";
+			break;
+		case 3: 
+			powerUpOccValue.text = "MEDIUM";
+			break;
+		case 4:
+			powerUpOccValue.text = "HIGH";
+			break;	
+		}
 
 		Button b = SoundButton.GetComponent<Button>(); 
 		ColorBlock cb = b.colors;
@@ -186,9 +236,7 @@ public class menuScript : MonoBehaviour
 		if (Sound) {
 			SoundButton.GetComponent<Image> ().color = timeValue.color;
 		}
-		if (Pow) {
-			PowerUpButton.GetComponent<Image> ().color = timeValue.color;
-		}
+			
 		if (Zone) {
 			ZonesButton.GetComponent<Image> ().color  = timeValue.color;
 		}
@@ -236,6 +284,7 @@ public class menuScript : MonoBehaviour
 		}
 		b.colors = cb;
 	}
+<<<<<<< HEAD
 	/// <summary>
 	/// handles the Power-up Button
 	/// </summary>
@@ -253,6 +302,9 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// Handles the Zone button
 	/// </summary>
+=======
+		
+>>>>>>> PowUpTid
 	public void onClickZone() {
 		Zone = !Zone;
 		Button b = ZonesButton.GetComponent<Button>(); 
@@ -272,6 +324,7 @@ public class menuScript : MonoBehaviour
 		Button b = SoundButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.black;
 	}
+<<<<<<< HEAD
 	/// <summary>
 	/// handles the powerup button
 	/// --- hover ---
@@ -284,6 +337,9 @@ public class menuScript : MonoBehaviour
 	/// handles the zone button
 	/// --- hover ---
 	/// </summary>
+=======
+		
+>>>>>>> PowUpTid
 	public void onHoverZone(){
 		Button b = ZonesButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.black;
@@ -295,6 +351,7 @@ public class menuScript : MonoBehaviour
 		Button b = SoundButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.clear;
 	}
+<<<<<<< HEAD
 	/// <summary>
 	/// handles the powerup button
 	/// </summary>
@@ -305,6 +362,9 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// handles the zone button
 	/// </summary>
+=======
+		
+>>>>>>> PowUpTid
 	public void onLeaveZone(){
 		Button b = ZonesButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.clear;

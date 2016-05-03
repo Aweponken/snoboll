@@ -39,6 +39,8 @@ public class GameWideScript : MonoBehaviour {
 	/// </summary>
 	public int setMap;
 	public bool EndOfGame;
+	public int setPowUpOcc;
+	public int setPowUpDelay;
 
 	void Awake(){
 		EndOfGame = false;
@@ -53,7 +55,9 @@ public class GameWideScript : MonoBehaviour {
 			Instance.setTime = 210;
 			Instance.setPlayers = 2;
 			Instance.setMap = 1;
-		} else if (Instance != this) {
+			Instance.setPowUpOcc = 2;
+		} 
+		else if (Instance != this) {
 			Destroy (gameObject);
 		}
 	}

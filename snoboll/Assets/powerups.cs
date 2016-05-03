@@ -16,13 +16,14 @@ public class powerups : MonoBehaviour {
 	/// decides wich will be the next powerup to spawn
 	/// </summary>
     public static int a;
-
+	private int count;
 
 
 	// Use this for initialization
 	void Start () {
         a = Random.Range(1, 5);
-        rndm_time = Random.Range(1000, 2000);
+		rndm_time = Random.Range (500, 1000);
+		//rndm_time = Random.Range(GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
         Pow1 = GameObject.Find("PowerUp_Inv");
         Pow2 = GameObject.Find("PowerUp_Shield");
         Pow3 = GameObject.Find("PowerUp_SpeedSlow");
@@ -37,12 +38,13 @@ public class powerups : MonoBehaviour {
 
 
     }
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
         
 		if (rndm_time <= 0 && !(Pow.active)) {
 			if (GameWideScript.Instance.setPow) {
+<<<<<<< HEAD
 				if (a == 1) {
 					Pow1.SetActive(true);
 					Pow = Pow1;
@@ -68,6 +70,41 @@ public class powerups : MonoBehaviour {
 				Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
 				Pow.SetActive(true);
 				rndm_time = Random.Range (1000, 2000);
+=======
+				if (count == GameWideScript.Instance.setPowUpDelay) {
+					Debug.Log ("JA");
+					if (a == 1) {
+						Pow1.active = true;
+						Pow = Pow1;
+					} else if (a == 2) {
+						Pow2.active = true;
+						Pow = Pow2;
+					} else if (a == 3) {
+						Pow3.active = true;
+						Pow = Pow3;
+					} else {
+						Pow4.active = true;
+						Pow = Pow4;
+					
+					}
+					float left = Camera.main.gameObject.transform.position.x
+					             - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
+					float right = Camera.main.gameObject.transform.position.x
+					              + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
+					float top = Camera.main.gameObject.transform.position.y
+					            + ((2f * Camera.main.orthographicSize) / 2) - 15;
+					float bott = Camera.main.gameObject.transform.position.y
+					             - ((2f * Camera.main.orthographicSize) / 2) + 15;
+					Pow.transform.position = new Vector2 (Random.Range (left, right), Random.Range (bott, top));
+					Pow.active = true;
+					count = 0;
+				} else {
+					count += 1;
+					Debug.Log ("NEJ");
+				}
+				//rndm_time = Random.Range (GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
+				rndm_time = Random.Range (500, 1000);
+>>>>>>> PowUpTid
 
 			}
 		}
