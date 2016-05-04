@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PowerUp_Inv
+  - Zone
+  - DiscoLight
   layers:
   - Default
   - TransparentFX

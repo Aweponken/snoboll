@@ -5,10 +5,11 @@ using System.Collections;
 /// </summary>
 public class PowerUp_NoJump : MonoBehaviour
 {
-
+	GameObject noJump3d;
     // Use this for initialization
     void Start()
     {
+		noJump3d = GameObject.Find("powNoJump");
         float left = Camera.main.gameObject.transform.position.x
          - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
         float right = Camera.main.gameObject.transform.position.x
@@ -24,7 +25,7 @@ public class PowerUp_NoJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		noJump3d.transform.position = new Vector3 (transform.position.x+12.5f,transform.position.y+12.5f,30);
     }
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -33,6 +34,7 @@ public class PowerUp_NoJump : MonoBehaviour
             GameObject snoBoll = GameObject.Find("Boll");
             SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
             script.noJump();
+			noJump3d.transform.position = new Vector3 (-30,-30,-30); 
 			gameObject.SetActive(false);
         }
     }
