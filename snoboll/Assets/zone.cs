@@ -37,11 +37,12 @@ public class zone : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if(counter == 0){
-            if (type != 0)
+           /* if (type != 0)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x - gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * 2, gameObject.transform.localScale.y);
             }
+            */
 
             
             fireF();
@@ -84,8 +85,8 @@ public class zone : MonoBehaviour {
         else   // varmt område
         {
             
-            gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x/2, gameObject.transform.localScale.y);
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x + gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
+           // gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x/2, gameObject.transform.localScale.y);
+            //gameObject.transform.position = new Vector3(gameObject.transform.position.x + gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
             myZone.material.shader = shaderGUItext;
             myZone.color = Color.red;
             eld.Play();
