@@ -10,10 +10,12 @@ public class menuScript : MonoBehaviour
 	private bool Sound;
 	private bool Pow;
 	private bool Zone;
+	private bool Shrink;
 	private int Time;
 	private int PowUpOcc;
 	private int Players;
 	private int Map;
+
 	/// <summary>
 	/// The button that starts the game
 	/// </summary>
@@ -38,7 +40,7 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// The button that toggles powerups
 	/// </summary>
-	public Button PowerUpButton;
+	public Button ShrinkButton;
 	/// <summary>
 	/// The Btton that toggles zones
 	/// </summary>
@@ -229,6 +231,10 @@ public class menuScript : MonoBehaviour
 			ZonesButton.GetComponent<Image> ().color  = timeValue.color;
 		}
 
+		if (Shrink) {
+			ShrinkButton.GetComponent<Image> ().color = timeValue.color;
+		}
+
 		// Custom map could be set
 		if (GameWideScript.Instance.setCostum) {
 			switch (GameWideScript.Instance.setMap) {
@@ -275,14 +281,14 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// handles the Power-up Button
 	/// </summary>
-	public void onClickPower() {
-		Pow = !Pow;
-		Button b = PowerUpButton.GetComponent<Button>(); 
+	public void onClickShrink() {
+		Shrink = !Shrink;
+		Button b = ShrinkButton.GetComponent<Button>(); 
 		ColorBlock cb = b.colors;
-		if (!Pow) { 
-			PowerUpButton.GetComponent<Image>().color = Color.white;
+		if (!Shrink) { 
+			ShrinkButton.GetComponent<Image>().color = Color.white;
 		} else {
-			PowerUpButton.GetComponent<Image>().color = timeValue.color;
+			ShrinkButton.GetComponent<Image>().color = timeValue.color;
 		}
 		b.colors = cb;
 	}
@@ -313,8 +319,8 @@ public class menuScript : MonoBehaviour
 	/// handles the powerup button
 	/// --- hover ---
 	/// </summary>
-	public void onHoverPower(){
-		Button b = PowerUpButton.GetComponent<Button>(); 
+	public void onHoverShrink(){
+		Button b = ShrinkButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.black;
 	}
 	/// <summary>
@@ -337,8 +343,8 @@ public class menuScript : MonoBehaviour
 	/// <summary>
 	/// handles the powerup button
 	/// </summary>
-	public void onLeavePower(){
-		Button b = PowerUpButton.GetComponent<Button>(); 
+	public void onLeaveShrink(){
+		Button b = ShrinkButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = Color.clear;
 	}
 	/// <summary>
