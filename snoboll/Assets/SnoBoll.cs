@@ -91,7 +91,6 @@ public class SnoBoll : MonoBehaviour
 	void FixedUpdate()
     {
         //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
-        Debug.Log(static_shield);
         horizontal = Input.GetAxis("Horizontal1");
         float vertical = Input.GetAxis("Vertical1");
         float jump = Input.GetAxis("Jump1");

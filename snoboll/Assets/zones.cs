@@ -11,6 +11,7 @@ public class zones : MonoBehaviour {
 	private int minTime;
 	private float counter;
 	private float counterSecondZone;
+    
    
 
 	// Use this for initialization
@@ -19,8 +20,15 @@ public class zones : MonoBehaviour {
 		counter = Random.Range(minTime,maxTime);
 		counterSecondZone = Random.Range(minTime,maxTime);
 		zonesArray = GameObject.FindGameObjectsWithTag("Zone");
+             
 		foreach(GameObject i in zonesArray) {
-			i.active = false;
+            zone script = (zone)i.GetComponent(typeof(zone));
+            i.SetActive(false);
+            script.snowF();
+            script.molnF();
+            script.fireF();
+            
+              
 		}
 	}
 	
@@ -36,7 +44,7 @@ public class zones : MonoBehaviour {
 			}
 			if (counterSecondZone == 0) {
 				counterSecondZone = Random.Range (minTime, maxTime);
-			
+			    
 				activateZone ();	
 			} else {
 				counterSecondZone--;
@@ -46,18 +54,25 @@ public class zones : MonoBehaviour {
 
 	void activateZone(){
 		int rand = Random.Range(0, zonesArray.Length);
+        
 
-		if(zonesArray[rand].active == false){
-			zonesArray[rand].active = true;
+        if (zonesArray[rand].active == false){
+            zone script = (zone)zonesArray[rand].GetComponent(typeof(zone));
+            zonesArray[rand].SetActive(true);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.1f, zonesArray[rand].transform.position.y, 0);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.1f, zonesArray[rand].transform.position.y, 0);
             isTwoActive++;
-		}
+            script.decideType();
+
+        }
 	}
 	
 	void activateZoneByIndex(int i){
-		if(zonesArray[i].active == false){
-			zonesArray[i].active = true;
+
+        int rand = Random.Range(0, zonesArray.Length);
+
+        if (zonesArray[i].active == false){
+            zonesArray[i].SetActive(true);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x + 0.1f, zonesArray[i].transform.position.y, 0);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x - 0.1f, zonesArray[i].transform.position.y, 0);
 			isTwoActive++;
