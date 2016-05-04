@@ -16,20 +16,31 @@ public class zone : MonoBehaviour {
 	/// </summary>
     private float changeSizeWinter;
     [SerializeField]
+
     /// <summary>
     /// The change size summer.
     /// </summary>
-	private float changeSizeSummer;
 
+    private float changeSizeSummer;
+    private float defSize;
+    private float sizeWarm;
+    private float defPos;
+    private float posWarm;
+    [SerializeField]
+    private ParticleSystem eld;
+    [SerializeField]
+    private ParticleSystem snow;
+    [SerializeField]
+    private GameObject moln;
 
     // Use this for initialization
     void Start () {
-
-        myZone = gameObject.GetComponent<SpriteRenderer>();
-        shaderGUItext = Shader.Find("GUI/Text Shader");
-        shaderSpritesDefault = Shader.Find("Sprites/Default");
-        type = Random.Range(0, 2);
-        decideType();
+        /*defSize = gameObject.transform.localScale.x;
+        sizeWarm = defSize/2;
+        defPos = gameObject.transform.position.x;
+        posWarm = defPos + sizeWarm;
+        */
+        //decideType();
         counter = 400;
 	}
 	
@@ -42,6 +53,26 @@ public class zone : MonoBehaviour {
 			counter = 400;
 			gameObject.SetActive(false);
 			zones.isTwoActive--;
+
+           /* if (type != 0)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x - gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
+                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * 2, gameObject.transform.localScale.y);
+            }
+            */
+
+            
+            fireF();
+            snowF();
+            molnF();
+           // molnFunktionWithDelay();
+
+
+
+            zones.isTwoActive--;
+            gameObject.active = false;
+
+            counter = 400;
 		} 
 		else {
 			counter--;
@@ -51,28 +82,38 @@ public class zone : MonoBehaviour {
     /// <summary>
     /// decide whether the zone is warm or cold depending on random number(0,1)
     /// </summary>
-    void decideType()
+    public void decideType()
     {
+
+        myZone = gameObject.GetComponent<SpriteRenderer>();
+        shaderGUItext = Shader.Find("GUI/Text Shader");
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
+        type = Random.Range(0, 2);
         if (type == 0) //kallt område
         {
             myZone.material.shader = shaderGUItext;
             myZone.color = Color.blue;
+            snow.gameObject.SetActive(true);
+            moln.SetActive(true);
+            snow.Play();
 
+            
         }
         else   // varmt område
         {
+            
+           // gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x/2, gameObject.transform.localScale.y);
+            //gameObject.transform.position = new Vector3(gameObject.transform.position.x + gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
             myZone.material.shader = shaderGUItext;
             myZone.color = Color.red;
-
+            eld.Play();
         }
+
 
     }
 
     void OnTriggerStay2D(Collider2D other)
-    {
-        
-      
-        
+    {    
         GameObject boll = other.gameObject;
         if (boll.name.Contains("Boll"))
         {
@@ -121,4 +162,29 @@ public class zone : MonoBehaviour {
             }
         }
     }
+    
+    public void fireF()
+    {
+        eld.Stop();
+    }
+    public void snowF()
+    {
+        snow.Stop();
+    }
+    public void molnF()
+    {
+        moln.SetActive(false);
+    }
+   
+    /*public void molnFunktionWithDelay()
+    {
+        StartCoroutine(molnPause());
+    }
+
+    IEnumerator molnPause()
+    {  
+        yield return new WaitForSeconds(2);
+        moln.SetActive(false);
+    }
+    */
 }

@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Options.unity
+=======
+- path: Assets/start.unity
+>>>>>>> refs/remotes/origin/smält/snö-zoner-klara
   isLoaded: 1
   isActive: 1
