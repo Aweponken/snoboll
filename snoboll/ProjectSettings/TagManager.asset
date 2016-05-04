@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PowerUp_Inv
+  - Fire
+  - Zone
+  - Boll
   layers:
   - Default
   - TransparentFX
