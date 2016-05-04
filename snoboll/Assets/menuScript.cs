@@ -94,6 +94,7 @@ public class menuScript : MonoBehaviour
 			Map = GameWideScript.Instance.setMap;
 			PowUpOcc = GameWideScript.Instance.setPowUpOcc;
 			PowUpDelay = (GameWideScript.Instance.setPowUpDelay);
+			Shrink = GameWideScript.Instance.setKrymp;
 		}
 		else {
 			Sound = true;
@@ -104,6 +105,7 @@ public class menuScript : MonoBehaviour
 			Map = 1;
 			PowUpOcc = 2;
 			PowUpDelay = 10;
+			Shrink = false;
 		}
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
@@ -125,6 +127,7 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setPlayers = Players;
 		GameWideScript.Instance.setPowUpOcc = PowUpOcc;
 		GameWideScript.Instance.setPowUpDelay = PowUpDelay;
+		GameWideScript.Instance.setKrymp = Shrink;
 
 		GameWideScript.Instance.setCostum = true;
 
