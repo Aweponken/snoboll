@@ -1,10 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/start.unity
-||||||| merged common ancestors
-- path: Assets/Map.unity
-=======
-- path: Assets/Map3.unity
->>>>>>> graffebranchenmån
   isLoaded: 1
   isActive: 1
