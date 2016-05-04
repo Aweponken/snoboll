@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 7785c5d0a652b2b4a96474b9e9967ae4
+<<<<<<< HEAD:snoboll/Assets/DocuMaker.meta
+guid: 7fa7f2b1ec84a134489a581a54714dc9
+||||||| merged common ancestors
+guid: 8fe8ccf2fef8641678ca3c18297b3ed0
+=======
+guid: a957d4d6ee5aaba47b0c5707c3a27fb8
+>>>>>>> origin/s:snoboll/Assets/Editor/Doxygen.meta
 folderAsset: yes
-timeCreated: 1462270534
+<<<<<<< HEAD:snoboll/Assets/DocuMaker.meta
+timeCreated: 1462282292
+||||||| merged common ancestors
+timeCreated: 1462172946
+=======
+timeCreated: 1462190842
+>>>>>>> origin/s:snoboll/Assets/Editor/Doxygen.meta
 licenseType: Free
 DefaultImporter:
   userData: 
