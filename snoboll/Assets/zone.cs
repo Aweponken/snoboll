@@ -49,30 +49,13 @@ public class zone : MonoBehaviour {
 		if(counter == 0){
             //Disable
             type = Random.Range(0, 2);
-            decideType();
+           // decideType();
 			counter = 400;
-			gameObject.SetActive(false);
-			zones.isTwoActive--;
-
-           /* if (type != 0)
-            {
-                gameObject.transform.position = new Vector3(gameObject.transform.position.x - gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * 2, gameObject.transform.localScale.y);
-            }
-            */
-
-            
-            fireF();
             snowF();
             molnF();
-           // molnFunktionWithDelay();
-
-
-
-            zones.isTwoActive--;
-            gameObject.active = false;
-
-            counter = 400;
+            fireF();
+            gameObject.SetActive(false);
+			zones.isTwoActive--;
 		} 
 		else {
 			counter--;
