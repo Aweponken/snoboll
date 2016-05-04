@@ -59,7 +59,6 @@
      <Compile Include="Assets\SnoBoll3.cs" />
      <Compile Include="Assets\SnoBoll4.cs" />
      <Compile Include="Assets\StartScript.cs" />
-     <Compile Include="Assets\TREdShield.cs" />
      <Compile Include="Assets\counterscript.cs" />
      <Compile Include="Assets\fadeInBlur.cs" />
      <Compile Include="Assets\menuScript.cs" />
