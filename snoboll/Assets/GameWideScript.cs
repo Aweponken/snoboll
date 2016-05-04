@@ -49,7 +49,7 @@ public class GameWideScript : MonoBehaviour {
 			Instance = this;
 			Instance.setCostum = false;
 			Instance.setSound = true;
-			Instance.setKrymp = true;
+			Instance.setKrymp = false;
 			Instance.setPow = true;
 			Instance.setZone = true;
 			Instance.setTime = 210;
