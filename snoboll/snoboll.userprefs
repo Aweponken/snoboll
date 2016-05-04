@@ -2,13 +2,20 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PauseMenu.cs">
 ||||||| merged common ancestors
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\zone.cs">
 =======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\powerups.cs">
 >>>>>>> doc
+||||||| merged common ancestors
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/slutMenuScript.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TREdShield.cs">
+>>>>>>> graffebranchenmån
     <Files>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <File FileName="Assets/slutMenuScript.cs" Line="104" Column="45" />
       <File FileName="Assets/PauseMenu.cs" Line="59" Column="74" />
@@ -60,6 +67,18 @@
       <File FileName="Assets\zones.cs" Line="67" Column="1" />
       <File FileName="Assets\SnoBoll.cs" Line="1" Column="1" />
 >>>>>>> refs/remotes/origin/krymp
+||||||| merged common ancestors
+      <File FileName="Assets/slutMenuScript.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="1" Column="1" />
+      <File FileName="Assets\slutMenuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\PowerUp_Shield.cs" Line="26" Column="6" />
+      <File FileName="Assets\powerups.cs" Line="38" Column="6" />
+      <File FileName="Assets\TREdShield.cs" Line="19" Column="1" />
+      <File FileName="Assets\zones.cs" Line="29" Column="1" />
+      <File FileName="Assets\SnoBoll.cs" Line="94" Column="1" />
+      <File FileName="Assets\molnrör.cs" Line="13" Column="3" />
+>>>>>>> graffebranchenmån
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
