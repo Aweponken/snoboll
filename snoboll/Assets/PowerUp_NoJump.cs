@@ -6,9 +6,11 @@ using System.Collections;
 public class PowerUp_NoJump : MonoBehaviour
 {
 
-    // Use this for initialization
+	AudioClip FX;
+
     void Start()
     {
+		FX = GetComponent<AudioSource> ().clip;
         float left = Camera.main.gameObject.transform.position.x
          - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
         float right = Camera.main.gameObject.transform.position.x
@@ -18,23 +20,16 @@ public class PowerUp_NoJump : MonoBehaviour
         float bott = Camera.main.gameObject.transform.position.y
             - ((2f * Camera.main.orthographicSize) / 2) + 15;
         gameObject.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+		
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.name == "Boll" || coll.gameObject.name == "Boll 2" || coll.gameObject.name == "Boll 3" || coll.gameObject.name == "Boll 4")
-        {
-            GameObject snoBoll = GameObject.Find("Boll");
-            SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));
-            script.noJump();
+		if (coll.gameObject.tag == "Boll")
+		{
+			AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
+			GameObject snoBoll = GameObject.Find("Boll");
+			snoBoll.SendMessage ("noJump");
 			gameObject.SetActive(false);
-        }
+		}
     }
-
 }

@@ -349,14 +349,11 @@ public class SnoBoll : MonoBehaviour
         {
             SnoBoll4.ableToJump = false;
         }
-        Debug.Log("random SF " + randomSF);
         yield return new WaitForSeconds(5);
-        Debug.Log("väntat ");
         SnoBoll.ableToJump = true;
         SnoBoll2.ableToJump = true;
         SnoBoll3.ableToJump = true;
         SnoBoll4.ableToJump = true;
-        Debug.Log("Efter " + randomSF);
     }
 	/// <summary>
 	/// Updates the ground radius
