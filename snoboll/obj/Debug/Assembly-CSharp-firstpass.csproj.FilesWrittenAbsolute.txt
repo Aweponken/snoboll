@@ -1,0 +1,17 @@
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/Niklas/Projekt-IT/snoboll/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/Niklas/Projekt-IT/snoboll/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/UnityEngine.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/UnityEditor.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Niklas/Projekt-IT/snoboll/Temp/bin/Debug/Mono.Cecil.Mdb.dll
