@@ -99,7 +99,7 @@ public class SnoBoll : MonoBehaviour
 				timer.onlyOne++;
 				gameObject.SetActive (false);
 			} else {
-				transform.localScale = new Vector3 (transform.localScale.x - 0.1f, transform.localScale.x - 0.1f, 0);
+				transform.localScale = new Vector3 (transform.localScale.x - 0.1f, transform.localScale.x - 0.1f, transform.localScale.z);
 				GameWideScript.Player1.size = transform.localScale.x;
 			}
 		}
@@ -178,7 +178,7 @@ public class SnoBoll : MonoBehaviour
                 if (transform.localScale.x > minSize)
                 {
 
-                    transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, 0);
+                    transform.localScale = new Vector3(transform.localScale.x - changeIfHit, transform.localScale.x - changeIfHit, transform.localScale.z);
 
                     //  groundRadius -= 1;
                 }
@@ -189,7 +189,7 @@ public class SnoBoll : MonoBehaviour
             {
                 if (transform.localScale.x < maxSize)
                 {
-                    transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, 0);
+                    transform.localScale = new Vector3(transform.localScale.x + changeIfHit, transform.localScale.x + changeIfHit, transform.localScale.z);
 
                     //  groundRadius += 1;
                 }

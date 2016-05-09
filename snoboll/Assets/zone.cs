@@ -105,7 +105,7 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x < 170)
                 {
-                    boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, 0);
+                    boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.z);
                 }
 
             }
@@ -113,7 +113,7 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x > 30)
                 {
-					boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.x - changeSizeSummer, 0);
+                    boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.z);
 					if (boll.gameObject.name == "Boll")
 					{
 						GameObject snoBoll = GameObject.Find("Boll");
