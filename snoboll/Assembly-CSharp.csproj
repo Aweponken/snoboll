@@ -69,6 +69,7 @@
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
      <Compile Include="Assets\solrör.cs" />
+     <Compile Include="Assets\spot.cs" />
      <Compile Include="Assets\timer.cs" />
      <Compile Include="Assets\zone.cs" />
      <Compile Include="Assets\zones.cs" />
