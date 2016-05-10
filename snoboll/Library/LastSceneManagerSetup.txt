@@ -1,4 +1,10 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Map4.unity
+||||||| merged common ancestors
+- path: Assets/Map2.unity
+=======
+- path: Assets/Map3.unity
+>>>>>>> implementation-av-zooner
   isLoaded: 1
   isActive: 1
