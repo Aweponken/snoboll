@@ -15,8 +15,6 @@ public class zone : MonoBehaviour {
 	/// The change size winter.
 	/// </summary>
     private float changeSizeWinter;
-    [SerializeField]
-
     /// <summary>
     /// The change size summer.
     /// </summary>
@@ -58,6 +56,22 @@ public class zone : MonoBehaviour {
 			zones.isTwoActive--;
 		} 
 		else {
+            if (type == 0){
+                if (counter >= 300)
+                {
+                    moln.transform.position = new Vector3 (moln.transform.position.x + 0.03f, moln.transform.position.y , moln.transform.position.z);
+                }
+               else if (counter >= 200)
+                {
+                    moln.transform.position = new Vector3(moln.transform.position.x - 0.03f, moln.transform.position.y, moln.transform.position.z);
+                }
+                else if (counter >= 100)
+                {
+                    moln.transform.position = new Vector3 (moln.transform.position.x - 0.03f, moln.transform.position.y , moln.transform.position.z);
+                }
+                else
+                    moln.transform.position = new Vector3(moln.transform.position.x + 0.03f, moln.transform.position.y, moln.transform.position.z);
+            }
 			counter--;
 		}
 	}
@@ -78,10 +92,7 @@ public class zone : MonoBehaviour {
             myZone.color = Color.blue;
             snow.gameObject.SetActive(true);
             moln.SetActive(true);
-            snow.Play();
-
-            
-        }
+            snow.Play();        }
         else   // varmt område
         {
             
@@ -91,8 +102,6 @@ public class zone : MonoBehaviour {
             myZone.color = Color.red;
             eld.Play();
         }
-
-
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -105,7 +114,7 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x < 170)
                 {
-                    boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.z);
+                    boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, 0);
                 }
 
             }
@@ -113,7 +122,7 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x > 30)
                 {
-                    boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.z);
+					boll.transform.localScale = new Vector3(boll.transform.localScale.x - changeSizeSummer, boll.transform.localScale.x - changeSizeSummer, 0);
 					if (boll.gameObject.name == "Boll")
 					{
 						GameObject snoBoll = GameObject.Find("Boll");
