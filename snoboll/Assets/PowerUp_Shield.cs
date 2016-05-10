@@ -6,30 +6,6 @@ using System.Collections;
 /// </summary>
 public class PowerUp_Shield : MonoBehaviour
 {
-<<<<<<< HEAD
-	AudioClip FX;
-
-	void Start()
-	{
-		FX = GetComponent<AudioSource> ().clip;
-		float left = Camera.main.gameObject.transform.position.x
-			- ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
-		float right = Camera.main.gameObject.transform.position.x
-			+ ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
-		float top = Camera.main.gameObject.transform.position.y
-			+ ((2f * Camera.main.orthographicSize) / 2) - 15;
-		float bott = Camera.main.gameObject.transform.position.y
-			- ((2f * Camera.main.orthographicSize) / 2) + 15;
-		gameObject.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
-	}
-		
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-		if (coll.gameObject.tag == "Boll")
-		{
-			AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
-			coll.gameObject.SendMessage ("setShield");
-=======
 	GameObject shield3d;
     // Use this for initialization
     void Start()
@@ -85,8 +61,7 @@ public class PowerUp_Shield : MonoBehaviour
             SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
             script.setShield();
 			shield3d.transform.position = new Vector3 (transform.position.x+transform.localScale.x,transform.position.y,-30); 
->>>>>>> refs/remotes/origin/disco
 			gameObject.SetActive(false);
-		}
+        }
     }
 }

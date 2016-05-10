@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Map4.unity
-=======
-- path: Assets/Map2.unity
->>>>>>> refs/remotes/origin/disco
+- path: Assets/start.unity
   isLoaded: 1
   isActive: 1

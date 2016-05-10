@@ -5,18 +5,10 @@ using System.Collections;
 /// Script that handles Power up faster slower.
 /// </summary>
 public class PowerUp_Faster_Slower : MonoBehaviour {
-<<<<<<< HEAD
-
-	AudioClip FX;
-
-	void Start () {
-		FX = GetComponent<AudioSource> ().clip;
-=======
 	GameObject FastSlow3d;
 	// Use this for initialization
 	void Start () {
 		FastSlow3d = GameObject.Find("powSlowSpeed");
->>>>>>> refs/remotes/origin/disco
         float left = Camera.main.gameObject.transform.position.x
                  - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
         float right = Camera.main.gameObject.transform.position.x
@@ -26,16 +18,8 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
         float bott = Camera.main.gameObject.transform.position.y
             - ((2f * Camera.main.orthographicSize) / 2) + 15;
         gameObject.transform.position = new Vector2(Random.Range(left, right), Random.Range(bott, top));
-    }
-<<<<<<< HEAD
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-		if (coll.gameObject.tag == "Boll")
-		{
-			AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
-			coll.gameObject.SendMessage ("SlowerFasterF");
-=======
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -75,8 +59,7 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
             SnoBoll4 script = (SnoBoll4)snoBoll.GetComponent(typeof(SnoBoll4));
             script.SlowerFasterF();
 			FastSlow3d.transform.position = new Vector3 (-30,-30,-30); 
->>>>>>> refs/remotes/origin/disco
 			gameObject.SetActive(false);
-		}
+        }
     }
 }
