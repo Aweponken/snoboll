@@ -5,9 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - PowerUp_Inv
+<<<<<<< HEAD
   - Fire
   - Zone
   - Boll
+=======
+  - Zone
+  - DiscoLight
+>>>>>>> refs/remotes/origin/disco
   layers:
   - Default
   - TransparentFX

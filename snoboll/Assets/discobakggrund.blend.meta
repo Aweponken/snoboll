@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 8fa797d01e0d99e4c864ea94f2b604d0
+timeCreated: 1462370226
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cylinder
+    100002: //RootNode
+    100004: Plane
+    100006: Plane_001
+    100008: Sn_boll_disco_golv
+    100010: Sn_boll_DJ
+    100012: Sn_boll_h_gtalare
+    100014: Sn_boll_h_gtalare_001
+    100016: Sn_boll_h_gtalare_002
+    100018: Sn_boll_h_gtalare_003
+    100020: Sn_boll_str_lkastare
+    100022: Sn_boll_str_lkastare_001
+    100024: Sn_boll_str_lkastare_002
+    100026: Sn_boll_str_lkastare_003
+    100028: Sphere
+    400000: Cylinder
+    400002: //RootNode
+    400004: Plane
+    400006: Plane_001
+    400008: Sn_boll_disco_golv
+    400010: Sn_boll_DJ
+    400012: Sn_boll_h_gtalare
+    400014: Sn_boll_h_gtalare_001
+    400016: Sn_boll_h_gtalare_002
+    400018: Sn_boll_h_gtalare_003
+    400020: Sn_boll_str_lkastare
+    400022: Sn_boll_str_lkastare_001
+    400024: Sn_boll_str_lkastare_002
+    400026: Sn_boll_str_lkastare_003
+    400028: Sphere
+    2300000: Cylinder
+    2300002: Plane
+    2300004: Plane_001
+    2300006: Sn_boll_disco_golv
+    2300008: Sn_boll_DJ
+    2300010: Sn_boll_h_gtalare
+    2300012: Sn_boll_h_gtalare_001
+    2300014: Sn_boll_h_gtalare_002
+    2300016: Sn_boll_h_gtalare_003
+    2300018: Sn_boll_str_lkastare
+    2300020: Sn_boll_str_lkastare_001
+    2300022: Sn_boll_str_lkastare_002
+    2300024: Sn_boll_str_lkastare_003
+    2300026: Sphere
+    3300000: Cylinder
+    3300002: Plane
+    3300004: Plane_001
+    3300006: Sn_boll_disco_golv
+    3300008: Sn_boll_DJ
+    3300010: Sn_boll_h_gtalare
+    3300012: Sn_boll_h_gtalare_001
+    3300014: Sn_boll_h_gtalare_002
+    3300016: Sn_boll_h_gtalare_003
+    3300018: Sn_boll_str_lkastare
+    3300020: Sn_boll_str_lkastare_001
+    3300022: Sn_boll_str_lkastare_002
+    3300024: Sn_boll_str_lkastare_003
+    3300026: Sphere
+    4300000: Cylinder
+    4300002: Sn_boll_disco_golv
+    4300004: Plane_001
+    4300006: Plane
+    4300008: Sn_boll_str_lkastare
+    4300010: Sn_boll_h_gtalare
+    4300012: Sn_boll_DJ
+    4300014: Sn_boll_h_gtalare_001
+    4300016: Sn_boll_str_lkastare_001
+    4300018: Sn_boll_h_gtalare_002
+    4300020: Sn_boll_h_gtalare_003
+    4300022: Sn_boll_str_lkastare_002
+    4300024: Sn_boll_str_lkastare_003
+    4300026: Sphere
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

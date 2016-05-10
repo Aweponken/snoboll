@@ -62,12 +62,18 @@
      <Compile Include="Assets\Sound\SoundFXController.cs" />
      <Compile Include="Assets\StartScript.cs" />
      <Compile Include="Assets\counterscript.cs" />
+     <Compile Include="Assets\disco.cs" />
+     <Compile Include="Assets\discogolv.cs" />
      <Compile Include="Assets\fadeInBlur.cs" />
      <Compile Include="Assets\menuScript.cs" />
      <Compile Include="Assets\molnrör.cs" />
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
      <Compile Include="Assets\solrör.cs" />
+<<<<<<< HEAD
+=======
+     <Compile Include="Assets\spot.cs" />
+>>>>>>> refs/remotes/origin/disco
      <Compile Include="Assets\timer.cs" />
      <Compile Include="Assets\vattenmove.cs" />
      <Compile Include="Assets\zone.cs" />
