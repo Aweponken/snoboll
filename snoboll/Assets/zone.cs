@@ -5,20 +5,20 @@ using System.Collections;
 /// </summary>
 public class zone : MonoBehaviour {
 
-	private int counter;
+    private int counter;
     private int type;
     private SpriteRenderer myZone;
     private Shader shaderGUItext;
     private Shader shaderSpritesDefault;
     [SerializeField]
-	/// <summary>
-	/// The change size winter.
-	/// </summary>
+    /// <summary>
+    /// The change size winter.
+    /// </summary>
     private float changeSizeWinter;
     /// <summary>
     /// The change size summer.
     /// </summary>
-
+    [SerializeField]
     private float changeSizeSummer;
     private float defSize;
     private float sizeWarm;

@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Assets\FixedCamera.cs" />
     <Compile Include="Assets\GameWideScript.cs" />
+    <Compile Include="Assets\Lightning.cs" />
     <Compile Include="Assets\PauseMenu.cs" />
     <Compile Include="Assets\PlayersOption.cs" />
     <Compile Include="Assets\PowerUp_Faster_Slower.cs" />
@@ -95,17 +96,22 @@
     <Compile Include="Assets\Sound\SoundFXController.cs" />
     <Compile Include="Assets\StartScript.cs" />
     <Compile Include="Assets\counterscript.cs" />
+    <Compile Include="Assets\disco.cs" />
+    <Compile Include="Assets\discogolv.cs" />
     <Compile Include="Assets\fadeInBlur.cs" />
     <Compile Include="Assets\menuScript.cs" />
     <Compile Include="Assets\molnrör.cs" />
     <Compile Include="Assets\powerups.cs" />
     <Compile Include="Assets\slutMenuScript.cs" />
     <Compile Include="Assets\solrör.cs" />
+    <Compile Include="Assets\spot.cs" />
     <Compile Include="Assets\timer.cs" />
+    <Compile Include="Assets\vattenmove.cs" />
     <Compile Include="Assets\zone.cs" />
     <Compile Include="Assets\zones.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\DavNickOpStandardLOLOMGshieeeet.shader" />
     <None Include="Assets\DocuMaker\readme.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
@@ -189,6 +195,7 @@
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\davnickstartshaderOP.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
