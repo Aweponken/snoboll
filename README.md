@@ -12,4 +12,16 @@ The game
 Done.
 
 ##Sprint 3
-Coming soon!
+Done.
+
+##Sprint 4
+Done.
+
+##Sprint 5
+* Skriva rapporten
+* Skriva Software manual (Generera från koden?)
+* Städa upp i koden 
+* Städa upp i Assets-mappen
+* Lägga in all grafik
+* Testning
+* Lägga upp allt på hemsidan
