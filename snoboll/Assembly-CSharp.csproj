@@ -73,6 +73,7 @@
      <Compile Include="Assets\spot.cs" />
      <Compile Include="Assets\timer.cs" />
      <Compile Include="Assets\vattenmove.cs" />
+     <Compile Include="Assets\vax.cs" />
      <Compile Include="Assets\zone.cs" />
      <Compile Include="Assets\zones.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

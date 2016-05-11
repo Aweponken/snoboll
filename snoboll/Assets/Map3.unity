@@ -265,7 +265,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -3647,6 +3647,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &160141994 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
+  m_PrefabInternal: {fileID: 160141993}
 --- !u!1001 &162470201
 Prefab:
   m_ObjectHideFlags: 0
@@ -3709,10 +3713,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9a706acf9d3f614daffda9e3ac9602b, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &209319706 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
-  m_PrefabInternal: {fileID: 160141993}
 --- !u!4 &209319707 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
@@ -4128,6 +4128,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &262672680 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
+  m_PrefabInternal: {fileID: 262672679}
 --- !u!1001 &279957765
 Prefab:
   m_ObjectHideFlags: 0
@@ -4182,6 +4186,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &279957766 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
+  m_PrefabInternal: {fileID: 279957765}
 --- !u!1001 &283934363
 Prefab:
   m_ObjectHideFlags: 0
@@ -4426,6 +4434,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &324590196 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
+  m_PrefabInternal: {fileID: 324590195}
 --- !u!1001 &335263929
 Prefab:
   m_ObjectHideFlags: 0
@@ -4537,7 +4549,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -7985,15 +7997,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 435411893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 085d9a4c05f981545b7710a91974841f, type: 3}
+  m_Script: {fileID: 11500000, guid: dd5a7781ec5d6465880339839a50885e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  F1: {fileID: 1796919726}
-  F2: {fileID: 2058389015}
-  F3: {fileID: 1717404763}
-  F4: {fileID: 209319706}
-  F5: {fileID: 1430136883}
-  F6: {fileID: 449852263}
+  F1: {fileID: 279957766}
+  F2: {fileID: 1719112799}
+  F3: {fileID: 324590196}
+  F4: {fileID: 160141994}
+  F5: {fileID: 1518363590}
+  F6: {fileID: 262672680}
   R1: {fileID: 28300941}
   R2: {fileID: 957816192}
   R3: {fileID: 2015733858}
@@ -8094,10 +8106,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78d56ddb50f63a0478a3fb318441b923, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &449852263 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
-  m_PrefabInternal: {fileID: 262672679}
 --- !u!4 &449852264 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
@@ -8386,7 +8394,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -12149,7 +12157,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -15648,7 +15656,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -18825,7 +18833,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -24490,7 +24498,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -29370,10 +29378,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78d56ddb50f63a0478a3fb318441b923, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1430136883 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
-  m_PrefabInternal: {fileID: 1518363589}
 --- !u!4 &1430136884 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
@@ -29925,6 +29929,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1518363590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
+  m_PrefabInternal: {fileID: 1518363589}
 --- !u!4 &1526856170 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 6b99cd7dcc9f62848bfd2d9fc84bbb86, type: 3}
@@ -30048,7 +30056,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -31968,10 +31976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9544c1a6dcbe144a4ed5a552d1d6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1717404763 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
-  m_PrefabInternal: {fileID: 324590195}
 --- !u!4 &1717404764 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
@@ -32030,6 +32034,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1719112799 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
+  m_PrefabInternal: {fileID: 1719112798}
 --- !u!1 &1726785181
 GameObject:
   m_ObjectHideFlags: 0
@@ -34032,10 +34040,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba9b9eed66f6d8348bf59eeb2c268c8f, type: 3}
   m_IsPrefabParent: 0
---- !u!1 &1796919726 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
-  m_PrefabInternal: {fileID: 279957765}
 --- !u!4 &1796919727 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 50a377feea0dad84da7e4388b4c2e998, type: 3}
@@ -38144,7 +38148,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -39721,7 +39725,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -41298,7 +41302,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -42888,10 +42892,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 5c987ee29108181418c8ab44d43739ba, type: 3}
   m_PrefabInternal: {fileID: 2052608311}
---- !u!1 &2058389015 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
-  m_PrefabInternal: {fileID: 1719112798}
 --- !u!4 &2058389016 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 141338d564c5c9d4eb5c5d174d40f940, type: 3}
@@ -42953,7 +42953,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3e521f5b4bbd0e7469a52115b52d9648, type: 2}
+  - {fileID: 2100000, guid: c7dbc2fde965b4912822e422972ab62a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
