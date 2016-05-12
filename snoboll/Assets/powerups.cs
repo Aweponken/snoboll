@@ -42,7 +42,7 @@ public class powerups : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         
-		if (rndm_time <= 0 && !(Pow.active)) {
+		if (rndm_time <= 0 && !(Pow.activeSelf)) {
 			if (GameWideScript.Instance.setPow) {
 				if (count == GameWideScript.Instance.setPowUpDelay) {
 					if (a == 1) {
