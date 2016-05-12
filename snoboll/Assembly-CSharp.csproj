@@ -59,6 +59,7 @@
      <Compile Include="Assets\SnoBoll2.cs" />
      <Compile Include="Assets\SnoBoll3.cs" />
      <Compile Include="Assets\SnoBoll4.cs" />
+     <Compile Include="Assets\Sol.cs" />
      <Compile Include="Assets\Sound\MusicController.cs" />
      <Compile Include="Assets\Sound\SoundFXController.cs" />
      <Compile Include="Assets\StartScript.cs" />
@@ -70,7 +71,6 @@
      <Compile Include="Assets\molnrör.cs" />
      <Compile Include="Assets\powerups.cs" />
      <Compile Include="Assets\slutMenuScript.cs" />
-     <Compile Include="Assets\solrör.cs" />
      <Compile Include="Assets\spot.cs" />
      <Compile Include="Assets\timer.cs" />
      <Compile Include="Assets\vattenmove.cs" />

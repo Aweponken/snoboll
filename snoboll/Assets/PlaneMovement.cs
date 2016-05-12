@@ -21,8 +21,7 @@ public class PlaneMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		
+	void FixedUpdate () {		
 		p.transform.position = new Vector3 (p.transform.position.x - diff, y, z);
 	}
 }
