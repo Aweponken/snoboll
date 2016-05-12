@@ -1,35 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PowerUp_Shield.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PlaneMovement.cs">
     <Files>
-      <File FileName="Assets/PowerUp_Shield.cs" Line="29" Column="1" />
-      <File FileName="Assets/Sound/MusicController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" Line="1" Column="1" />
-      <File FileName="Assets/SnoBoll.cs" Line="1" Column="1" />
-      <File FileName="Assets/SnoBoll4.cs" Line="8" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StartScript.cs">
-    <Files>
-      <File FileName="Assets/davnickstartshaderOP.shader" Line="10" Column="10" />
-      <File FileName="Assets/DavNickOpStandardLOLOMGshieeeet.shader" Line="1" Column="22" />
-      <File FileName="Assets/StartScript.cs" Line="1" Column="1" />
->>>>>>> NyStartskräm
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\spot.cs">
-    <Files>
-      <File FileName="Assets\spot.cs" Line="6" Column="16" />
-      <File FileName="Assets\PowerUp_Shield.cs" Line="1" Column="1" />
-      <File FileName="Assets\zones.cs" Line="31" Column="13" />
-      <File FileName="Assets\powerups.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameWideScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\PowerUp_NoJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\PowerUp_Inv_scr.cs" Line="1" Column="1" />
-      <File FileName="Assets\PowerUp_Faster_Slower.cs" Line="1" Column="1" />
-      <File FileName="Assets\disco.cs" Line="16" Column="13" />
-      <File FileName="Assets\discogolv.cs" Line="1" Column="1" />
->>>>>>> refs/remotes/origin/disco
+      <File FileName="Assets/PowerUp_Shield.cs" Line="1" Column="1" />
+      <File FileName="Assets/PlaneMovement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
