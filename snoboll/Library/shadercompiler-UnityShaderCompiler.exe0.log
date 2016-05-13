@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: getPlatforms
 Cmd: preprocess
@@ -385,3 +386,7 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=0 insize=11044 outsize=733 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING ok=1
 >>>>>>> refs/remotes/origin/Lava_animering_hampsan
+=======
+Base path: C:/Program Files/Unity/Editor/Data
+Cmd: getPlatforms
+>>>>>>> refs/remotes/origin/zoneFix
