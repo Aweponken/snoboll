@@ -82,15 +82,15 @@ public class zone : MonoBehaviour {
     public void decideType()
     {
 
-        myZone = gameObject.GetComponent<SpriteRenderer>();
-        shaderGUItext = Shader.Find("GUI/Text Shader");
-        shaderSpritesDefault = Shader.Find("Sprites/Default");
+        //myZone = gameObject.GetComponent<SpriteRenderer>();
+        //shaderGUItext = Shader.Find("GUI/Text Shader");
+        //shaderSpritesDefault = Shader.Find("Sprites/Default");
         type = Random.Range(0, 2);
         if (type == 0) //kallt område
         {
-            myZone.material.shader = shaderGUItext;
-            myZone.color = Color.blue;
-            snow.gameObject.SetActive(true);
+          //  myZone.material.shader = shaderGUItext;
+            //myZone.color = Color.blue;
+            //snow.gameObject.SetActive(true);
             moln.SetActive(true);
             snow.Play();        }
         else   // varmt område
@@ -98,8 +98,8 @@ public class zone : MonoBehaviour {
             
            // gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x/2, gameObject.transform.localScale.y);
             //gameObject.transform.position = new Vector3(gameObject.transform.position.x + gameObject.transform.localScale.x, gameObject.transform.position.y, gameObject.transform.position.z);
-            myZone.material.shader = shaderGUItext;
-            myZone.color = Color.red;
+           // myZone.material.shader = shaderGUItext;
+          //  myZone.color = Color.red;
             eld.Play();
         }
     }

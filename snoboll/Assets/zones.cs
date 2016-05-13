@@ -36,7 +36,7 @@ public class zones : MonoBehaviour {
 		foreach(GameObject i in zonesArray) {
 			i.SetActive(false);
             zone script = (zone)i.GetComponent(typeof(zone));
-            i.SetActive(false);
+          
             script.snowF();
             script.molnF();
             script.fireF();
@@ -68,12 +68,13 @@ public class zones : MonoBehaviour {
         
 
 
-        if (zonesArray[rand].active == false){
+        if (zonesArray[rand].activeSelf == false){
             zone script = (zone)zonesArray[rand].GetComponent(typeof(zone));
             zonesArray[rand].SetActive(true);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.1f, zonesArray[rand].transform.position.y, 0);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.1f, zonesArray[rand].transform.position.y, 0);
             isTwoActive++;
+            Debug.Log("BÖÖÖÖG");
             script.decideType();
 
         }
@@ -81,9 +82,9 @@ public class zones : MonoBehaviour {
 	
 	void activateZoneByIndex(int i){
 
-        int rand = Random.Range(0, zonesArray.Length);
+       // int rand = Random.Range(0, zonesArray.Length);
 
-        if (zonesArray[i].active == false){
+        if (zonesArray[i].activeSelf == false){
             zonesArray[i].SetActive(true);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x + 0.1f, zonesArray[i].transform.position.y, 0);
 			zonesArray[i].transform.position = new Vector3(zonesArray[i].transform.position.x - 0.1f, zonesArray[i].transform.position.y, 0);
