@@ -78,6 +78,8 @@ public class GameWideScript : MonoBehaviour {
 	/// </summary>
 	public static Player Player4 = new Player ("Player4", 0);
 
+	public static colorSelectionWrap colorSelection = new colorSelectionWrap ();
+
 	/// <summary>
 	/// Class to create the objects that handles the players
 	/// </summary>
@@ -113,5 +115,18 @@ public class GameWideScript : MonoBehaviour {
 			this.size = size;
 			this.isActive = isActive;
 		}
+	}
+
+
+	public class colorSelectionWrap{
+		public bool isPlayedOnce = false;
+		public int[] playersIndex;
+
+		//Bool array to see what balls are selected
+		public bool[] selectedColors;
+
+		//Bool array to check if all players have selected a color
+		public bool[] isSelected;
+		public int[] playersSelectedColor;
 	}
 }
