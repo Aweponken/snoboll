@@ -2,20 +2,24 @@
 using System.Collections;
 
 public class Sol : MonoBehaviour {
-	GameObject s;
+	Light light;
 	float diff;
-	int x = 50;
-	int z = 0;
+	float start = 430;
+	float stop = 300;
+	float angle;
 
 	void Start () {
-		s = GameObject.FindWithTag ("Sol");
-		s.transform.localRotation = new Vector3 (x, -290, z);
+		light = GetComponent<Light> ();
 		diff = GameWideScript.Instance.setTime - 2014;
 		diff = 130 / diff;
 		diff = diff / 60;
+		angle = Mathf.Sin (start) - Mathf.Sin (stop);
+		angle = angle * 57.2957795f;
+		angle = angle * diff;
+
 	}
 
 	void FixedUpdate () {
-		s.transform.localRotation = new Vector3 (x, s.transform.localRotation.y - diff, z);
+		light.transform.RotateAround (light.transform.position,new Vector3(0,1,0),angle);
 	}
 }
