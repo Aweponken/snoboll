@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Map3.unity
+=======
+- path: Assets/Map2.unity
+>>>>>>> refs/remotes/origin/discoDompa
   isLoaded: 1
   isActive: 1
