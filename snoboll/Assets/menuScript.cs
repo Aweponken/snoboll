@@ -132,7 +132,7 @@ public class menuScript : MonoBehaviour
 		GameWideScript.Instance.setCostum = true;
 
         if (Map == 1)
-			SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
+			SceneManager.LoadScene("Map4"); //this will load our first level from our build settings. "1" is the second scene in our game
         else if (Map == 2)
             SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
         else
