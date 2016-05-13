@@ -152,6 +152,7 @@ public class SnoBoll3 : MonoBehaviour
 			else 
 				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
 			GetComponent<SpriteRenderer>().color = new Color32(255, 208, 250, 255);
+			GetComponent<TrailRenderer> ().enabled = false;
 		}
 
 		if (PowerUp_Inv == true)
@@ -164,6 +165,8 @@ public class SnoBoll3 : MonoBehaviour
 		}
 		if ((Time.time > boostStartTime) && boost != 0)
 		{
+			GetComponent<TrailRenderer> ().startWidth = transform.localScale.x / 8;
+			GetComponent<TrailRenderer> ().enabled = true;
 			GetComponent<SpriteRenderer>().color = Color.yellow;
 			
 			boostStartTime = Time.time + boostCooldown;
@@ -269,22 +272,24 @@ public class SnoBoll3 : MonoBehaviour
 
 		if (this.transform.position.x > right)
 		{
-
+			GetComponent<TrailRenderer> ().enabled = false;
 			this.transform.position = new Vector2(left, this.transform.position.y);
 		}
 		if (this.transform.position.x < left)
 		{
-
+			GetComponent<TrailRenderer> ().enabled = false;
 			this.transform.position = new Vector2(right, this.transform.position.y);
 
 		}
 		if (this.transform.position.y > top)
 		{
+			GetComponent<TrailRenderer> ().enabled = false;
 			this.transform.position = new Vector2(this.transform.position.x, bott);
 
 		}
 		if (this.transform.position.y < bott)
 		{
+			GetComponent<TrailRenderer> ().enabled = false;
 			this.transform.position = new Vector2(this.transform.position.x, top);
 
 		}

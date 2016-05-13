@@ -10,6 +10,7 @@ public class SnoBoll : MonoBehaviour
 	private bool isHorizontal;
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
+
     private bool grounded;
     /// <summary>
     /// Boolean showing if the controls are inverted
@@ -80,6 +81,7 @@ public class SnoBoll : MonoBehaviour
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
+
 		GameWideScript.Player1.Color = "Yellow";
     }
 
@@ -130,7 +132,10 @@ public class SnoBoll : MonoBehaviour
 				snoBoll.velocity = new Vector2 (horizontal * movementSpeed, snoBoll.velocity.y - 3); 
 			else 
 				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
+
+			GetComponent<TrailRenderer> ().enabled = false;
 			GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
+
         }
 
 
@@ -146,6 +151,8 @@ public class SnoBoll : MonoBehaviour
         }
         if ((Time.time > boostStartTime) && boost != 0)
         {
+			GetComponent<TrailRenderer> ().startWidth = transform.localScale.x / 8;
+			GetComponent<TrailRenderer> ().enabled = true;
             GetComponent<SpriteRenderer>().color = Color.yellow;   //Bollen ändrar färg
             boostStartTime = Time.time + boostCooldown;
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
@@ -247,23 +254,27 @@ public class SnoBoll : MonoBehaviour
             + ((2f * Camera.main.orthographicSize) / 2) + snoBollCollider.radius;
         float bott = Camera.main.gameObject.transform.position.y
             - ((2f * Camera.main.orthographicSize) / 2) - snoBollCollider.radius;
-
+	
         if (this.transform.position.x > right)
         {
+			GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(left, this.transform.position.y);
         }
         if (this.transform.position.x < left)
         {
+			GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(right, this.transform.position.y);
 
         }
         if (this.transform.position.y > top)
         {
+			GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(this.transform.position.x, bott);
 
         }
         if (this.transform.position.y < bott)
         {
+			GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(this.transform.position.x, top);
 
         }
