@@ -140,7 +140,7 @@ public class menuScriptV2 : MonoBehaviour
 
 		themMaps = GameObject.FindGameObjectsWithTag("Maps").OrderBy( go => go.name ).ToArray();;
 		rightPosBall = themMaps [themMaps.Length - 1].transform.position.x;
-		leftPosBall = 430;
+		leftPosBall = GameObject.Find("ghostmap").transform.position.x;
 
 		SetGUI ();
 		HowToPlayCanvas.interactable = false;
