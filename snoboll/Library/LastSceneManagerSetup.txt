@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/start.unity
-=======
 - path: Assets/Map4.unity
->>>>>>> refs/remotes/origin/Lava_animering_hampsan
-=======
-- path: Assets/Map.unity
->>>>>>> refs/remotes/origin/zoneFix
   isLoaded: 1
   isActive: 1
