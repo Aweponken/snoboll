@@ -11,7 +11,8 @@
 *.userprefs
 *.pidb
 *.booproj
-
+*.temp
+*.meta
 # Unity3D Generated File On Crash Reports
 /snoboll/sysinfo.txt
 /snoboll/Binaries
