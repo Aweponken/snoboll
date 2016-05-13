@@ -136,7 +136,13 @@ Material:
         first:
           name: _Color
 <<<<<<< HEAD
+<<<<<<< HEAD
         second: {r: 0, g: 1, b: 1, a: 1}
 =======
         second: {r: 1, g: 0, b: 0, a: 1}
 >>>>>>> refs/remotes/origin/Lava_animering_hampsan
+||||||| merged common ancestors
+        second: {r: 0, g: 1, b: 0, a: 1}
+=======
+        second: {r: 1, g: 0, b: 0, a: 1}
+>>>>>>> fix

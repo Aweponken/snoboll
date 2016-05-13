@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class vax : MonoBehaviour {
-
+	float diff;
+	int years;
 	[SerializeField]
 	GameObject F1;
 	[SerializeField]
@@ -24,82 +25,60 @@ public class vax : MonoBehaviour {
 	[SerializeField]
 	GameObject R4;
 	[SerializeField]
-	GameObject R5;
-	[SerializeField]
-	GameObject R6;
-	[SerializeField]
-	GameObject R7;
-	[SerializeField]
 	GameObject R8;
 	[SerializeField]
 	GameObject R9;
-	[SerializeField]
-	GameObject R10;
-	[SerializeField]
-	GameObject R11;
-	[SerializeField]
-	GameObject R12;
+
 
 	public static int count = 0;
 	// Use this for initialization
 	void Start () {
-		R1.active = false;
-		R2.active = false;
-		R3.active = false;
-		R4.active = false;
-		R5.active = false;
-		R6.active = false;
-		R7.active = false;
-		R8.active = false;
-		R9.active = false;
-		R10.active = false;
-		R11.active = false;
-		R12.active = false;
+		years = GameWideScript.Instance.setTime - 2014;
+		R1.SetActive(false);
+		R2.SetActive(false);
+		R3.SetActive(false);
+		R4.SetActive(false);
+		R8.SetActive(false);
+		R9.SetActive(false);
+		count = 0;
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		count++;
-		if (count < 5000)
+		diff = 400/years;
+		if (count < 5000 / diff)
 		{
+			F5.transform.position = new Vector3(F5.transform.position.x, F5.transform.position.y + 0.007f * diff, F5.transform.position.z);
+			F3.transform.position = new Vector3(F3.transform.position.x, F3.transform.position.y + 0.007f * diff, F3.transform.position.z);
+		}
+		if (3000 / diff < count  && count < 8000 / diff)
+		{
+			F2.transform.position = new Vector3(F2.transform.position.x, F2.transform.position.y + 0.01f * diff, F2.transform.position.z);
+			F6.transform.position = new Vector3(F6.transform.position.x, F6.transform.position.y + 0.007f * diff, F6.transform.position.z);
+		}
+		if(5000 / diff < count && count < 10000 / diff)
+		{
+			F1.transform.position = new Vector3(F1.transform.position.x, F1.transform.position.y + 0.007f * diff, F1.transform.position.z);
+			F4.transform.position = new Vector3(F4.transform.position.x, F4.transform.position.y + 0.007f * diff, F4.transform.position.z);
 
-			F5.transform.position = new Vector3(F5.transform.position.x, F5.transform.position.y + 0.007f, F5.transform.position.z);
-			F3.transform.position = new Vector3(F3.transform.position.x, F3.transform.position.y + 0.007f, F3.transform.position.z);
 		}
-		if (2000 < count && count < 7000)
+		if(count > 6000 / diff)
 		{
-			F2.transform.position = new Vector3(F2.transform.position.x, F2.transform.position.y + 0.01f, F2.transform.position.z);
-			F6.transform.position = new Vector3(F6.transform.position.x, F6.transform.position.y + 0.007f, F6.transform.position.z);
-		}
-		if(4000 < count && count < 9000)
-		{
-			F1.transform.position = new Vector3(F1.transform.position.x, F1.transform.position.y + 0.007f, F1.transform.position.z);
-			F4.transform.position = new Vector3(F4.transform.position.x, F4.transform.position.y + 0.007f, F4.transform.position.z);
-
-		}
-		if(count > 5000)
-		{
-			R9.active = true;
-			R10.active = true;
-			R11.active = true;
-			R12.active = true;
-			R2.active = true;
+			R9.SetActive(true);
+			R2.SetActive(true);
 
 
 		}
-		if (count > 7000)
+		if (count > 8000 / diff)
 		{
-			R8.active = true;
-			R1.active = true;            
+			R8.SetActive(true);
+			R1.SetActive(true);            
 		}
-		if(count > 9000)
+		if(count > 10000 / diff)
 		{
-			R3.active = true;
-			R4.active = true;
-			R5.active = true;
-			R6.active = true;
-			R7.active = true;
-
+			R3.SetActive(true);
+			R4.SetActive(true);
 		}
 	}
 }

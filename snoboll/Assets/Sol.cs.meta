@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:snoboll/Assets/solrör.cs.meta
+guid: fd8dea85826d4f84e9cbe0d3360c30fd
+timeCreated: 1463047365
+||||||| merged common ancestors
+guid: fd8dea85826d4f84e9cbe0d3360c30fd
+timeCreated: 1461936531
+=======
+guid: 35cff67696ff9438e869c9c7937217b8
+timeCreated: 1463083216
+>>>>>>> fix:snoboll/Assets/Sol.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,10 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Options.unity
+||||||| merged common ancestors
+- path: Assets/Map3.unity
+=======
+- path: Assets/start.unity
+>>>>>>> fix
   isLoaded: 1
   isActive: 1
