@@ -125,6 +125,7 @@ public class menuScriptV2 : MonoBehaviour
 			PowUpOcc = GameWideScript.Instance.setPowUpOcc;
 			PowUpDelay = (GameWideScript.Instance.setPowUpDelay);
 			Shrink = GameWideScript.Instance.setKrymp;
+			player1I = GameWideScript.Instance.setMap;
 		}
 		else {
 			Sound = true;
