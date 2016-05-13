@@ -6,15 +6,21 @@ TagManager:
   tags:
   - Zone
   - Plane
+  - PowerUp_Inv
+  - Boll
+  - Zone
+  - Zone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+  - 
   - Water
   - UI
-  - Background Layer
-  - vulcan
-  - Ground
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
