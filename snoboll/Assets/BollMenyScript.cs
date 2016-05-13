@@ -96,7 +96,6 @@ public class BollMenyScript : MonoBehaviour {
 				gameObject.GetComponent<CanvasGroup> ().interactable = true;
 				Debug.Log (GameWideScript.colorSelection.isPlayedOnce);
 				if (GameWideScript.colorSelection.isPlayedOnce) {
-					Debug.Log ("skit");
 					player1I = GameWideScript.colorSelection.playersIndex[0];
 					player2I = GameWideScript.colorSelection.playersIndex[1];
 					player3I = GameWideScript.colorSelection.playersIndex[2];
@@ -107,8 +106,11 @@ public class BollMenyScript : MonoBehaviour {
 
 					selectColor (1, Mod(player1I,selectedColors.Length));
 					selectColor (2, Mod(player2I,selectedColors.Length));
-					selectColor (3, Mod(player3I,selectedColors.Length));
-					selectColor (4, Mod(player4I,selectedColors.Length));
+					if (isSelected.Length > 2) {
+						selectColor (3, Mod (player3I, selectedColors.Length));
+						if(isSelected.Length > 3)
+							selectColor (4, Mod (player4I, selectedColors.Length));
+					}
 
 					int witchPlayer = 0;
 					foreach (int x in playersSelectedColor) {

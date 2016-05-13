@@ -171,6 +171,7 @@ public class menuScriptV2 : MonoBehaviour
 			if ((Input.GetAxis ("Horizontal1") == 1 || Input.GetAxis ("Horizontal2") == 1 || Input.GetAxis ("Horizontal3") == 1 || Input.GetAxis ("Horizontal4") == 1) && !player1Left) {
 				if (!player1Right) {
 					player1Right = !player1Right;
+					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [Mod (player1I-1, themMaps.Length)].GetComponent<RawImage> ().texture;
 					StartCoroutine (rotateRight (player1I, themMaps));
 					player1I -= 1;
 				}
@@ -181,6 +182,7 @@ public class menuScriptV2 : MonoBehaviour
 			if ((Input.GetAxis ("Horizontal1") == -1 || Input.GetAxis ("Horizontal2") == -1 || Input.GetAxis ("Horizontal3") == -1 || Input.GetAxis ("Horizontal4") == -1) && !player1Right) {
 				if (!player1Left) {
 					player1Left = !player1Left;
+					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [Mod (player1I+1, themMaps.Length)].GetComponent<RawImage> ().texture;
 					StartCoroutine (rotateLeft (player1I, themMaps));
 					player1I += 1;
 				}
@@ -273,6 +275,10 @@ public class menuScriptV2 : MonoBehaviour
 	}
 
 	private void SetGUI (){
+		//GameObject.Find ("bgNext").GetComponent<RawImage> ().color = new Color(255,255,255,0);
+		//GameObject.Find ("bgCurrent").GetComponent<RawImage> ().color = new Color (255, 255, 255, 1);
+		//GameObject.Find ("bgCurrent").GetComponent<RawImage> ().texture = themMaps [Mod (Map, themMaps.Length)].GetComponent<RawImage> ().texture;
+
 		time.value = Time;
 		players.value = Players;
 		powerUpOcc.value = PowUpOcc;
@@ -313,12 +319,14 @@ public class menuScriptV2 : MonoBehaviour
 			if (Map < 1) {
 				int middle = 1;
 				for (int rotate = (1 - Map); rotate > 0; rotate--) {
+					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [middle-1].GetComponent<RawImage> ().texture;
 					StartCoroutine (rotateRightNoDelay (middle, themMaps));
 					middle -= 1;
 				}
 			} else if (Map > 1) {
 				int middle = 1;
 				for (int rotate = (Map - 1); rotate > 0; rotate--){
+					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [middle+1].GetComponent<RawImage> ().texture;
 					StartCoroutine (rotateLeftNoDelay (middle, themMaps));
 					middle += 1;
 				}
@@ -624,10 +632,18 @@ public class menuScriptV2 : MonoBehaviour
 			break;
 		}
 		mapName.color = new Color (mapName.color.r, mapName.color.g, mapName.color.b, mapName.color.a + 0.2f);
+		RawImage temp = GameObject.Find ("bgCurrent").GetComponent<RawImage> ();
+		temp.color = new Color (temp.color.r, temp.color.b, temp.color.g, temp.color.a - 0.1f);
+		RawImage temp2 = GameObject.Find ("bgNext").GetComponent<RawImage> ();
+		temp2.color = new Color (temp2.color.r, temp2.color.b, temp2.color.g, temp2.color.a + 0.1f);
 	}
 
 	private void fadeOutName(){
 		mapName.color = new Color (mapName.color.r, mapName.color.g, mapName.color.b, mapName.color.a - 0.2f);
+		RawImage temp = GameObject.Find ("bgCurrent").GetComponent<RawImage> ();
+		temp.color = new Color (temp.color.r, temp.color.b, temp.color.g, temp.color.a - 0.1f);
+		RawImage temp2 = GameObject.Find ("bgNext").GetComponent<RawImage> ();
+		temp2.color = new Color (temp2.color.r, temp2.color.b, temp2.color.g, temp2.color.a + 0.1f);
 	}
 	private void fadeInNameNoDelay(){
 		switch (Mod(player1I, themMaps.Length)+1) {
@@ -649,6 +665,10 @@ public class menuScriptV2 : MonoBehaviour
 
 	private void fadeOutNameNoName(){
 		mapName.color = new Color (mapName.color.r, mapName.color.g, mapName.color.b, mapName.color.a - 1f);
+		RawImage temp = GameObject.Find ("bgCurrent").GetComponent<RawImage> ();
+		temp.color = new Color (temp.color.r, temp.color.b, temp.color.g, temp.color.a - 1f);
+		RawImage temp2 = GameObject.Find ("bgNext").GetComponent<RawImage> ();
+		temp2.color = new Color (temp2.color.r, temp2.color.b, temp2.color.g, temp2.color.a + 1f);
 	}
 
 	private int Mod(int a, int b){
