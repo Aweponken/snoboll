@@ -22898,6 +22898,7 @@ GameObject:
   - 50: {fileID: 686475723}
   - 58: {fileID: 686475721}
   - 114: {fileID: 686475722}
+  - 96: {fileID: 686475726}
   m_Layer: 0
   m_Name: Boll 2
   m_TagString: Boll
@@ -23008,6 +23009,53 @@ Transform:
   - {fileID: 2135665045}
   m_Father: {fileID: 817567894}
   m_RootOrder: 1
+--- !u!96 &686475726
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686475720}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &687295222
 GameObject:
   m_ObjectHideFlags: 0
@@ -31746,6 +31794,7 @@ GameObject:
   - 50: {fileID: 839466051}
   - 114: {fileID: 839466050}
   - 58: {fileID: 839466049}
+  - 96: {fileID: 839466054}
   m_Layer: 0
   m_Name: Boll
   m_TagString: Boll
@@ -31856,6 +31905,53 @@ Transform:
   - {fileID: 1725761286}
   m_Father: {fileID: 817567894}
   m_RootOrder: 0
+--- !u!96 &839466054
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 839466048}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &846820125
 GameObject:
   m_ObjectHideFlags: 0
@@ -38552,6 +38648,7 @@ GameObject:
   - 50: {fileID: 905180144}
   - 58: {fileID: 905180143}
   - 114: {fileID: 905180142}
+  - 96: {fileID: 905180147}
   m_Layer: 0
   m_Name: Boll 4
   m_TagString: Boll
@@ -38662,6 +38759,53 @@ Transform:
   - {fileID: 645708255}
   m_Father: {fileID: 817567894}
   m_RootOrder: 3
+--- !u!96 &905180147
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905180141}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &916904070
 GameObject:
   m_ObjectHideFlags: 0
@@ -43843,6 +43987,7 @@ GameObject:
   - 50: {fileID: 1053200888}
   - 58: {fileID: 1053200887}
   - 114: {fileID: 1053200886}
+  - 96: {fileID: 1053200891}
   m_Layer: 0
   m_Name: Boll 3
   m_TagString: Boll
@@ -43953,6 +44098,53 @@ Transform:
   - {fileID: 802906532}
   m_Father: {fileID: 817567894}
   m_RootOrder: 2
+--- !u!96 &1053200891
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053200885}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &1096952573
 GameObject:
   m_ObjectHideFlags: 0

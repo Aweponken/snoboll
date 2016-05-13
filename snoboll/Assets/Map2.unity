@@ -12433,6 +12433,7 @@ GameObject:
   - 50: {fileID: 409323504}
   - 58: {fileID: 409323503}
   - 114: {fileID: 409323502}
+  - 96: {fileID: 409323506}
   m_Layer: 0
   m_Name: Boll 2
   m_TagString: Boll
@@ -12544,6 +12545,53 @@ SpriteRenderer:
   m_Color: {r: 0.712, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!96 &409323506
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 409323500}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &420624814
 GameObject:
   m_ObjectHideFlags: 0
@@ -25059,6 +25107,7 @@ GameObject:
   - 50: {fileID: 1138625626}
   - 114: {fileID: 1138625625}
   - 58: {fileID: 1138625624}
+  - 96: {fileID: 1138625628}
   m_Layer: 0
   m_Name: Boll
   m_TagString: Boll
@@ -25170,6 +25219,53 @@ SpriteRenderer:
   m_Color: {r: 0.9411765, g: 0.89182675, b: 0.61591697, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!96 &1138625628
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1138625622}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1001 &1152084566
 Prefab:
   m_ObjectHideFlags: 0
@@ -32839,6 +32935,7 @@ GameObject:
   - 50: {fileID: 1559818321}
   - 58: {fileID: 1559818320}
   - 114: {fileID: 1559818319}
+  - 96: {fileID: 1559818323}
   m_Layer: 0
   m_Name: Boll 3
   m_TagString: Boll
@@ -32950,6 +33047,53 @@ SpriteRenderer:
   m_Color: {r: 1, g: 0.8161765, b: 0.979716, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!96 &1559818323
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559818317}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1001 &1560048767
 Prefab:
   m_ObjectHideFlags: 0
@@ -34982,6 +35126,7 @@ GameObject:
   - 50: {fileID: 1788132004}
   - 58: {fileID: 1788132003}
   - 114: {fileID: 1788132002}
+  - 96: {fileID: 1788132006}
   m_Layer: 0
   m_Name: Boll 4
   m_TagString: Boll
@@ -35093,6 +35238,53 @@ SpriteRenderer:
   m_Color: {r: 0.40268162, g: 0.97794116, b: 0.43045282, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!96 &1788132006
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788132000}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7fdbfff7aa9001f4992d6160a07e5dc4, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 0.15
+  m_StartWidth: 10
+  m_EndWidth: 1
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1001 &1822386637
 Prefab:
   m_ObjectHideFlags: 0
