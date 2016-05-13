@@ -40,6 +40,7 @@ public class vax : MonoBehaviour {
 		R4.SetActive(false);
 		R8.SetActive(false);
 		R9.SetActive(false);
+		count = 0;
 	}
 
 	// Update is called once per frame
@@ -78,7 +79,6 @@ public class vax : MonoBehaviour {
 		{
 			R3.SetActive(true);
 			R4.SetActive(true);
-
 		}
 	}
 }
