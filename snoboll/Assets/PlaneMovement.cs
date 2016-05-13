@@ -13,7 +13,7 @@ public class PlaneMovement : MonoBehaviour {
 		p = GameObject.FindWithTag ("Plane");
 		p.transform.position = new Vector3 (750, y, z);
 		diff = GameWideScript.Instance.setTime - 2014;
-		diff = 1500 / diff;
+		diff = 1100 / diff;
 		diff = diff / 60;
 	}
 

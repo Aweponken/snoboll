@@ -12,14 +12,10 @@ public class Sol : MonoBehaviour {
 		light = GetComponent<Light> ();
 		diff = GameWideScript.Instance.setTime - 2014;
 		diff = 130 / diff;
-		diff = diff / 60;
-		angle = Mathf.Sin (start) - Mathf.Sin (stop);
-		angle = angle * 57.2957795f;
-		angle = angle * diff;
-
 	}
 
 	void FixedUpdate () {
-		light.transform.RotateAround (light.transform.position,new Vector3(0,1,0),angle);
+		light.transform.RotateAround (light.transform.position,new Vector3(0,1,0),diff * Time.deltaTime);
+		print (light.transform.position.y);
 	}
 }
