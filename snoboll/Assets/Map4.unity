@@ -16866,13 +16866,9 @@ Transform:
   - {fileID: 1034519964}
   - {fileID: 1706354805}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-  m_RootOrder: 15
---- !u!1001 &1411622934
-=======
   m_RootOrder: 16
 --- !u!1001 &1400813038
->>>>>>> refs/remotes/origin/zonbrans
+
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
