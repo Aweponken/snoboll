@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: sphereColor_ 2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -112,10 +112,6 @@ Material:
         second: 0
       data:
         first:
-          name: _EdgeLength
-        second: 10.5
-      data:
-        first:
           name: _ZWrite
         second: 1
       data:
@@ -146,15 +142,19 @@ Material:
         first:
           name: _Mode
         second: 0
+      data:
+        first:
+          name: _EdgeLength
+        second: 10.5
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 0.15, g: 0.15, b: 0.15, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0.33793116, b: 1, a: 0}
+        second: {r: 0.80784315, g: 0.5294118, b: 0.5294118, a: 0.003921569}
       data:
         first:
           name: _SpecColor

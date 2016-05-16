@@ -45,20 +45,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ToonShade
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
@@ -101,6 +87,20 @@ Material:
           m_Offset: {x: 1, y: 1}
       data:
         first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ToonShade
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
@@ -136,20 +136,8 @@ Material:
         second: 1
       data:
         first:
-          name: _Outline
-        second: 0.03
-      data:
-        first:
           name: _Parallax
         second: 0.02
-      data:
-        first:
-          name: _EdgeLength
-        second: 10
-      data:
-        first:
-          name: _BumpAmt
-        second: 10
       data:
         first:
           name: _ZWrite
@@ -212,17 +200,37 @@ Material:
         second: 0
       data:
         first:
+          name: _Outline
+        second: 0.03
+      data:
+        first:
+          name: _EdgeLength
+        second: 10
+      data:
+        first:
+          name: _BumpAmt
+        second: 10
+      data:
+        first:
           name: _Rotation
         second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
+<<<<<<< HEAD
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
         second: {r: 1, g: 0.93103445, b: 0, a: 0}
+=======
+        second: {r: 0.15, g: 0.15, b: 0.15, a: 1}
+      data:
+        first:
+          name: _Color
+        second: {r: 0.7294118, g: 1, b: 0.6627451, a: 0.003921569}
+>>>>>>> ändra-färg-på-bollar
       data:
         first:
           name: _SpecColor
