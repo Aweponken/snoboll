@@ -25,3 +25,10 @@ Done.
 * Lägga in all grafik
 * Testning
 * Lägga upp allt på hemsidan
+
+
+# Kvar att göra
+* Bollgrafiken och färgerna på alla banor, med meny(fixa powerups grejen också). Fixa stora bollar när man kör shrink mode. Hampus och menyfolket
+* Boost-mesh. Hampus och Sandra
+* Fixa zoner och powerups på alla banor. Testa att builda! Alex och Dag 
+* Ny ljud, ev för varje spelare? Dag och Arvid
