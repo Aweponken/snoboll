@@ -230,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 623144606}
   deselect: {fileID: 252444596}
-  bollColor0: {fileID: 2100000, guid: 25dba5ba8af9a694ea9bc77522e57b2e, type: 2}
+  bollColor0: {fileID: 2100000, guid: 6f507ab425a4341c986d366984cafbde, type: 2}
   bollColor1: {fileID: 2100000, guid: 3aa008eaac686a04ca0dacb2faf55601, type: 2}
   bollColor2: {fileID: 2100000, guid: 12088794e72945a45846e318a9e5b35d, type: 2}
   bollColor3: {fileID: 2100000, guid: aeee90fc85087d94ab9070fc2bd1b645, type: 2}
