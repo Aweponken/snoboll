@@ -191,7 +191,7 @@ public class BollMenyScript : MonoBehaviour {
 				player1Right = !player1Right;
 			}
 
-			if (Input.GetAxis ("Horizontal1") == -1 && !player1Right) {
+			if (Input.GetAxis ("Horizontal1") < -0.9 && !player1Right) {
 				if (!player1Left) {
 					player1Left = !player1Left;
 					StartCoroutine (rotateLeft (player1I, player1Balls));
@@ -226,7 +226,7 @@ public class BollMenyScript : MonoBehaviour {
 				player2Right = !player2Right;
 			}
 
-			if (Input.GetAxis ("Horizontal2") == -1 && !player2Right) {
+			if (Input.GetAxis ("Horizontal2") <-0.9 && !player2Right) {
 				if (!player2Left) {
 					player2Left = !player2Left;
 					StartCoroutine (rotateLeft (player2I, player2Balls));
@@ -261,7 +261,7 @@ public class BollMenyScript : MonoBehaviour {
 					player3Right = !player3Right;
 				}
 
-				if (Input.GetAxis ("Horizontal3") == -1 && !player3Right) {
+				if (Input.GetAxis ("Horizontal3") <-0.9 && !player3Right) {
 					if (!player3Left) {
 						player3Left = !player3Left;
 						StartCoroutine (rotateLeft (player3I, player3Balls));
@@ -296,7 +296,7 @@ public class BollMenyScript : MonoBehaviour {
 						player4Right = !player4Right;
 					}
 
-					if (Input.GetAxis ("Horizontal4") == -1 && !player4Right) {
+					if (Input.GetAxis ("Horizontal4") <-0.9 && !player4Right) {
 						if (!player4Left) {
 							player4Left = !player4Left;
 							StartCoroutine (rotateLeft (player4I, player4Balls));

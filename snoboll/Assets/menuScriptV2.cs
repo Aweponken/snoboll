@@ -168,7 +168,9 @@ public class menuScriptV2 : MonoBehaviour
 			}
 		}
 		if (inMapWrapper) {
-			if ((Input.GetAxis ("Horizontal1") == 1 || Input.GetAxis ("Horizontal2") == 1 || Input.GetAxis ("Horizontal3") == 1 || Input.GetAxis ("Horizontal4") == 1) && !player1Left) {
+            
+           
+			if ((Input.GetAxis ("Horizontal1") == 1|| Input.GetAxis ("Horizontal2") == 1|| Input.GetAxis ("Horizontal3") == 1 || Input.GetAxis ("Horizontal4") == 1) && !player1Left) {
 				if (!player1Right) {
 					player1Right = !player1Right;
 					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [Mod (player1I-1, themMaps.Length)].GetComponent<RawImage> ().texture;
@@ -179,7 +181,7 @@ public class menuScriptV2 : MonoBehaviour
 				player1Right = !player1Right;
 			}
 
-			if ((Input.GetAxis ("Horizontal1") == -1 || Input.GetAxis ("Horizontal2") == -1 || Input.GetAxis ("Horizontal3") == -1 || Input.GetAxis ("Horizontal4") == -1) && !player1Right) {
+			if ((Input.GetAxis ("Horizontal1") < -0.9 || Input.GetAxis ("Horizontal2") < -0.9 || Input.GetAxis ("Horizontal3") < -0.9 || Input.GetAxis ("Horizontal4") <-0.9) && !player1Right) {
 				if (!player1Left) {
 					player1Left = !player1Left;
 					GameObject.Find ("bgNext").GetComponent<RawImage> ().texture = themMaps [Mod (player1I+1, themMaps.Length)].GetComponent<RawImage> ().texture;
