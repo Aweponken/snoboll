@@ -95,13 +95,13 @@ public class SnoBoll : MonoBehaviour
     {
 		if (GameWideScript.Instance.setKrymp) {
 			
-			if (transform.localScale.x < 10) {
+			if (transform.localScale.x < 15) {
 				Debug.Log ("boll1 dog");
 				GameWideScript.Player1.size = 0;
 				timer.onlyOne++;
 				gameObject.SetActive (false);
 			} else {
-				transform.localScale = new Vector3 (transform.localScale.x - 0.1f, transform.localScale.x - 0.1f, transform.localScale.z);
+				transform.localScale = new Vector3 (transform.localScale.x - 0.04f, transform.localScale.x - 0.04f, transform.localScale.z);
 				GameWideScript.Player1.size = transform.localScale.x;
 			}
 		}
