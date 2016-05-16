@@ -39,6 +39,7 @@ public class zone : MonoBehaviour {
         posWarm = defPos + sizeWarm;
         */
         //decideType();
+
         counter = 400;
 	}
 	
