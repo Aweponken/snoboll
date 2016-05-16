@@ -40,6 +40,8 @@ public class SnoBoll : MonoBehaviour
 	/// </summary>
     public static float slowerFaster = 1;
     Vector2 facing;
+    [SerializeField]
+    public Material BoostMesh;
 
     [SerializeField]
     private LayerMask whatIsGround;
@@ -87,6 +89,7 @@ public class SnoBoll : MonoBehaviour
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
+        tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
     }
 
     /// <summary>

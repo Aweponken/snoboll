@@ -62,12 +62,13 @@ public class SnoBoll4 : MonoBehaviour
 	/// </summary>
 	[SerializeField]
 	private float groundRadius;
-
-	/// <summary>
-	/// The movement speed.
-	/// to be able to control speed from GUI:t
-	/// </summary>
-	[SerializeField]
+    [SerializeField]
+    public Material BoostMesh;
+    /// <summary>
+    /// The movement speed.
+    /// to be able to control speed from GUI:t
+    /// </summary>
+    [SerializeField]
 	private float movementSpeed;
 
 	/// <summary>
@@ -100,11 +101,13 @@ public class SnoBoll4 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+        tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         shield = static_shield;
         boostStartTime = Time.time + boostCooldown;
 		GameWideScript.Player4.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D>();
 		snoBollCollider = GetComponent<CircleCollider2D>();
+
 	}
 
 	/// <summary>

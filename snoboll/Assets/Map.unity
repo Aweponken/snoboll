@@ -23148,6 +23148,7 @@ MonoBehaviour:
   ground: {fileID: 686475725}
   groundRadius: 9.5
   movementSpeed: 100
+  BoostMesh: {fileID: 2100000, guid: 1d3ec004f95fc4640875b860b9104a26, type: 2}
   jumpForce: 5000
   boostForce: 400
   boostCooldown: 2
@@ -32005,6 +32006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: 0
+  BoostMesh: {fileID: 2100000, guid: 1d3ec004f95fc4640875b860b9104a26, type: 2}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -38681,6 +38683,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   ground: {fileID: 905180146}
   groundRadius: 9.5
+  BoostMesh: {fileID: 2100000, guid: 1d3ec004f95fc4640875b860b9104a26, type: 2}
   movementSpeed: 100
   jumpForce: 5000
   boostForce: 400
@@ -43915,6 +43918,7 @@ MonoBehaviour:
   groundRadius: 9.5
   movementSpeed: 100
   jumpForce: 5000
+  BoostMesh: {fileID: 2100000, guid: 1d3ec004f95fc4640875b860b9104a26, type: 2}
   boostForce: 400
   boostCooldown: 2
   boostDuration: 0.15

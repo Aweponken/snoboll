@@ -115,6 +115,7 @@ public class zone : MonoBehaviour {
             {
                 if (boll.transform.localScale.x < 170)
                 {
+                        
 					boll.transform.localScale = new Vector3(boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.x + changeSizeWinter, boll.transform.localScale.z);
                     GameObject snoBoll = GameObject.Find("Boll");
                     SnoBoll script = (SnoBoll)snoBoll.GetComponent(typeof(SnoBoll));

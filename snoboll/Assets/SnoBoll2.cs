@@ -69,7 +69,8 @@ public class SnoBoll2 : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float movementSpeed;
-
+    [SerializeField]
+    public Material BoostMesh;
     /// <summary>
     /// The jump force.
     /// to be able to control jumpforce from GUI:t
@@ -100,6 +101,7 @@ public class SnoBoll2 : MonoBehaviour
     /// </summary>
     void Start()
     {
+        tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         boostStartTime = Time.time;
         boostStartTime = Time.time;
         GameWideScript.Player2.size = transform.localScale.x;

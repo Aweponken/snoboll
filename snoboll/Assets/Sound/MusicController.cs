@@ -18,7 +18,7 @@ public class MusicController : MonoBehaviour {
 		} 
 	}
 	void Update () {
-		if(Application.loadedLevelName == "Map" || Application.loadedLevelName == "Map2" || Application.loadedLevelName == "Map3")
+		if(Application.loadedLevelName == "Map" || Application.loadedLevelName == "Map2" || Application.loadedLevelName == "Map3" || Application.loadedLevelName == "Map4")
 		{
 			menu.loop = false;
 			if (!menu.isPlaying  && menuIsActive) {

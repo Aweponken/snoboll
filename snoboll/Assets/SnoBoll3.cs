@@ -76,8 +76,9 @@ public class SnoBoll3 : MonoBehaviour
 	/// </summary>
 	[SerializeField]
 	private float jumpForce;
-
-	[SerializeField]     //för att kunna styra Boostforce från GUI:t
+    [SerializeField]
+    public Material BoostMesh;
+    [SerializeField]     //för att kunna styra Boostforce från GUI:t
 	private float boostForce;
 	[SerializeField]
 	private float boostCooldown;
@@ -100,6 +101,7 @@ public class SnoBoll3 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+        tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         shield = static_shield;
         boostStartTime = Time.time + boostCooldown;
 		GameWideScript.Player3.size = transform.localScale.x;
