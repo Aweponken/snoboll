@@ -11,6 +11,15 @@ public class BollMenyScript : MonoBehaviour {
 	public Button start;
 	public Button deselect;
 
+	[SerializeField]
+	private Material bollColor0;
+	[SerializeField]
+	private Material bollColor1;
+	[SerializeField]
+	private Material bollColor2;
+	[SerializeField]
+	private Material bollColor3;
+
 	//Used for input
 	private bool player1Right;
 	private bool player1Left;
@@ -338,6 +347,46 @@ public class BollMenyScript : MonoBehaviour {
 		GameWideScript.colorSelection.isSelected = isSelected;
 		GameWideScript.colorSelection.playersSelectedColor = playersSelectedColor;
 		GameWideScript.colorSelection.selectedColors = selectedColors;
+
+		GameWideScript.Player[] temp = {
+			GameWideScript.Player1,
+			GameWideScript.Player2,
+			GameWideScript.Player3,
+			GameWideScript.Player4
+		};
+		Material[] temp2 = { bollColor0, bollColor1, bollColor2, bollColor3 };
+		for (int i = 0; i < playersSelectedColor.Length; i++) {
+			switch (playersSelectedColor [i]) {
+			case 0:
+				temp [i].Color = "Orange";
+				temp2[i].SetColor ("_Color", new Color32(255, 219, 165, 1));
+				break;
+			case 1:
+				temp[i].Color = "White";
+				temp2[i].SetColor ("_Color", Color.white);
+				break;
+			case 2:
+				temp[i].Color = "Green";
+				temp2[i].SetColor ("_Color", new Color32(186, 255, 169, 1));
+				break;
+			case 3:
+				temp[i].Color = "Red";
+				temp2[i].SetColor ("_Color", new Color32(206, 135, 135, 1));
+				break;
+			case 4:
+				temp[i].Color = "Yellow";
+				temp2[i].SetColor ("_Color", new Color32(254, 255, 163, 1));
+				break;
+			case 5:
+				temp[i].Color = "Purple";
+				temp2[i].SetColor ("_Color", new Color32(229, 180, 255, 1));
+				break;
+			case 6:
+				temp[i].Color = "Blue";
+				temp2[i].SetColor ("_Color", new Color32(162, 227, 255, 1));
+				break;
+			}
+		}
 
 		if (GameWideScript.Instance.setMap == 0)
 			SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game

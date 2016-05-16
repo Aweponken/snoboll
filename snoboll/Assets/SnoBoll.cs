@@ -11,6 +11,9 @@ public class SnoBoll : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
 
+
+
+
     private bool grounded;
     /// <summary>
     /// Boolean showing if the controls are inverted
@@ -81,8 +84,6 @@ public class SnoBoll : MonoBehaviour
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
-
-		GameWideScript.Player1.Color = "Yellow";
     }
 
     /// <summary>
@@ -134,6 +135,26 @@ public class SnoBoll : MonoBehaviour
 				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
 
 			GetComponent<TrailRenderer> ().enabled = false;
+
+			// = (Material) Resources.Load("sphereColor_", typeof (Material));
+			/*switch (GameWideScript.Player1.Color) {
+			case "Blue":
+				bollColor.color = new Color (0, 0, 0, 255);
+				break;
+			case "Red":
+				bollColor.color = new Color (162, 227, 255, 1);
+				break;
+			case "White":
+				break;
+			case "Purple":
+				break;
+			case "Green":
+				break;
+			case "Orange":
+				break;
+			case "Yellow":
+				break;
+			}*/
 			GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
 
         }

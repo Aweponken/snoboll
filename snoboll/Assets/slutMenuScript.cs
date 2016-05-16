@@ -115,13 +115,14 @@ public class slutMenuScript : MonoBehaviour
 		Time.timeScale = 1;
 		timer.onlyOne = 1;
 
-        if (GameWideScript.Instance.setMap == 1)
+        if (GameWideScript.Instance.setMap == 0)
             SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
-        else if (GameWideScript.Instance.setMap == 2)
+        else if (GameWideScript.Instance.setMap == 1)
             SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
-        else
+		else if(GameWideScript.Instance.setMap == 2)
             SceneManager.LoadScene("Map3"); //this will load our first level from our build settings. "1" is the second scene in our game
-
+		else
+			SceneManager.LoadScene("Map4");
     }
     /// <summary>
     /// If triggered, shutdown the game.
