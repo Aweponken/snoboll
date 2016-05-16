@@ -50,6 +50,7 @@
      <Compile Include="Assets\DompaZones.cs" />
      <Compile Include="Assets\FixedCamera.cs" />
      <Compile Include="Assets\GameWideScript.cs" />
+     <Compile Include="Assets\Lavagolvzone.cs" />
      <Compile Include="Assets\Lightning.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
      <Compile Include="Assets\PlaneMovement.cs" />

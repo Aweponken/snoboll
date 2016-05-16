@@ -41,6 +41,9 @@ public class SnoBoll : MonoBehaviour
     [SerializeField]
     private LayerMask whatIsGround;
 
+	[SerializeField]
+	private GameObject tredBoll;
+
     [SerializeField]
     private LayerMask whatIsAny;
 
@@ -133,8 +136,8 @@ public class SnoBoll : MonoBehaviour
 			else 
 				snoBoll.velocity = new Vector2(horizontal * movementSpeed, snoBoll.velocity.y); //uppdaterar positionsvektorn med input från tangenbordet
 
-			GetComponent<TrailRenderer> ().enabled = false;
-			GetComponent<SpriteRenderer>().color = new Color32(240, 227, 157, 255);
+			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
+
 
         }
 
@@ -151,8 +154,8 @@ public class SnoBoll : MonoBehaviour
         }
         if ((Time.time > boostStartTime) && boost != 0)
         {
-			GetComponent<TrailRenderer> ().startWidth = transform.localScale.x / 8;
-			GetComponent<TrailRenderer> ().enabled = true;
+			tredBoll.GetComponent<TrailRenderer> ().startWidth = transform.localScale.x / 8;
+			tredBoll.GetComponent<TrailRenderer> ().enabled = true;
             GetComponent<SpriteRenderer>().color = Color.yellow;   //Bollen ändrar färg
             boostStartTime = Time.time + boostCooldown;
             snoBoll.velocity = new Vector2(horizontal * boostForce, vertical * boostForce);
@@ -257,24 +260,24 @@ public class SnoBoll : MonoBehaviour
 	
         if (this.transform.position.x > right)
         {
-			GetComponent<TrailRenderer> ().enabled = false;
+			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(left, this.transform.position.y);
         }
         if (this.transform.position.x < left)
         {
-			GetComponent<TrailRenderer> ().enabled = false;
+			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(right, this.transform.position.y);
 
         }
         if (this.transform.position.y > top)
         {
-			GetComponent<TrailRenderer> ().enabled = false;
+			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(this.transform.position.x, bott);
 
         }
         if (this.transform.position.y < bott)
         {
-			GetComponent<TrailRenderer> ().enabled = false;
+			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
             this.transform.position = new Vector2(this.transform.position.x, top);
 
         }
