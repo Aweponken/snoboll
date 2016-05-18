@@ -26,6 +26,7 @@ public class PowerUp_Inv_scr : MonoBehaviour {
     {		
         if (coll.gameObject.tag == "Boll")
         {
+			Debug.Log ("hit " + coll.gameObject.name);
 			AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
 			coll.gameObject.SendMessage ("inv");
 			gameObject.SetActive(false);
