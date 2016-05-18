@@ -164,8 +164,8 @@ public class SnoBoll3 : MonoBehaviour
 			tredBoll.GetComponent<TrailRenderer> ().enabled = false;
 		}
 
-		if (PowerUp_Inv == true)
-			snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
+		//if (PowerUp_Inv == true)
+		//	snoBoll.velocity = new Vector2(horizontal * (-1) * movementSpeed, snoBoll.velocity.y);//inverterar positionsvektorn om PowerUp_Inv är aktiv 
 
 		if (jump != 0 && grounded && ableToJump) 
 		{

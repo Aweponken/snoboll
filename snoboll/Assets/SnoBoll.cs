@@ -85,13 +85,13 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     void Start()
     {
-        boostStartTime = Time.time;
-        shield = false;
-        static_shield = false;
         SnoBoll.ableToJump = true;
         SnoBoll2.ableToJump = true;
         SnoBoll3.ableToJump = true;
         SnoBoll4.ableToJump = true;
+        boostStartTime = Time.time;
+        shield = false;
+        static_shield = false;
         SnoBoll2.PowerUp_Inv = false;
         SnoBoll3.PowerUp_Inv = false;
         SnoBoll4.PowerUp_Inv = false;

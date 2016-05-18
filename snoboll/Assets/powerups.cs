@@ -21,8 +21,9 @@ public class powerups : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         a = Random.Range(1, 5);
-		rndm_time = Random.Range (200, 800);
+ 		rndm_time = Random.Range (200, 800);
 		//rndm_time = Random.Range(GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
         Pow1 = GameObject.Find("PowerUp_Inv");
         Pow2 = GameObject.Find("PowerUp_Shield");
@@ -80,6 +81,7 @@ public class powerups : MonoBehaviour {
 		}
 		
         a = Random.Range(1, 5);
+        
         if(!Pow.activeSelf)
             rndm_time--;
 		tel();
