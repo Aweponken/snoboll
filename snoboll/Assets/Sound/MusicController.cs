@@ -13,8 +13,8 @@ public class MusicController : MonoBehaviour {
 			AudioSource[] audios = GetComponents<AudioSource>(); //Hämta alla ljudfiler
 			menu = audios[0]; 
 			game = audios[1];
-            menu.volume = 0.15f;
-            game.volume = 0.15f;
+            menu.volume = 0.05f;
+            game.volume = 0.05f;
 			menu.Play ();
 			DontDestroyOnLoad (gameObject);
 		} 
