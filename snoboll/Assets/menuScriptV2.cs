@@ -135,7 +135,7 @@ public class menuScriptV2 : MonoBehaviour
 			Players = 2;
 			Map = 1;
 			PowUpOcc = 2;
-			PowUpDelay = 2;
+			PowUpDelay = 10;
 			Shrink = false;
 		}
 
@@ -245,11 +245,11 @@ public class menuScriptV2 : MonoBehaviour
 			break;
 		case 2: 
 			powerUpOccValue.text = "Low";
-			PowUpDelay = 2;
+			PowUpDelay = 10;
 			break;
 		case 3: 
 			powerUpOccValue.text = "Medium";
-			PowUpDelay = 1;
+			PowUpDelay = 5;
 			break;
 		case 4:
 			powerUpOccValue.text = "High";

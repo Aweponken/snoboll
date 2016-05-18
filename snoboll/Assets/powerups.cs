@@ -44,7 +44,7 @@ public class powerups : MonoBehaviour {
         
 		if (rndm_time <= 0 && !(Pow.activeSelf)) {
 			if (GameWideScript.Instance.setPow) {
-				if (count == GameWideScript.Instance.setPowUpDelay) {
+				if (count >= GameWideScript.Instance.setPowUpDelay) {
 					if (a == 1) {
 						Pow1.SetActive (true);
 						Pow = Pow1;
@@ -72,7 +72,7 @@ public class powerups : MonoBehaviour {
 					count = 0;
 				} 
 				else 
-					count += 1;
+					count += 5;
 				//rndm_time = Random.Range (GameWideScript.Instance.setminPowUpTime, GameWideScript.Instance.setmaxPowUpTime);
 				rndm_time = Random.Range (200, 800);
 
