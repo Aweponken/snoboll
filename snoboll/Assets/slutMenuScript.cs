@@ -124,15 +124,15 @@ public class slutMenuScript : MonoBehaviour
 			SceneManager.LoadScene("Map4");
     }
     /// <summary>
-    /// If triggered, shutdown the game.
+    /// If triggered, open options.
     /// </summary>
     public void ExitGame() //This function will be used on our "Yes" button in our Quit menu
 
     {
-		Time.timeScale = 1;
-		timer.onlyOne = 1;
-		Time.timeScale = 1;
-        SceneManager.LoadScene("Options"); //this will quit our game. Note this will only work after building the game
-
+        GameWideScript.Instance.EndOfGame = false;
+        timer.onlyOne = 1;
+        Time.timeScale = 1;
+        timer.past = false;
+        SceneManager.LoadScene("Options");
     }
 }

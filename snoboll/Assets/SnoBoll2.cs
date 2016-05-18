@@ -101,6 +101,11 @@ public class SnoBoll2 : MonoBehaviour
     /// </summary>
     void Start()
     {
+        shield = false;
+        static_shield = false;
+        SnoBoll.PowerUp_Inv = false;
+        SnoBoll3.PowerUp_Inv = false;
+        SnoBoll4.PowerUp_Inv = false;
         tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         boostStartTime = Time.time;
         GameWideScript.Player2.size = transform.localScale.x;

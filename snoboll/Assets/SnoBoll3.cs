@@ -101,6 +101,11 @@ public class SnoBoll3 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+        SnoBoll2.PowerUp_Inv = false;
+        SnoBoll.PowerUp_Inv = false;
+        SnoBoll4.PowerUp_Inv = false;
+        shield = false;
+        static_shield = false;
         tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         shield = static_shield;
         boostStartTime = Time.time;
@@ -351,7 +356,7 @@ public class SnoBoll3 : MonoBehaviour
         shield = true;
         yield return new WaitForSeconds(10);
         shield = false;
-        static_shield = false; ;
+        static_shield = false; 
     }
 	/// <summary>
 	/// Updates the ground radius

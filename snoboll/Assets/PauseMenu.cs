@@ -103,6 +103,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void goToStartMenu()
     {
+        timer.onlyOne = 1;
         Time.timeScale = 1;
         timer.past = false;
         SceneManager.LoadScene("Options");

@@ -86,10 +86,15 @@ public class SnoBoll : MonoBehaviour
     void Start()
     {
         boostStartTime = Time.time;
+        shield = false;
+        static_shield = false;
         SnoBoll.ableToJump = true;
         SnoBoll2.ableToJump = true;
         SnoBoll3.ableToJump = true;
         SnoBoll4.ableToJump = true;
+        SnoBoll2.PowerUp_Inv = false;
+        SnoBoll3.PowerUp_Inv = false;
+        SnoBoll4.PowerUp_Inv = false;
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
