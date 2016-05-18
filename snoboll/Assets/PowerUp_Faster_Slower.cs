@@ -6,10 +6,11 @@ using System.Collections;
 /// </summary>
 public class PowerUp_Faster_Slower : MonoBehaviour {
 
-	AudioClip FX;
+	AudioSource[] FX;
+    public static int slowerFasterSound;
 
 	void Start () {
-		FX = GetComponent<AudioSource> ().clip;
+		FX = GetComponents<AudioSource>();
         float left = Camera.main.gameObject.transform.position.x
                  - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
         float right = Camera.main.gameObject.transform.position.x
@@ -25,8 +26,17 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
     {
 		if (coll.gameObject.tag == "Boll")
 		{
-			AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
-			coll.gameObject.SendMessage ("SlowerFasterF");
+            coll.gameObject.SendMessage("SlowerFasterF");
+            if (slowerFasterSound == 0)
+            {
+                AudioSource.PlayClipAtPoint(FX[0].clip, new Vector2(0, 0));
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(FX[1].clip, new Vector2(0, 0));
+            }
+            
+			
 			gameObject.SetActive(false);
 		}
     }

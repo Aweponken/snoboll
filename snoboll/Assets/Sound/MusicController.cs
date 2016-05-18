@@ -12,7 +12,9 @@ public class MusicController : MonoBehaviour {
 		if (menuIsActive) {
 			AudioSource[] audios = GetComponents<AudioSource>(); //Hämta alla ljudfiler
 			menu = audios[0]; 
-			game = audios[1]; 
+			game = audios[1];
+            menu.volume = 0.15f;
+            game.volume = 0.15f;
 			menu.Play ();
 			DontDestroyOnLoad (gameObject);
 		} 

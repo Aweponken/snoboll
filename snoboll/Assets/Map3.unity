@@ -4756,7 +4756,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b5d0e5d0ce8ee4b5d9a643f22b1635fa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8882e0540430f8542aa48ccccf6eac78, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -17805,7 +17805,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cdc31a626293b44d9b572d0c268c6b50, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27bc345dac2a28640bf23e5cdba48fbb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -23454,6 +23454,7 @@ GameObject:
   - 61: {fileID: 1573000708}
   - 114: {fileID: 1573000707}
   - 82: {fileID: 1573000706}
+  - 82: {fileID: 1573000712}
   m_Layer: 0
   m_Name: PowerUp_SpeedSlow
   m_TagString: PowerUp_Inv
@@ -23470,7 +23471,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 94516fff76710415082758ea9019f95f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 721f7739027c36d45a831c64d7e7c3d3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -23620,6 +23621,80 @@ Transform:
   - {fileID: 1168697506}
   m_Father: {fileID: 734941583}
   m_RootOrder: 3
+--- !u!82 &1573000712
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573000705}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a7a1dd8a4bc517947b8d33637f56cb7a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1578088922 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 78d56ddb50f63a0478a3fb318441b923, type: 3}
@@ -27576,7 +27651,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 265fa82d70f454885a5fe526fcc938c2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3bdc862c36bc08b40901181633e15505, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

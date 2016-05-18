@@ -103,7 +103,7 @@ public class SnoBoll3 : MonoBehaviour
 	{
         tredBoll.GetComponent<TrailRenderer>().material = BoostMesh;
         shield = static_shield;
-        boostStartTime = Time.time + boostCooldown;
+        boostStartTime = Time.time;
 		GameWideScript.Player3.size = transform.localScale.x;
 		snoBoll = GetComponent<Rigidbody2D>();
 		snoBollCollider = GetComponent<CircleCollider2D>();
@@ -321,14 +321,16 @@ public class SnoBoll3 : MonoBehaviour
     {
         float randomSF = Random.Range(1, 3);
 
-        if (randomSF < 1.5)
+        if(randomSF < 1.5)
 
         {
             slowerFaster = 0.5f;
+            PowerUp_Faster_Slower.slowerFasterSound = 0;
         }
         else
         {
             slowerFaster = 1.5f;
+            PowerUp_Faster_Slower.slowerFasterSound = 1;
         }
         yield return new WaitForSeconds(5);
         slowerFaster = 1;

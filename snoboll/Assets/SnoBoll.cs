@@ -86,6 +86,10 @@ public class SnoBoll : MonoBehaviour
     void Start()
     {
         boostStartTime = Time.time;
+        SnoBoll.ableToJump = true;
+        SnoBoll2.ableToJump = true;
+        SnoBoll3.ableToJump = true;
+        SnoBoll4.ableToJump = true;
         GameWideScript.Player1.size = transform.localScale.x;
         snoBoll = GetComponent<Rigidbody2D>();
         snoBollCollider = GetComponent<CircleCollider2D>();
@@ -336,12 +340,14 @@ public class SnoBoll : MonoBehaviour
 
         {
             slowerFaster = 0.5f;
+            PowerUp_Faster_Slower.slowerFasterSound = 0;
         }
         else
         {
             slowerFaster = 1.5f;
+            PowerUp_Faster_Slower.slowerFasterSound = 1;
         }
-      
+
         yield return new WaitForSeconds(5);
         slowerFaster = 1;
        

@@ -78,12 +78,11 @@ public class powerups : MonoBehaviour {
 
 			}
 		}
-		a = 1;
-        //a = Random.Range(1, 5);
+		
+        a = Random.Range(1, 5);
         if(!Pow.activeSelf)
             rndm_time--;
 		tel();
-
 	}
 	private void tel()
 	{ 
