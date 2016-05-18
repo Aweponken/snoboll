@@ -131,6 +131,8 @@ public class slutMenuScript : MonoBehaviour
 
     {
 		Time.timeScale = 1;
+		timer.onlyOne = 1;
+		Time.timeScale = 1;
         SceneManager.LoadScene("Options"); //this will quit our game. Note this will only work after building the game
 
     }
