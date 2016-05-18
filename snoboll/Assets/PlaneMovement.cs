@@ -17,7 +17,8 @@ public class PlaneMovement : MonoBehaviour {
 		diff = diff / 60;
 	}
 
-	void FixedUpdate () {		
-		p.transform.position = new Vector3 (p.transform.position.x - diff, y, z);
+	void FixedUpdate () {
+        if(p.transform.position.x > -350)		
+		    p.transform.position = new Vector3 (p.transform.position.x - diff, y, z);
 	}
 }
