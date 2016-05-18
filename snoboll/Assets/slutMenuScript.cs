@@ -42,7 +42,6 @@ public class slutMenuScript : MonoBehaviour
 			chatEvents.Add (GameWideScript.Player4);
 		}
 
-
         callMe = true;
 
         restartText = restartText.GetComponent<Button>();
