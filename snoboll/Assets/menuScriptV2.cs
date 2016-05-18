@@ -17,6 +17,7 @@ public class menuScriptV2 : MonoBehaviour
 	private int Players;
 	private int Map;
 
+	public static bool StartFadeInYo = false;
 	/// <summary>
 	/// The button that starts the game
 	/// </summary>
@@ -111,6 +112,7 @@ public class menuScriptV2 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+		StartFadeInYo = false;
 		inMapWrapper = false;
 		player1Left = false;
 		player1Right = false;
@@ -151,8 +153,12 @@ public class menuScriptV2 : MonoBehaviour
 	}
 
 	private void FixedUpdate(){
+
+		if (StartFadeInYo)
+			StartYo ();
+
 		if (removeOptions) {
-			if (removeCounter != 0) {
+			if (removeCounter > 0) {
 				float current = gameObject.GetComponent<CanvasGroup> ().alpha;
 				gameObject.GetComponent<CanvasGroup> ().alpha = (current - 0.084f);
 				startText.GetComponent<CanvasGroup> ().alpha -= 0.084f;
@@ -165,11 +171,12 @@ public class menuScriptV2 : MonoBehaviour
 				exitText.GetComponent<CanvasGroup> ().interactable = false;
 				HowToPlay.GetComponent<CanvasGroup> ().interactable = false;
 				BollMenyScript.fadeInBalls = true;
+				removeCounter -= 1;
 			}
 		}
 		if (inMapWrapper) {
-            
-           
+
+
 			if ((Input.GetAxis ("Horizontal1") == 1|| Input.GetAxis ("Horizontal2") == 1|| Input.GetAxis ("Horizontal3") == 1 || Input.GetAxis ("Horizontal4") == 1) && !player1Left) {
 				if (!player1Right) {
 					player1Right = !player1Right;
@@ -211,8 +218,8 @@ public class menuScriptV2 : MonoBehaviour
 
 		GameWideScript.Instance.setCostum = true;
 
-        removeOptions = true;
-    }
+		removeOptions = true;
+	}
 	/// <summary>
 	/// If triggered, shutdown the game.
 	/// </summary>
@@ -305,7 +312,7 @@ public class menuScriptV2 : MonoBehaviour
 			SoundButton.GetComponent<Image> ().color = new Color32(102,102,102,255); 
 			SoundButton.transform.GetChild(0).GetComponent<Text> ().color = Color.white;
 		}
-			
+
 		if (Zone) {
 			ZonesButton.GetComponent<Image> ().color  = new Color32(102,102,102,255);
 			ZonesButton.transform.GetChild(0).GetComponent<Text> ().color = Color.white;
@@ -397,7 +404,7 @@ public class menuScriptV2 : MonoBehaviour
 	/// handles the zone button
 	/// --- hover ---
 	/// </summary>
-		
+
 	public void onHoverZone(){
 		Button b = ZonesButton.GetComponent<Button>(); 
 		b.GetComponent<Outline> ().effectColor = new Color32(0,147,209,255);
@@ -675,5 +682,32 @@ public class menuScriptV2 : MonoBehaviour
 
 	private int Mod(int a, int b){
 		return (a % b + b) % b;
+	}
+
+	private void StartYo(){
+		StartCoroutine (fadeBackYo ());
+	}
+
+	private IEnumerator fadeBackYo() {
+		for (int x = 0; x < 10; x++) {
+			fadeBackYoStep ();
+			yield return new WaitForSeconds (0.001f);
+		}
+		removeOptions = false;
+		removeCounter = 12;
+		StartFadeInYo = false;
+		gameObject.GetComponent<CanvasGroup> ().interactable = true;
+		startText.GetComponent<CanvasGroup> ().interactable = true;
+		exitText.GetComponent<CanvasGroup> ().interactable = true;
+		HowToPlay.GetComponent<CanvasGroup> ().interactable = true;
+		SoundButton.Select ();
+	}
+
+	private void fadeBackYoStep(){
+		float current = gameObject.GetComponent<CanvasGroup> ().alpha;
+		gameObject.GetComponent<CanvasGroup> ().alpha = (current + 0.1f);
+		startText.GetComponent<CanvasGroup> ().alpha += 0.1f;
+		exitText.GetComponent<CanvasGroup> ().alpha += 0.1f;
+		HowToPlay.GetComponent<CanvasGroup> ().alpha += 0.1f;
 	}
 }

@@ -7,6 +7,7 @@ using System.Linq;
 public class BollMenyScript : MonoBehaviour {
 	// General stuff:P
 	public static bool fadeInBalls = false;
+	private bool doNoRotatePLS = false;
 	private int removeCounter = 13;
 	public Button start;
 	public Button deselect;
@@ -19,6 +20,10 @@ public class BollMenyScript : MonoBehaviour {
 	private Material bollColor2;
 	[SerializeField]
 	private Material bollColor3;
+
+	//BallObjects
+	private GameObject[] ballWrappers;
+	private GameObject[] ballTitles;
 
 	//Used for input
 	private bool player1Right;
@@ -35,6 +40,7 @@ public class BollMenyScript : MonoBehaviour {
 	private bool player4Clicked;
 	private float leftPosBall;
 	private float rightPosBall;
+	private bool clicked;
 
 	//Arrays for the player's ballz :P
 	private GameObject[] player1Balls;
@@ -58,6 +64,17 @@ public class BollMenyScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		doNoRotatePLS = false;
+		ballWrappers = new GameObject[4];
+		ballWrappers [0] = GameObject.Find ("'dem ballz P1");
+		ballWrappers [1] = GameObject.Find ("'dem ballz P2");
+		ballWrappers [2] = GameObject.Find ("'dem ballz P3");
+		ballWrappers [3] = GameObject.Find ("'dem ballz P4");
+		ballTitles = new GameObject[4];
+		ballTitles[0] = GameObject.Find ("Player 1");
+		ballTitles[1] = GameObject.Find ("Player 2");
+		ballTitles[2] = GameObject.Find ("Player 3");
+		ballTitles[3] = GameObject.Find ("Player 4");
 		player1Right = false;
 		player1Left = false;
 		player1Clicked = false;
@@ -73,6 +90,7 @@ public class BollMenyScript : MonoBehaviour {
 		fadeInBalls = false;
 		removeCounter = 13;
 		isAllSelected = false;
+		clicked = false;
 		isSelected = new bool[GameWideScript.Instance.setPlayers];
 		playersSelectedColor = new int[GameWideScript.Instance.setPlayers];
 		// Get all the player1 ball gameObjects
@@ -97,82 +115,162 @@ public class BollMenyScript : MonoBehaviour {
 		leftPosBall = player1Balls [0].transform.position.x;
 		rightPosBall = player1Balls [6].transform.position.x;
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (fadeInBalls) {
+			//kolla efter tryck på esc
+			if (Input.GetAxisRaw ("Cancel_menu") != 0) {
+				if (!clicked) {
+					clicked = true;
+					goBackToSettings ();
+				}
+			}
+			if (Input.GetAxisRaw ("Cancel_menu") == 0)
+				clicked = false;
+
 			if (removeCounter == 13) {
 				gameObject.GetComponent<CanvasGroup> ().interactable = true;
-				if (GameWideScript.colorSelection.isPlayedOnce) {
+				if (GameWideScript.colorSelection.isPlayedOnce && !doNoRotatePLS) {
 					player1I = GameWideScript.colorSelection.playersIndex[0];
 					player2I = GameWideScript.colorSelection.playersIndex[1];
 					player3I = GameWideScript.colorSelection.playersIndex[2];
 					player4I = GameWideScript.colorSelection.playersIndex[3];
-					selectedColors = GameWideScript.colorSelection.selectedColors;
-					bool[] temp1 = new bool[GameWideScript.Instance.setPlayers];
-					for(int i = 0; i < GameWideScript.colorSelection.isSelected.Length; i++)
-						temp1[i] = GameWideScript.colorSelection.isSelected[i];
-					isSelected = temp1; 
-					int[] temp2 = new int[GameWideScript.Instance.setPlayers];
-					for (int i = 0; i < GameWideScript.colorSelection.playersSelectedColor.Length; i++)
-						temp2 [i] = GameWideScript.colorSelection.playersSelectedColor [i];
-					playersSelectedColor = temp2;
+					selectedColors = new bool[player1Balls.Length];
+					if (GameWideScript.Instance.setPlayers < GameWideScript.colorSelection.isSelected.Length) {
+						bool[] temp1 = new bool[GameWideScript.Instance.setPlayers];
+						for (int i = 0; i < GameWideScript.Instance.setPlayers; i++)
+							temp1 [i] = GameWideScript.colorSelection.isSelected [i];
+						isSelected = temp1;
+
+						int[] temp2 = new int[GameWideScript.Instance.setPlayers];
+						for (int i = 0; i < GameWideScript.Instance.setPlayers; i++)
+							temp2 [i] = GameWideScript.colorSelection.playersSelectedColor [i];
+						playersSelectedColor = temp2;
+					} else {
+						bool[] temp1 = new bool[GameWideScript.Instance.setPlayers];
+						for (int i = 0; i < GameWideScript.colorSelection.isSelected.Length; i++)
+							temp1 [i] = GameWideScript.colorSelection.isSelected [i];
+						isSelected = temp1; 
+
+						int[] temp2 = new int[GameWideScript.Instance.setPlayers];
+						for (int i = 0; i < GameWideScript.colorSelection.playersSelectedColor.Length; i++)
+							temp2 [i] = GameWideScript.colorSelection.playersSelectedColor [i];
+						playersSelectedColor = temp2;
+					}
+					foreach (int i in playersSelectedColor) {
+						selectedColors [i] = true;
+					}
 					selectColor (1, Mod(player1I,selectedColors.Length));
 					selectColor (2, Mod(player2I,selectedColors.Length));
 					if (GameWideScript.Instance.setPlayers > 2) {
-						if (isSelected [2])
-							selectColor (3, Mod (player3I, selectedColors.Length));
+						selectColor (3, Mod (player3I, selectedColors.Length));
 						if (GameWideScript.Instance.setPlayers > 3) 
-						if (isSelected [3])
 							selectColor (4, Mod (player4I, selectedColors.Length));
 					}
 
+
 					int witchPlayer = 0;
 					foreach (int x in GameWideScript.colorSelection.playersSelectedColor) {
-						GameObject[] temp = null;
-						switch (witchPlayer) {
-						case 0: 
-							temp = player1Balls;
-							break;
-						case 1: 
-							temp = player2Balls;
-							break;
-						case 2: 
-							temp = player3Balls;
-							break;
-						case 3: 
-							temp = player4Balls;
-							break;
-						}
-						if (x < 3) {
-							int middle = 3;
-							for (int rotate = (3 - x); rotate > 0; rotate--) {
-								StartCoroutine (rotateRightNoDelay (middle, temp));
-								middle -= 1;
+						if (witchPlayer < GameWideScript.Instance.setPlayers) {
+							GameObject[] temp = null;
+							switch (witchPlayer) {
+							case 0: 
+								temp = player1Balls;
+								break;
+							case 1: 
+								temp = player2Balls;
+								break;
+							case 2: 
+								temp = player3Balls;
+								break;
+							case 3: 
+								temp = player4Balls;
+								break;
 							}
-						}  else if (x > 3) {
-							int middle = 3;
-							for (int rotate = (x - 3); rotate > 0; rotate--){
-								StartCoroutine (rotateLeftNoDelay (middle, temp));
-								middle += 1;
+							if (x < 3) {
+								int middle = 3;
+								for (int rotate = (3 - x); rotate > 0; rotate--) {
+									StartCoroutine (rotateRightNoDelay (middle, temp));
+									middle -= 1;
+								}
+							} else if (x > 3) {
+								int middle = 3;
+								for (int rotate = (x - 3); rotate > 0; rotate--) {
+									StartCoroutine (rotateLeftNoDelay (middle, temp));
+									middle += 1;
+								}
 							}
+							witchPlayer += 1;
+						} else {
+							player3I = 3;
+							player4I = 3;
 						}
-						witchPlayer += 1;
 					}
-				}  else {
-					isSelected = new bool[GameWideScript.Instance.setPlayers];
-					playersSelectedColor = new int[GameWideScript.Instance.setPlayers];
+
+				}  else{
+					bool[] temp1 = new bool[GameWideScript.Instance.setPlayers];
+					for(int i = 0; i < isSelected.Length; i++)
+						if(i < temp1.Length)
+							temp1[i] = isSelected[i];
+					isSelected = temp1;
+
+					int[] temp2 = new int[GameWideScript.Instance.setPlayers];
+					for (int i = 0; i < playersSelectedColor.Length; i++)
+						if(i < temp2.Length)
+							temp2 [i] = playersSelectedColor [i];
+					int oldSelected;
+					switch (GameWideScript.Instance.setPlayers) {
+					case 2:
+						if (playersSelectedColor.Length > 2) {
+							oldSelected = playersSelectedColor [2];
+							selectedColors [oldSelected] = false;
+							player1Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player2Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player3Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player4Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							if (playersSelectedColor.Length > 3) {
+								oldSelected = playersSelectedColor [3];
+								selectedColors [oldSelected] = false;
+								player1Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+								player2Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+								player3Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+								player4Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							}
+						}
+						break;
+					case 3:
+						if (playersSelectedColor.Length > 3) {
+							oldSelected = playersSelectedColor [3];
+							selectedColors [oldSelected] = false;
+							player1Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player2Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player3Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+							player4Balls [oldSelected].transform.GetChild (0).GetComponent<Text> ().text = "";
+						}
+						break;
+					}
+					playersSelectedColor = temp2;
 				}
 				switch (GameWideScript.Instance.setPlayers) {
 				case 2:
-					GameObject.Find ("'dem ballz P3").SetActive (false);
-					GameObject.Find ("'dem ballz P4").SetActive (false);
-					GameObject.Find ("Player 3").SetActive (false);
-					GameObject.Find ("Player 4").SetActive (false);
+					ballWrappers[2].SetActive (false);
+					ballWrappers[3].SetActive (false);
+					ballTitles[2].SetActive (false);
+					ballTitles[3].SetActive (false);
+
 					break;
 				case 3:
-					GameObject.Find ("'dem ballz P4").SetActive (false);
-					GameObject.Find ("Player 4").SetActive (false);
+					ballWrappers[2].SetActive (true);
+					ballTitles[2].SetActive (true);
+					ballWrappers[3].SetActive (false);
+					ballTitles[3].SetActive (false);
+					break;
+				case 4:
+					ballWrappers[2].SetActive (true);
+					ballWrappers[3].SetActive (true);
+					ballTitles[2].SetActive (true);
+					ballTitles[3].SetActive (true);
 					break;
 				}
 				removeCounter -= 1;
@@ -184,7 +282,7 @@ public class BollMenyScript : MonoBehaviour {
 			} else if (removeCounter == 0) {
 				removeCounter -= 1;
 			}
-		
+
 			// Check if all players have selected their color
 			foreach (bool player in isSelected) {
 				if (!player) {
@@ -389,9 +487,9 @@ public class BollMenyScript : MonoBehaviour {
 		if (GameWideScript.Instance.setMap == 0)
 			SceneManager.LoadScene("Map"); //this will load our first level from our build settings. "1" is the second scene in our game
 		else if (GameWideScript.Instance.setMap == 1)
-            SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
+			SceneManager.LoadScene("Map2"); //this will load our first level from our build settings. "1" is the second scene in our game
 		else if(GameWideScript.Instance.setMap == 2)
-            SceneManager.LoadScene("Map3"); //this will load our first level from our build settings. "1" is the second scene in our game
+			SceneManager.LoadScene("Map3"); //this will load our first level from our build settings. "1" is the second scene in our game
 		else 
 			SceneManager.LoadScene("Map4");
 	}
@@ -414,11 +512,11 @@ public class BollMenyScript : MonoBehaviour {
 			balls [Mod((i - 2), balls.Length)].transform.position = new Vector2 (leftPosBall, balls [Mod((i - 2), balls.Length)].transform.position.y);
 
 
-			stepRightNoDelay (balls [Mod((i - 2), balls.Length)]);
-			stepRightAndGrowNoDelay (balls [Mod((i - 1), balls.Length)]);
-			stepRightAndShrinkNoDelay (balls [Mod(i, balls.Length)]);
-			stepRightNoDelay (balls [Mod((i + 1), balls.Length)]);
-			yield return null;
+		stepRightNoDelay (balls [Mod((i - 2), balls.Length)]);
+		stepRightAndGrowNoDelay (balls [Mod((i - 1), balls.Length)]);
+		stepRightAndShrinkNoDelay (balls [Mod(i, balls.Length)]);
+		stepRightNoDelay (balls [Mod((i + 1), balls.Length)]);
+		yield return null;
 
 
 	}
@@ -491,7 +589,7 @@ public class BollMenyScript : MonoBehaviour {
 		stepLeftAndGrowNoDelay (balls [Mod((i + 1), balls.Length)]);
 		stepLeftAndShrinkNoDelay (balls [Mod(i, balls.Length)]);
 		stepLeftNoDelay (balls [Mod((i - 1), balls.Length)]);
-			yield return null;
+		yield return null;
 
 
 	}
@@ -547,11 +645,14 @@ public class BollMenyScript : MonoBehaviour {
 		if (!isSelected [player - 1]) {
 			int oldSelected = playersSelectedColor [player - 1];
 			selectedColors [oldSelected] = false;
-
-			player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			if( player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
+				player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			if( player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
+				player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			if( player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
+				player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			if( player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
+				player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
 
 		}
 		selectedColors [playersIndex] = true;
@@ -567,22 +668,44 @@ public class BollMenyScript : MonoBehaviour {
 		player3Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = temp[2];
 		player4Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = temp[3];
 		switch (player) {
-			case 1:
-				player1Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
-				break;
-			case 2:
-				player2Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
-				break;
-			case 3: 
-				player3Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
-				break;
-			case 4:
-				player4Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
-				break;
+		case 1:
+			player1Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+			break;
+		case 2:
+			player2Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+			break;
+		case 3: 
+			player3Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+			break;
+		case 4:
+			player4Balls [playersIndex].transform.GetChild(0).GetComponent<Text>().text = "SELECTED";
+			break;
 		}
 	}
 
 	private int Mod(int a, int b){
 		return (a % b + b) % b;
 	}
+
+	private void goBackToSettings(){
+		StartCoroutine (fadeBackYo ());
+	}
+
+	private IEnumerator fadeBackYo() {
+		for (int x = 0; x < 10; x++) {
+			fadeBackYoStep ();
+			yield return new WaitForSeconds (0.001f);
+		}
+		doNoRotatePLS = true;
+		gameObject.GetComponent<CanvasGroup> ().interactable = false;
+		fadeInBalls = false;
+		removeCounter = 13;
+		menuScriptV2.StartFadeInYo = true;
+	}
+
+	private void fadeBackYoStep(){
+		float current = gameObject.GetComponent<CanvasGroup> ().alpha;
+		gameObject.GetComponent<CanvasGroup> ().alpha = (current - 0.1f);
+	}
 }
+	
