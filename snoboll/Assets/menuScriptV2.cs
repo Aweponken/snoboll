@@ -138,7 +138,7 @@ public class menuScriptV2 : MonoBehaviour
 			Map = 1;
 			PowUpOcc = 2;
 			PowUpDelay = 10;
-			Shrink = false;
+			Shrink = true;
 		}
 
 		themMaps = GameObject.FindGameObjectsWithTag("Maps").OrderBy( go => go.name ).ToArray();;
