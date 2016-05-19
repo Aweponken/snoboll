@@ -11,7 +11,8 @@ public class SnoBoll : MonoBehaviour
     private Rigidbody2D snoBoll; //pekare till snöboll1
     private CircleCollider2D snoBollCollider;
 
-
+	[SerializeField]
+	public GameObject sköldRing;
 
 
     private bool grounded;
@@ -120,6 +121,14 @@ public class SnoBoll : MonoBehaviour
 				transform.localScale = new Vector3 (transform.localScale.x - 0.04f, transform.localScale.x - 0.04f, transform.localScale.z);
 				GameWideScript.Player1.size = transform.localScale.x;
 			}
+		}
+		if (static_shield) {
+			sköldRing.SetActive (true);
+
+
+		} else 
+		{
+			sköldRing.SetActive (false);
 		}
         //får input från tangentbordet (via Edit -> Pro. Set. -> Input)
         horizontal = Input.GetAxis("Horizontal1");
