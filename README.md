@@ -5,7 +5,7 @@
 * Ändra så att starta med start-knappen – Dag och Nick - DONE
 * Göra how to play större! - David - DONE
 * Sköldanimering – Hampus & Alex - DONE
-* Ikon till spelet - David
+* Ikon till spelet - David - DONE
 * Software manual – Sandra & Dusey - DONE
 * Flyers – Arvid - DONE
 * Planera turneringen – Dag - DONE 
