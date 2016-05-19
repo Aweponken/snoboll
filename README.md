@@ -1,34 +1,24 @@
 # Snöboll
-The game
+###The game
 
-## Sprint 1
-* Story 1 - En spelbana, done
-* Story 2 - Snöbollen, done
-* Story 3 - Timer, done
-* Story 4 - Startskärm, done
-* Story 5 - Styrning av snöboll (om vi hinner), done
-
-##Sprint 2
-Done.
-
-##Sprint 3
-Done.
-
-##Sprint 4
-Done.
-
-##Sprint 5
-* Skriva rapporten
-* Skriva Software manual (Generera från koden?)
-* Städa upp i koden 
-* Städa upp i Assets-mappen
-* Lägga in all grafik
-* Testning
-* Lägga upp allt på hemsidan
+## Kvar att göra
+* Ändra så att starta med start-knappen – Dag och Nick
+* Göra how to play större! - David
+* Sköldanimering – Hampus & Alex
+* Ikon till spelet - David
+* Software manual – Sandra & Dusey
+* Flyers – Arvid
+* Planera turneringen – Dag 
+* Muggar och godis från grossen – Första lediga
+* Ladda upp sista builden på hemsidan – Arvid fixar vid dagens slut
 
 
-# Kvar att göra
-* Bollgrafiken och färgerna på alla banor, med meny(fixa powerups grejen också). Fixa stora bollar när man kör shrink mode. Hampus och menyfolket
-* Boost-mesh. Hampus och Sandra
-* Fixa zoner och powerups på alla banor. Testa att builda! Alex och Dag 
-* Ny ljud, ev för varje spelare? Dag och Arvid
+## Inför expo
+* Davids TV
+* Hampus högtalare
+* Kistans soffa
+* Ett högt och ett lågt bord
+* Vi brygger kaffe
+* Muggar och godis från grossen
+* Vi samlas halv tio, dubbel straffkassa
+
