@@ -2,14 +2,15 @@
 ###The game
 
 ## Kvar att göra
-* Ändra så att starta med start-knappen – Dag och Nick
-* Göra how to play större! - David
+* Ändra så att starta med start-knappen – Dag och Nick - DONE
+* Göra how to play större! - David - DONE
 * Sköldanimering – Hampus & Alex - DONE
 * Ikon till spelet - David
-* Software manual – Sandra & Dusey
+* Software manual – Sandra & Dusey - DONE
 * Flyers – Arvid - DONE
 * Planera turneringen – Dag - DONE 
-* Muggar och godis från grossen – Första lediga
+* Muggar och godis från grossen – DONE
+* Fixa buggen med powerups
 * Ladda upp sista builden på hemsidan – Arvid fixar vid dagens slut
 
 
