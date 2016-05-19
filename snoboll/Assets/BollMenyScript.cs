@@ -297,6 +297,7 @@ public class BollMenyScript : MonoBehaviour {
 					player1Right = !player1Right;
 					StartCoroutine (rotateLeft (player1I, player1Balls));
 					player1I += 1;
+                    isSelected[0] = false;
 				}
 			} else if (Input.GetAxis ("Horizontal1") < 0.8 && player1Right) {
 				player1Right = !player1Right;
@@ -307,7 +308,8 @@ public class BollMenyScript : MonoBehaviour {
 					player1Left = !player1Left;
 					StartCoroutine (rotateRight (player1I, player1Balls));
 					player1I -= 1;
-				}
+                    isSelected[0] = false;
+                }
 			} else if (Input.GetAxis ("Horizontal1") > -0.7 && player1Left) {
 				player1Left = !player1Left;
 			}
@@ -330,7 +332,8 @@ public class BollMenyScript : MonoBehaviour {
 					player2Right = !player2Right;
 					StartCoroutine (rotateLeft (player2I, player2Balls));
 					player2I += 1;
-				}
+                    isSelected[1] = false;
+                }
 			} else if (Input.GetAxis ("Horizontal2") < 0.8 && player2Right) {
 				player2Right = !player2Right;
 			}
@@ -340,7 +343,8 @@ public class BollMenyScript : MonoBehaviour {
 					player2Left = !player2Left;
 					StartCoroutine (rotateRight (player2I, player2Balls));
 					player2I -= 1;
-				}
+                    isSelected[1] = false;
+                }
 			} else if (Input.GetAxis ("Horizontal2") > -0.7 && player2Left) {
 				player2Left = !player2Left;
 			}
@@ -363,7 +367,8 @@ public class BollMenyScript : MonoBehaviour {
 						player3Right = !player3Right;
 						StartCoroutine (rotateLeft (player3I, player3Balls));
 						player3I += 1;
-					}
+                        isSelected[2] = false;
+                    }
 				} else if (Input.GetAxis ("Horizontal3") < 0.8 && player3Right) {
 					player3Right = !player3Right;
 				}
@@ -373,7 +378,8 @@ public class BollMenyScript : MonoBehaviour {
 						player3Left = !player3Left;
 						StartCoroutine (rotateRight (player3I, player3Balls));
 						player3I -= 1;
-					}
+                        isSelected[2] = false;
+                    }
 				} else if (Input.GetAxis ("Horizontal3") > -0.7 && player3Left) {
 					player3Left = !player3Left;
 				}
@@ -396,7 +402,8 @@ public class BollMenyScript : MonoBehaviour {
 							player4Right = !player4Right;
 							StartCoroutine (rotateLeft (player4I, player4Balls));
 							player4I += 1;
-						}
+                            isSelected[3] = false;
+                        }
 					} else if (Input.GetAxis ("Horizontal4") < 0.7 && player4Right) {
 						player4Right = !player4Right;
 					}
@@ -406,7 +413,8 @@ public class BollMenyScript : MonoBehaviour {
 							player4Left = !player4Left;
 							StartCoroutine (rotateRight (player4I, player4Balls));
 							player4I -= 1;
-						}
+                            isSelected[3] = false;
+                        }
 					} else if (Input.GetAxis ("Horizontal4") > -0.7 && player4Left) {
 						player4Left = !player4Left;
 					}

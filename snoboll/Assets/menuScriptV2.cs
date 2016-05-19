@@ -321,7 +321,10 @@ public class menuScriptV2 : MonoBehaviour
 		if (Shrink) {
 			ShrinkButton.GetComponent<Image> ().color = Color.white;
 			ShrinkButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
-		}
+            time.interactable = false;
+            time.GetComponent<CanvasGroup>().alpha = 0.2f;
+            Time = 2200;
+        }
 
 		// Custom map could be set
 		if (GameWideScript.Instance.setCostum) {

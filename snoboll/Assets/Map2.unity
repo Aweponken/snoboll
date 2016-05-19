@@ -12862,7 +12862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0.25
-  changeSizeSummer: 1.25
+  changeSizeSummer: 0.5
   eld: {fileID: 528763753}
   snow: {fileID: 1018967824}
   eld2: {fileID: 1752378189}
@@ -12955,7 +12955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0.25
-  changeSizeSummer: 1.25
+  changeSizeSummer: 0.5
   eld: {fileID: 1399840036}
   snow: {fileID: 1009840712}
   eld2: {fileID: 2129043014}
@@ -20853,7 +20853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0.25
-  changeSizeSummer: 1.25
+  changeSizeSummer: 0.5
   eld: {fileID: 845433382}
   snow: {fileID: 116964896}
   eld2: {fileID: 252116961}
@@ -27037,7 +27037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0.25
-  changeSizeSummer: 1.25
+  changeSizeSummer: 0.5
   eld: {fileID: 363844250}
   snow: {fileID: 1238298543}
   eld2: {fileID: 1163425203}
@@ -32990,7 +32990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0.25
-  changeSizeSummer: 1.25
+  changeSizeSummer: 0.5
   eld: {fileID: 526191538}
   snow: {fileID: 331061334}
   eld2: {fileID: 323901859}
