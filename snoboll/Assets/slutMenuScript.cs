@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class slutMenuScript : MonoBehaviour
 {
+    bool a;
 	/// <summary>
 	/// button to restart game
 	/// </summary>
@@ -16,6 +17,7 @@ public class slutMenuScript : MonoBehaviour
 	/// button that links to main menu
 	/// </summary>
     public Button mainmenuText;
+    public Button ghost;
 	/// <summary>
 	/// the actual scoreboard
 	/// </summary>
@@ -32,6 +34,7 @@ public class slutMenuScript : MonoBehaviour
     /// </summary>
     void Start()
     {
+
         chatEvents = new List<GameWideScript.Player>();
 		chatEvents.Add (GameWideScript.Player1);
 		chatEvents.Add (GameWideScript.Player2);
@@ -41,13 +44,15 @@ public class slutMenuScript : MonoBehaviour
 		if (GameWideScript.Instance.setPlayers > 3) {
 			chatEvents.Add (GameWideScript.Player4);
 		}
-
+        a = true;
         callMe = true;
 
         restartText = restartText.GetComponent<Button>();
         mainmenuText = mainmenuText.GetComponent<Button>();
-        restartText.Select();
+        ghost.Select();
+     
     }
+
 
     void Update()
     {

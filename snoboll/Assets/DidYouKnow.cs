@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DidYouKnow : MonoBehaviour {
     public Text b;
-    int a = Random.Range(0, 9);
+    int a;
     string[] v = new string[] {
     "Did you know that the Artic Sea Ice decreases with an avarage of 13.4 procent per decade, according to NASA.",
     "Did you know that the global avarage sea level has risen with an avarage of 3.42 mm per year, according to NASA.",
@@ -34,7 +34,7 @@ public class DidYouKnow : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
+        a = Random.Range(0, 9);
         string v1 = v[a];
         b.text = v1;
        
