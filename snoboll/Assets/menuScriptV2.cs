@@ -309,18 +309,18 @@ public class menuScriptV2 : MonoBehaviour
 		}
 
 		if (Sound) {
-			SoundButton.GetComponent<Image> ().color = new Color32(102,102,102,255); 
-			SoundButton.transform.GetChild(0).GetComponent<Text> ().color = Color.white;
+			SoundButton.GetComponent<Image> ().color = Color.white;
+			SoundButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
 		}
 
 		if (Zone) {
-			ZonesButton.GetComponent<Image> ().color  = new Color32(102,102,102,255);
-			ZonesButton.transform.GetChild(0).GetComponent<Text> ().color = Color.white;
+			ZonesButton.GetComponent<Image> ().color = Color.white;
+			ZonesButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
 		}
 
 		if (Shrink) {
-			ShrinkButton.GetComponent<Image> ().color = new Color32(102,102,102,255);
-			ShrinkButton.transform.GetChild(0).GetComponent<Text> ().color = Color.white;
+			ShrinkButton.GetComponent<Image> ().color = Color.white;
+			ShrinkButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
 		}
 
 		// Custom map could be set
@@ -348,12 +348,12 @@ public class menuScriptV2 : MonoBehaviour
 	public void onClickSound() {
 		Sound = !Sound; 
 		if (!Sound) { 
-			SoundButton.GetComponent<Image>().color = Color.white;
-			SoundButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
-			AudioListener.pause = true;
-		} else {
 			SoundButton.GetComponent<Image>().color = new Color32(102,102,102,255);
 			SoundButton.transform.GetChild (0).GetComponent<Text> ().color = Color.white;
+			AudioListener.pause = true;
+		} else {
+			SoundButton.GetComponent<Image> ().color = Color.white;
+			SoundButton.transform.GetChild (0).GetComponent<Text> ().color = new Color32(102,102,102,255);
 			AudioListener.pause = false;
 		}
 	}
@@ -363,11 +363,17 @@ public class menuScriptV2 : MonoBehaviour
 	public void onClickShrink() {
 		Shrink = !Shrink;
 		if (!Shrink) { 
-			ShrinkButton.GetComponent<Image>().color = Color.white;
-			ShrinkButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
-		} else {
 			ShrinkButton.GetComponent<Image>().color = new Color32(102,102,102,255);
 			ShrinkButton.transform.GetChild (0).GetComponent<Text> ().color = Color.white;
+			time.interactable = true;
+			time.GetComponent<CanvasGroup> ().alpha = 1f;
+			Time = (int) time.value;
+		} else {
+			ShrinkButton.GetComponent<Image> ().color = Color.white;
+			ShrinkButton.transform.GetChild (0).GetComponent<Text> ().color = new Color32(102,102,102,255);
+			time.interactable = false;
+			time.GetComponent<CanvasGroup> ().alpha = 0.2f;
+			Time = 2200;
 		}
 	}
 	/// <summary>
@@ -377,11 +383,11 @@ public class menuScriptV2 : MonoBehaviour
 	public void onClickZone() {
 		Zone = !Zone;
 		if (!Zone) { 
-			ZonesButton.GetComponent<Image>().color = Color.white;
-			ZonesButton.transform.GetChild(0).GetComponent<Text> ().color = new Color32(102,102,102,255);
-		} else {
 			ZonesButton.GetComponent<Image>().color = new Color32(102,102,102,255);
 			ZonesButton.transform.GetChild (0).GetComponent<Text> ().color = Color.white;
+		} else {
+			ZonesButton.GetComponent<Image> ().color = Color.white;
+			ZonesButton.transform.GetChild (0).GetComponent<Text> ().color = new Color32(102,102,102,255);
 		}
 	}
 	/// <summary>

@@ -177,8 +177,8 @@
  <Reference Include="UnityEditor.iOS.Extensions">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.WebGL.Extensions">
- <HintPath>/Applications/Unity/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+ <HintPath>/Applications/Unity/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>/Applications/Unity/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>

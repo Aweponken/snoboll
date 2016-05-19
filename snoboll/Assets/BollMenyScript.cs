@@ -645,14 +645,10 @@ public class BollMenyScript : MonoBehaviour {
 		if (!isSelected [player - 1]) {
 			int oldSelected = playersSelectedColor [player - 1];
 			selectedColors [oldSelected] = false;
-			if( player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
-				player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			if( player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
-				player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			if( player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
-				player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
-			if( player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text != "SELECTED")
-				player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			player1Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			player2Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			player3Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
+			player4Balls [oldSelected].transform.GetChild(0).GetComponent<Text>().text = "";
 
 		}
 		selectedColors [playersIndex] = true;
