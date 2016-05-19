@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Cloud_animering : MonoBehaviour
 {
-
+	AudioClip FX;
 
     [SerializeField]
     GameObject B1, B2, B3, B4, B5, B6, lavasky;
@@ -17,6 +17,7 @@ public class Cloud_animering : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		FX = GetComponent<AudioSource> ().clip;
         B1.SetActive(false);
         B2.SetActive(false);
         B3.SetActive(false);
@@ -75,6 +76,7 @@ public class Cloud_animering : MonoBehaviour
     public IEnumerator delay(GameObject B)
     {
         B.SetActive(true);
+		AudioSource.PlayClipAtPoint (FX, new Vector2(0,0));
         yield return new WaitForSeconds(0.4f);
         B.SetActive(false);
     }
