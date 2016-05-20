@@ -104,6 +104,7 @@ public class SnoBoll4 : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+        sköldRing.SetActive(false);
         SnoBoll2.PowerUp_Inv = false;
         SnoBoll3.PowerUp_Inv = false;
         SnoBoll.PowerUp_Inv = false;
@@ -373,7 +374,7 @@ public class SnoBoll4 : MonoBehaviour
 	/// <summary>
 	/// Updates the ground radius
 	/// </summary>
-	public void updateRad(){
-		groundRadius = (transform.localScale.x) / 10;
-	}
+	public void updateRad(int a){
+        groundRadius = (transform.localScale.x) / 10 + 0.1f * a;
+    }
 }

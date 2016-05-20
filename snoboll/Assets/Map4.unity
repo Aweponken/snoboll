@@ -5870,7 +5870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSizeWinter: 0
-  changeSizeSummer: 0.5
+  changeSizeSummer: 0.8
   eld: {fileID: 0}
   snow: {fileID: 0}
   moln: {fileID: 0}

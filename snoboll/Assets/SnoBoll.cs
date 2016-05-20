@@ -86,6 +86,7 @@ public class SnoBoll : MonoBehaviour
     /// </summary>
     void Start()
     {
+        sköldRing.SetActive(false);
         SnoBoll.ableToJump = true;
         SnoBoll2.ableToJump = true;
         SnoBoll3.ableToJump = true;
@@ -420,8 +421,8 @@ public class SnoBoll : MonoBehaviour
 	/// <summary>
 	/// Updates the ground radius
 	/// </summary>
-	public void updateRad(){
-		groundRadius = (transform.localScale.x) / 10;
+	public void updateRad(int a){
+		groundRadius = (transform.localScale.x) / 10 + 0.1f*a;
 	}
 
 }
