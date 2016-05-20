@@ -24,8 +24,8 @@ public class PowerUp_Faster_Slower : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-		if (coll.gameObject.tag == "Boll")
-		{
+        if (coll.gameObject.tag == "Boll")
+        {
             coll.gameObject.SendMessage("SlowerFasterF");
             if (slowerFasterSound == 0)
             {

@@ -74,7 +74,6 @@ public class zones : MonoBehaviour {
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x + 0.1f, zonesArray[rand].transform.position.y, 0);
             zonesArray[rand].transform.position = new Vector3(zonesArray[rand].transform.position.x - 0.1f, zonesArray[rand].transform.position.y, 0);
             isTwoActive++;
-            Debug.Log("BÖÖÖÖG");
             script.decideType();
 
         }

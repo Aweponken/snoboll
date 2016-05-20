@@ -12,7 +12,7 @@ public class PowerUp_NoJump : MonoBehaviour
     {
 		FX = GetComponent<AudioSource> ().clip;
         float left = Camera.main.gameObject.transform.position.x
-         - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
+                 - ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) + 100;
         float right = Camera.main.gameObject.transform.position.x
             + ((Camera.main.aspect * 2f * Camera.main.orthographicSize) / 2) - 100;
         float top = Camera.main.gameObject.transform.position.y

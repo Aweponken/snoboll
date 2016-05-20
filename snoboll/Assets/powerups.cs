@@ -79,7 +79,6 @@ public class powerups : MonoBehaviour {
 
 			}
 		}
-		
         a = Random.Range(1, 5);
         
         if(!Pow.activeSelf)

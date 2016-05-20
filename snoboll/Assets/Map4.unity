@@ -5767,7 +5767,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 1.25, y: 0.3125}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 2.7, y: 0.68}
 --- !u!50 &413522563
 Rigidbody2D:
   serializedVersion: 2
@@ -16932,7 +16932,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 1.25, y: 0.3125}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 2.7, y: 0.68}
 --- !u!50 &1352942236
 Rigidbody2D:
   serializedVersion: 2
@@ -17479,7 +17479,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 1.25, y: 0.3125}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 2.7, y: 0.68}
 --- !u!50 &1416473222
 Rigidbody2D:
   serializedVersion: 2
@@ -22035,7 +22035,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 1.25, y: 0.3125}
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 0.625}
+  m_Size: {x: 2.7, y: 0.68}
 --- !u!50 &1641511668
 Rigidbody2D:
   serializedVersion: 2
