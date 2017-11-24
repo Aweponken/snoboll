@@ -1,25 +1,15 @@
 # Snöboll
-###The game
+A couch multiplayer game written in Unity(C#). 
+## About the game
+The game is about having the biggest snowball before the world temperature has reached a maximum. The players start with the same size snowballs, then they gain snow by jumping on each other. A larger snowball can roll over a smaller snowball, but a smaller snowball is faster and can jump higher.
 
-## Kvar att göra
-* Ändra så att starta med start-knappen – Dag och Nick - DONE
-* Göra how to play större! - David - DONE
-* Sköldanimering – Hampus & Alex - DONE
-* Ikon till spelet - David - DONE
-* Software manual – Sandra & Dusey - DONE
-* Flyers – Arvid - DONE
-* Planera turneringen – Dag - DONE 
-* Muggar och godis från grossen – DONE
-* Fixa buggen med powerups
-* Ladda upp sista builden på hemsidan – Arvid fixar vid dagens slut
-
-
-## Inför expo
-* Davids TV
-* Hampus högtalare
-* Kistans soffa
-* Ett högt och ett lågt bord
-* Vi brygger kaffe
-* Muggar och godis från grossen
-* Vi samlas halv tio, dubbel straffkassa
-
+The game was developed during a 8 week software project. 
+## Developers
+* [Arvid Viderberg](mailto:arvidvi@kth.se)
+* [David Diamant](mailto:ddiamant@kth.se)
+* [Niklas Embretsen](mailto:nemb@kth.se)
+* [Viktor Dusan Hrstic](mailto:hrstic@kth.se)
+* [Alexander Persson](mailto:alepers@kth.se)
+* [Dag Reuterskiöld](mailto:dsterna@kth.se)
+* [Sandra Stål](mailto:sstal@kth.se)
+* [Hampus Hammersberg](mailto:hamham@kth.se)
